@@ -1,0 +1,175 @@
+{% extends "MWA_webapp/head.html" %}
+
+
+{% load static %}
+{% load widget_tweaks %}
+{% block title %} mywealthanalyst {% endblock %}
+{% block description %} Providing information and analysis on the true value of assets to safeguard your wealth for generations. {% endblock %}
+
+{% block head %} {% endblock %}
+
+{% block content %}
+
+<br>
+<div class='container'>
+<div class='container dashboard'>
+<div class='row'>
+
+<div class='col-sm-12' align="center">
+        <table class="table">
+              <thead>
+                    <tr>
+                        <th scope="col">Gold</th>
+                        <th scope="col">Silver</th>
+                        <th scope="col">Property</th>
+                        <th scope="col">Oil</th>
+                        <th scope="col">All Ords</th>
+                        <th scope="col">Bitcoin</th>
+                    </tr>
+              </thead>
+              <tbody>
+                    <tr>
+                        <td>$ {{gold.last_price}}
+                          {% if gold.increase == 1 %} <i class="fas fa-arrow-up" style='color:green'></i>
+                          {% elif not gold.increase == -1 %} <i class="fas fa-arrow-down" style='color:red'></i>
+                          {% elif not gold.increase == 0 %} <i class="fas fa-arrow-right" style='color:black'></i>
+                          {% endif %}
+                        </td>
+                        <td>$ {{silver.last_price}}
+                          {% if silver.increase == 1 %} <i class="fas fa-arrow-up" style='color:green'></i>
+                          {% elif not silver.increase == -1 %} <i class="fas fa-arrow-down" style='color:red'></i>
+                          {% elif not silver.increase == 0 %} <i class="fas fa-arrow-right" style='color:black'></i>
+                          {% endif %}
+                        </td>
+                        <td>1234</td>
+                        <td>1234</td>
+                        <td>1234</td>
+                        <td>1234</td>
+                    </tr>
+              </tbody>
+        </table>
+
+</div>
+
+</div>
+</div>
+</div>
+
+<br>
+
+<div class="row">
+      <div class="col-md-3"></div>
+
+      <div class="col-md-3" align="center">
+        <select class="form-control" id="id_commodity_one">
+            {% for item in form_options%}
+            {% if forloop.counter0 == 0 %}
+            <option selected={{item}}>{{item}}</option>
+            {% else %}
+            <option>{{item}}</option>
+            {% endif %}
+            {% endfor %}
+          </select>
+      </div>
+
+      <div class="col-md-3" align="center">
+        <select class="form-control" id="id_commodity_two">
+            {% for item in form_options%}
+            {% if forloop.counter0 == 1 %}
+            <option selected={{item}}>{{item}}</option>
+            {% else %}
+            <option>{{item}}</option>
+            {% endif %}
+            {% endfor %}
+          </select>
+      </div>
+
+      <div class="col-md-3"></div>
+</div>
+<br>
+
+
+
+<div id="container" style="height: 400px; min-width: 310px"></div>
+
+<script>
+
+  function jsUcfirst(string)
+  {
+      return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+
+  function plot_chart(){
+  var commodity_one = $("#id_commodity_one option:selected").text().toLowerCase();
+  var commodity_two = $("#id_commodity_two option:selected").text().toLowerCase();
+  $.getJSON(`http://localhost:8000/getdata/?commodity_one=${commodity_one}&commodity_two=${commodity_two}`, function (data) {
+      // Create the chart
+      Highcharts.stockChart('container', {
+
+
+          rangeSelector: {
+              selected: 6,
+              buttons: [{
+                            type: 'month',
+                            count: 1,
+                            text: '1m'
+                        }, {
+                            type: 'month',
+                            count: 3,
+                            text: '3m'
+                        }, {
+                            type: 'month',
+                            count: 6,
+                            text: '6m'
+                        }, {
+                            type: 'ytd',
+                            text: 'YTD'
+                        }, {
+                            type: 'year',
+                            count: 1,
+                            text: '1y'
+                        }, {
+                            type: 'year',
+                            count: 5,
+                            text: '5y'
+                        }, {
+                            type: 'year',
+                            count: 10,
+                            text: '10y'
+                        },{
+                            type: 'all',
+                            text: 'All'
+                        }]
+          },
+
+          title: {
+              enabled: false
+          },
+
+          series: [{
+              name: `${jsUcfirst(commodity_one)} : ${jsUcfirst(commodity_two)}`,
+              data: data,
+              tooltip: {
+                  valueDecimals: 2
+              }
+          }]
+      });
+  })};
+
+  plot_chart()
+
+
+  $('#id_commodity_one, #id_commodity_two').change(function(){
+      plot_chart();
+  })
+
+
+
+
+
+
+
+
+</script>
+
+{% endblock %}
