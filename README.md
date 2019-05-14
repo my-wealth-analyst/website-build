@@ -8,7 +8,7 @@ You will need to install python on your computer to run the server locally. This
  
  i) download Python 3.7.3 from https://www.python.org/downloads/
  
- ii) open command prompt (CMD) to the Website-Built root folder
+ ii) open command prompt (CMD) to the 'website-build' root folder
  
  iii) enter this command in CMD >>              pip install -r requirements.txt
  
