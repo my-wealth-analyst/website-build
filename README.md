@@ -63,3 +63,14 @@ username: admin
 
 password: mywealthadmin
 
+
+
+### Current Functionality (as at 14May 2019)
+- Django core configured
+- Charting functionality complete with selectable time-bounds (e.g. 3months, 1yr,5yrs,10yrs,all) (requires aesthetic review)
+- Current prices functionality complete (requires aesthetic review)
+- Landing page (draft - requires aesthetic review)
+- Header bar (draft - requires aesthetic review)
+- Auto-retrieval of data from perthmint website for Gold and Silver. Only pulls data up to the end of the last month.
+     - TO-DO: find source for last 30 days prices
+
