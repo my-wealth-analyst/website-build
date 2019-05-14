@@ -10,15 +10,15 @@ You will need to install python on your computer to run the server locally. This
  
  ii) open command prompt (CMD) to the 'website-build' root folder
  
- iii) enter this command in CMD >>              pip install -r requirements.txt
+ iii) enter this command in CMD >>              'pip install -r requirements.txt'     (without the quotes) 
  
  
 
  Linux:
  
- i) open terminal to the Website-Built root folder
+ i) open terminal to the 'website-build' root folder
  
- ii) enter this command in terminal >>              pip install -r requirements.txt
+ ii) enter this command in terminal >>           'pip install -r requirements.txt'     (without the quotes) 
  
 
 
@@ -32,7 +32,7 @@ Windows:
 
 i) open command prompt (CMD) to: "Website-Built > mywealthanalyst_django"
 
-ii) enter this command in CMD >>             python3 manage.py runserver
+ii) enter this command in CMD >>             'python3 manage.py runserver' (without the quotes)
 
 iii) open your browser and type in this URL:          http://localhost:8000/
 
@@ -42,7 +42,7 @@ Linux:
 
 i) open terminal to: "Website-Built > mywealthanalyst_django"
 
-ii) enter this command in terminal >>             python manage.py runserver
+ii) enter this command in terminal >>             'python manage.py runserver' (without the quotes)
 
 iii) open your browser and type in this URL:          http://localhost:8000/
 
