@@ -57,7 +57,7 @@ AlphaVantage API key: M4TA2P8B2OU22SPC
 
 ### Current Functionality (as at 17May 2019)
 Stage 1 revisions completed:
--chart layout revised in line with comments
+- chart layout revised in line with comments
 - charts now include recession indicators, and horizontal overvalue/undervalue lines
 - live data pulling from 'https://www.marketindex.com.au/' and 'https://coinmarketcap.com/currencies/bitcoin/' and 'https://www.alphavantage.co/' (for AUD/USD) completed. These will run once per hour (in production).
 - aesthetic comments incorporated
