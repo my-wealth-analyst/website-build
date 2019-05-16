@@ -7,36 +7,39 @@ import numpy as np
 import os
 import requests
 
-# from .forms import commodity_dropdown_field
 from .models import Commodities
 
 # Create your views here.
 
-def get_current_movement(commodity=None):
-    filepath = os.path.join(BASE_DIR, f"../media_files/datasets/{commodity}_askprice_avg_aud.csv")
-    df = pd.read_csv(filepath)
-
-
-    last_price = df.AskPrice_Avg_AUD.values[len(df.AskPrice_Avg_AUD.values)-1]
-    second_last_price = df.AskPrice_Avg_AUD.values[len(df.AskPrice_Avg_AUD.values)-2]
-
-    if last_price > second_last_price:
-        increase = 1
-    elif last_price < second_last_price:
-        increase = -1
-    elif last_price == second_last_price:
-        increase = 0
-
-    return({'last_price':last_price, 'increase':increase})
+# def get_current_movement(commodity=None):
+#     filepath = os.path.join(BASE_DIR, f"../media_files/datasets/{commodity}_askprice_avg_aud.csv")
+#     df = pd.read_csv(filepath)
+#
+#
+#     last_price = df.AskPrice_Avg_AUD.values[len(df.AskPrice_Avg_AUD.values)-1]
+#     second_last_price = df.AskPrice_Avg_AUD.values[len(df.AskPrice_Avg_AUD.values)-2]
+#
+#     if last_price > second_last_price:
+#         increase = 1
+#     elif last_price < second_last_price:
+#         increase = -1
+#     elif last_price == second_last_price:
+#         increase = 0
+#
+#     return({'last_price':last_price, 'increase':increase})
 
 def home(request):
-    # form = commodity_dropdown_field()
-    form_options = Commodities.objects.values_list('commodity_name', flat=True)
 
-    gold = get_current_movement('gold')
-    silver = get_current_movement('silver')
+    All = Commodities.objects.filter(enabled=True)
+    Gold = Commodities.objects.filter(enabled=True).get(commodity_name='Gold')
+    Silver = Commodities.objects.filter(enabled=True).get(commodity_name='Silver')
+    Property = Commodities.objects.filter(enabled=True).get(commodity_name='Property')
+    Oil = Commodities.objects.filter(enabled=True).get(commodity_name='Oil')
+    AllOrds = Commodities.objects.filter(enabled=True).get(commodity_name='All Ordinaries')
+    Bitcoin = Commodities.objects.filter(enabled=True).get(commodity_name='Bitcoin')
+    AUD = Commodities.objects.get(commodity_name='Australian Dollar')
 
-    return render(request, 'MWA_webapp/main.html', {'gold':gold, 'silver':silver, 'form_options':form_options})
+    return render(request, 'MWA_webapp/main.html', {'Commodities':All , 'Gold':Gold, 'Silver': Silver , 'Property':Property , 'Oil':Oil , 'AllOrds':AllOrds , 'Bitcoin':Bitcoin, 'AUD':AUD })
 
 
 def get_data(request):

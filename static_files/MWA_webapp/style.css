@@ -4,11 +4,9 @@
 
 * {
    font-family: 'Tw Cen MT';
+   color: rgba(34,42,53,1)
 }
-a, a:link, a:visited {
-   color: #000000;
-   font-weight: bold;
-}
+
 h1, h2, h3, h4, h5 {
    font-family: 'Verdana' !important;
 }
@@ -28,4 +26,18 @@ h1, h2, h3, h4, h5 {
 
  .nav-item:hover, .nav-link:hover {
     color: rgba(255, 153, 0, 1) !important;
+  }
+
+ /* DROPDOWN STYLING */
+
+
+
+  /* GENERAL STYLING */
+  .dashboard {
+    background-color: rgba(68, 114, 196, 0.2) !important;
+    border-radius: 10px;
+  }
+
+  table.table {
+    text-align: center;
   }
