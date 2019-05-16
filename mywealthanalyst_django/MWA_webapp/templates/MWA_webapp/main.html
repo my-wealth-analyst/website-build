@@ -32,16 +32,25 @@
                       <td class="currency""><span class="currency_togglable" data-monetary-amount="{{ Silver.last_price|floatformat:2 }}"></span></td>
                       <td class="currency""><span class="currency_togglable" data-monetary-amount="{{ Property.last_price|floatformat:2 }}"></span></td>
                       <td class="currency""><span class="currency_togglable" data-monetary-amount="{{ Oil.last_price|floatformat:2 }}"></span></td>
-                      <td class="currency""><span class="" data-monetary-amount="{{ AllOrds.last_price|floatformat:2 }}"></span></td>
+                      <td class=""><span class="" data-monetary-amount="{{ AllOrds.last_price|floatformat:2 }}"></span></td>
                       <td class="currency""><span class="currency_togglable" data-monetary-amount="{{ Bitcoin.last_price|floatformat:2 }}"></span></td>
                     </tr>
 
                     <tr>
                       {% for item in Commodities %}
                           {% if 0 > item.last_movement_nominal %}
+                                {% if item.commodity_name == "All Ordinaries"%}
                               <td class="price_small negative" data-monetary-amount="{{ item.last_movement_nominal|floatformat:2 }}"> ({{item.last_movement_percentage|floatformat:2}}%) </td>
+                                 {% else %}
+                              <td class="price_small negative currency_togglable" data-monetary-amount="{{ item.last_movement_nominal|floatformat:2 }}"> ({{item.last_movement_percentage|floatformat:2}}%) </td>
+                                 {% endif %}
+
                           {% else %}
-                              <td class="price_small positive" data-monetary-amount="{{ item.last_movement_nominal|floatformat:2 }}"> ({{item.last_movement_percentage|floatformat:2}}%) </td>
+                          {% if item.commodity_name == "All Ordinaries"%}
+                        <td class="price_small positive" data-monetary-amount="{{ item.last_movement_nominal|floatformat:2 }}"> ({{item.last_movement_percentage|floatformat:2}}%) </td>
+                           {% else %}
+                        <td class="price_small positive currency_togglable" data-monetary-amount="{{ item.last_movement_nominal|floatformat:2 }}"> ({{item.last_movement_percentage|floatformat:2}}%) </td>
+                           {% endif %}
                           {% endif %}
                       {% endfor %}
                     </tr>
