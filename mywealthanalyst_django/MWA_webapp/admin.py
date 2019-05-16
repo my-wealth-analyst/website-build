@@ -3,19 +3,19 @@ from .models import (
                     Commodities
                     )
 from scripts.perthmint_getdata import data_update_commodity, delete_commodity_file
+from scripts.scrape_livedata import scrape_all
 
 def refresh_data(ModelAdmin, request, queryset):
-
-    delete_commodity_file('gold')
-    delete_commodity_file('silver')
-    data_update_commodity('gold')
-    data_update_commodity('gold')
-    data_update_commodity('silver')
-    data_update_commodity('silver')
+    scrape_all()
 
 class CommoditiesAdmin(admin.ModelAdmin):
     actions = [refresh_data]
-    list_display = ['commodity_name','enabled']
+    readonly_fields = ["date_last_scraped"]
+    list_display = ['commodity_name','enabled','date_last_scraped','last_price']
+
+
+
+
 
 
 # Register your models here.

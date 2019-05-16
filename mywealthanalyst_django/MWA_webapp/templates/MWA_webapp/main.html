@@ -10,120 +10,110 @@
 
 {% block content %}
 
+
+<br>
 <br>
 <div class='container'>
 <div class='container dashboard'>
 <div class='row'>
 
-<div class='col-sm-12' align="center">
+<div class='col-sm-11' align="left">
         <table class="table">
               <thead>
                     <tr>
-                        <th scope="col">Gold</th>
-                        <th scope="col">Silver</th>
-                        <th scope="col">Property</th>
-                        <th scope="col">Oil</th>
-                        <th scope="col">All Ords</th>
-                        <th scope="col">Bitcoin</th>
+                      {% for item in Commodities %}
+                      <th> {{ item.shortname }} </th>
+                      {% endfor %}
                     </tr>
               </thead>
               <tbody>
                     <tr>
-                        <td>$ {{gold.last_price}}
-                          {% if gold.increase == 1 %} <i class="fas fa-arrow-up" style='color:green'></i>
-                          {% elif not gold.increase == -1 %} <i class="fas fa-arrow-down" style='color:red'></i>
-                          {% elif not gold.increase == 0 %} <i class="fas fa-arrow-right" style='color:black'></i>
+                      <td class="currency""><span class="currency_togglable" data-monetary-amount="{{ Gold.last_price|floatformat:2 }}"></span></td>
+                      <td class="currency""><span class="currency_togglable" data-monetary-amount="{{ Silver.last_price|floatformat:2 }}"></span></td>
+                      <td class="currency""><span class="currency_togglable" data-monetary-amount="{{ Property.last_price|floatformat:2 }}"></span></td>
+                      <td class="currency""><span class="currency_togglable" data-monetary-amount="{{ Oil.last_price|floatformat:2 }}"></span></td>
+                      <td class="currency""><span class="" data-monetary-amount="{{ AllOrds.last_price|floatformat:2 }}"></span></td>
+                      <td class="currency""><span class="currency_togglable" data-monetary-amount="{{ Bitcoin.last_price|floatformat:2 }}"></span></td>
+                    </tr>
+
+                    <tr>
+                      {% for item in Commodities %}
+                          {% if 0 > item.last_movement_nominal %}
+                              <td class="price_small negative" data-monetary-amount="{{ item.last_movement_nominal|floatformat:2 }}"> ({{item.last_movement_percentage|floatformat:2}}%) </td>
+                          {% else %}
+                              <td class="price_small positive" data-monetary-amount="{{ item.last_movement_nominal|floatformat:2 }}"> ({{item.last_movement_percentage|floatformat:2}}%) </td>
                           {% endif %}
-                        </td>
-                        <td>$ {{silver.last_price}}
-                          {% if silver.increase == 1 %} <i class="fas fa-arrow-up" style='color:green'></i>
-                          {% elif not silver.increase == -1 %} <i class="fas fa-arrow-down" style='color:red'></i>
-                          {% elif not silver.increase == 0 %} <i class="fas fa-arrow-right" style='color:black'></i>
-                          {% endif %}
-                        </td>
-                        <td>1234</td>
-                        <td>1234</td>
-                        <td>1234</td>
-                        <td>1234</td>
+                      {% endfor %}
                     </tr>
               </tbody>
         </table>
 
 </div>
 
+<div class='col-sm-1 my-auto' align="right" >
+<button type="button" class="btn btn-primary" id="currency_toggle" value="USD" data-toggle="button" aria-pressed="false" autocomplete="off">USD</button>
+</div>
+
 </div>
 </div>
 </div>
+
 
 <br>
 
-<div class="row">
-      <div class="col-md-3"></div>
-
-      <div class="col-md-3" align="center">
-        <select class="form-control" id="id_commodity_one">
-            {% for item in form_options%}
-            {% if forloop.counter0 == 0 %}
-            <option selected={{item}}>{{item}}</option>
-            {% else %}
-            <option>{{item}}</option>
-            {% endif %}
-            {% endfor %}
-          </select>
+<div class='container'>
+<div class='row'>
+      <div class='col-md-12'>
+      <div id="container_gold_silver" style="height: 400px"></div>
       </div>
-
-      <div class="col-md-3" align="center">
-        <select class="form-control" id="id_commodity_two">
-            {% for item in form_options%}
-            {% if forloop.counter0 == 1 %}
-            <option selected={{item}}>{{item}}</option>
-            {% else %}
-            <option>{{item}}</option>
-            {% endif %}
-            {% endfor %}
-          </select>
-      </div>
-
-      <div class="col-md-3"></div>
 </div>
-<br>
-
-
-
-<div id="container" style="height: 400px; min-width: 310px"></div>
+</div>
 
 <script>
+  $('#currency_toggle').on('click', function(event) {
+    if (this.innerHTML == 'USD'){
+        this.innerHTML = 'AUD';
+        $('#currency_toggle').val("AUD")
+        $('#currency_toggle').css("background-color", "rgba(255, 153, 0, 1)");
+
+        $(".currency_togglable").each(function() {
+            $(this).attr('data-monetary-amount', (($(this).attr('data-monetary-amount'))/{{AUD.last_price}}).toFixed(2)    );
+        });
+
+    } else {
+        this.innerHTML = 'USD';
+        $('#currency_toggle').val("USD")
+        $('#currency_toggle').css("background-color", "rgb(68, 114, 196)");
+
+        $(".currency_togglable").each(function() {
+            $(this).attr('data-monetary-amount', (($(this).attr('data-monetary-amount'))*{{AUD.last_price}}).toFixed(2)    );
+        });
+    }
+  });
 
   function jsUcfirst(string)
   {
       return string.charAt(0).toUpperCase() + string.slice(1);
   }
 
-  function plot_chart(){
-  var commodity_one = $("#id_commodity_one option:selected").text().toLowerCase();
-  var commodity_two = $("#id_commodity_two option:selected").text().toLowerCase();
+  function _formatEpochDate(eTS) {
+    return new Date(eTS).toLocaleDateString();
+  }
+
+  function plot_chart(commodity_one,commodity_two, undervalue, overvalue){
+  var plotbandcolour = 'rgba(255,80,80,0.2)';
+
   $.getJSON(`http://localhost:8000/getdata/?commodity_one=${commodity_one}&commodity_two=${commodity_two}`, function (data) {
       // Create the chart
-      Highcharts.stockChart('container', {
+      Highcharts.stockChart(`container_${commodity_one}_${commodity_two}`, {
 
 
           rangeSelector: {
-              selected: 6,
+              selected: 3,
               buttons: [{
-                            type: 'month',
-                            count: 1,
-                            text: '1m'
-                        }, {
-                            type: 'month',
-                            count: 3,
-                            text: '3m'
-                        }, {
                             type: 'month',
                             count: 6,
                             text: '6m'
-                        }, {
-                            type: 'ytd',
-                            text: 'YTD'
                         }, {
                             type: 'year',
                             count: 1,
@@ -134,41 +124,149 @@
                             text: '5y'
                         }, {
                             type: 'year',
-                            count: 10,
-                            text: '10y'
-                        },{
+                            count: 15,
+                            text: '15y'
+                        }, {
+                            type: 'ytd',
+                            text: 'YTD'
+                        }, {
                             type: 'all',
-                            text: 'All'
+                            text: 'ALL'
                         }]
           },
 
+          exporting:{enabled:false},
           title: {
-              enabled: false
+              enabled: true,
+              text: `${jsUcfirst(commodity_one)} : ${jsUcfirst(commodity_two)}` ,
+              align: 'left',
+              style: {'fontWeight':'bold'},
           },
-
+          subtitle: {
+              enabled: true,
+              text: `to ${_formatEpochDate(data[data.length-1][0])}`,
+              align: 'left',
+              style: {'fontSize':'10px'},
+          },
           series: [{
               name: `${jsUcfirst(commodity_one)} : ${jsUcfirst(commodity_two)}`,
               data: data,
               tooltip: {
                   valueDecimals: 2
               }
-          }]
+          }],
+
+          yAxis: {
+              plotLines: [{
+                            value: undervalue,
+                            label: {
+                                      text:`Switch to ${jsUcfirst(commodity_one)}`,
+                                      style: {'fontSize':'11px', 'color': 'rgba(68,114,196,0.9)',}
+                                    },
+                            color: 'rgba(68,114,196,0.5)',
+                            width: 1,
+                            zIndex: 9,
+                          },
+                          {
+                            value: overvalue,
+                            label: {
+                                      text:`Switch to ${jsUcfirst(commodity_two)}`,
+                                      style: {'fontSize':'11px', 'color': 'rgba(255,80,80,0.9)',}
+                                    },
+                            color: 'rgba(255,80,80,0.5)',
+                            width: 1,
+                            zIndex: 9,
+                          },
+                          ],
+          },
+
+          xAxis: {
+                    plotBands: [{
+                                  color: plotbandcolour, // Color value
+                                  from: 120873600000, // Nov 1973
+                                  to: 162777600000, // Mar 1975
+                                  label: {
+                                          text:'recession',
+                                          rotation: 90,
+                                          align:'left',
+                                          style:{"fontSize": "11px"},
+                                          y: 3,
+                                          x: 3,
+                                          color: 'rgb(34,42,53)'       },
+                                },
+                                {
+                                  color: plotbandcolour, // Color value
+                                  from: 315446400000, // Jan 1980
+                                  to: 331171200000, //  June 1980
+                                  label: {
+                                          text:'recession',
+                                          rotation: 90,
+                                          align:'left',
+                                          style:{"fontSize": "11px"},
+                                          y: 3,
+                                          x: 3,
+                                          color: 'rgb(34,42,53)'       },
+                                },
+                                {
+                                  color: plotbandcolour, // Color value
+                                  from: 362707200000, // July 1981
+                                  to: 404870400000, // Nov 1982
+                                  label: {
+                                          text:'recession',
+                                          rotation: 90,
+                                          align:'left',
+                                          style:{"fontSize": "11px"},
+                                          y: 3,
+                                          x: 3,
+                                          color: 'rgb(34,42,53)'       },
+                                },
+                                {
+                                  color: plotbandcolour, // Color value
+                                  from: 646704000000, // July 1990
+                                  to: 667699200000, // March 1991
+                                  label: {
+                                          text:'recession',
+                                          rotation: 90,
+                                          align:'left',
+                                          style:{"fontSize": "11px"},
+                                          y: 3,
+                                          x: 3,
+                                          color: 'rgb(34,42,53)'       },
+                                },
+                                {
+                                  color: plotbandcolour, // Color value
+                                  from: 983318400000, // March 2001
+                                  to: 1004486400000, // Nov 2001
+                                  label: {
+                                          text:'recession',
+                                          rotation: 90,
+                                          align:'left',
+                                          style:{"fontSize": "11px"},
+                                          y: 3,
+                                          x: 3,
+                                          color: 'rgb(34,42,53)'       },
+                                },
+                                {
+                                  color: plotbandcolour, // Color value
+                                  from: 1196380800000, // Dec 2007
+                                  to: 1243728000000, // June 2009
+                                  label: {
+                                          text:'recession',
+                                          rotation: 90,
+                                          align:'left',
+                                          style:{"fontSize": "11px"},
+                                          y: 3,
+                                          x: 3,
+                                          color: 'rgb(34,42,53)'       },
+                                },
+                                ],
+                },
       });
   })};
 
-  plot_chart()
-
-
-  $('#id_commodity_one, #id_commodity_two').change(function(){
-      plot_chart();
-  })
-
-
-
-
-
-
-
+  plot_chart('gold','silver', 45,80)
+  plot_chart('silver','silver')
+  // plot_chart('gold','gold')
 
 </script>
 

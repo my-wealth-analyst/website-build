@@ -5,22 +5,12 @@ You will need to install python on your computer to run the server locally. This
 
 
  Windows:
- 
+
  i) download Python 3.7.3 from https://www.python.org/downloads/
- 
- ii) open command prompt (CMD) to the 'website-build' root folder
- 
- iii) enter this command in CMD >>              'pip install -r requirements.txt'     (without the quotes) 
- 
- 
 
- Linux:
- 
- i) open terminal to the 'website-build' root folder
- 
- ii) enter this command in terminal >>           'pip install -r requirements.txt'     (without the quotes) 
- 
+ ii) open command prompt (CMD) to the 'website-build' root folder (the folder with a file called 'requirements.txt' in it)
 
+ iii) enter this command in CMD >>              'pip install -r requirements.txt'     (without the quotes)
 
 
 #### Running the development server
@@ -30,21 +20,12 @@ To run the dev server, do the following:
 
 Windows:
 
-i) open command prompt (CMD) to: "Website-Built > mywealthanalyst_django"
+i) open command prompt (CMD) to: "Website-Built > mywealthanalyst_django" (the folder with a file called 'manage.py' in it)
 
-ii) enter this command in CMD >>             'python3 manage.py runserver' (without the quotes)
-
-iii) open your browser and type in this URL:          http://localhost:8000/
-
-
-
-Linux:
-
-i) open terminal to: "Website-Built > mywealthanalyst_django"
-
-ii) enter this command in terminal >>             'python manage.py runserver' (without the quotes)
+ii) enter this command in CMD >>             'python manage.py runserver' (without the quotes)
 
 iii) open your browser and type in this URL:          http://localhost:8000/
+
 
 
 
@@ -63,7 +44,7 @@ username: admin
 
 password: mywealthadmin
 
-
+AlphaVantage API key: M4TA2P8B2OU22SPC
 
 ### Current Functionality (as at 14May 2019)
 - Django core configured
@@ -74,3 +55,9 @@ password: mywealthadmin
 - Auto-retrieval of data from perthmint website for Gold and Silver. Only pulls data up to the end of the last month.
      - TO-DO: find source for last 30 days prices
 
+### Current Functionality (as at 17May 2019)
+- Stage 1 revisions completed:
+--> chart layout revised in line with comments
+--> charts now include recession indicators, and horizontal overvalue/undervalue lines
+--> live data pulling from 'https://www.marketindex.com.au/' and 'https://coinmarketcap.com/currencies/bitcoin/' and 'https://www.alphavantage.co/' (for AUD/USD) completed. These will run once per hour (in production).
+--> aesthetic comments incorporated
