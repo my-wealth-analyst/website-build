@@ -5,7 +5,8 @@ from django.conf.urls.static import static
 
 
 urlpatterns = [
-	url(r'^$', views.home, name='landing_page'),
+	url(r'^$', views.landingpage, name='landingpage'),
+	url(r'^dashboard$', views.dashboard, name='dashboard'),
     url(r'^getdata/$', views.get_data)
 
         ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

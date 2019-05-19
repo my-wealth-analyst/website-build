@@ -7,17 +7,24 @@
             <li class="nav-item active">
                 <a class="nav-link" href="#">about us</a>
             </li>
+            {% if request.user.is_authenticated %}
             <li class="nav-item">
-                <a class="nav-link" href="#">login</a>
+                <a class="nav-link" href='{% url "logout" %}'>logout</a>
             </li>
+            {% else %}
+            <li class="nav-item">
+                <a class="nav-link" href='{% url "login" %}'>login</a>
+            </li>
+            {% endif %}
         </ul>
     </div>
 
     <div class="mx-auto order-0">
-        <img src="{% static 'MWA_webapp/logos/logo_full.png' %}" class="img-fluid" alt="mywealthanalyst" height="200px">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+        {% if request.user.is_authenticated %}
+          <a href="{% url 'dashboard' %}"><img src="{% static 'MWA_webapp/logos/logo_full.png' %}" class="img-fluid" alt="mywealthanalyst" height="200px"></a>
+        {% else %}
+          <a href="{% url 'landingpage' %}"><img src="{% static 'MWA_webapp/logos/logo_full.png' %}" class="img-fluid" alt="mywealthanalyst" height="200px"></a>
+        {% endif %}
     </div>
 
     <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
