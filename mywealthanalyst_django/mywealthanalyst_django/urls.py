@@ -21,4 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 	url(r'^', include('MWA_webapp.urls')),
 	url(r'^', include('MWA_users.urls')),
+
 ]

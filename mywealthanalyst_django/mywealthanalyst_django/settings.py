@@ -30,6 +30,8 @@ ALLOWED_HOSTS = ['localhost',]
 # Application definition
 
 INSTALLED_APPS = [
+    'MWA_webapp',
+    'MWA_users',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -37,9 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 	'django.contrib.sitemaps',
-    'widget_tweaks',
-    'MWA_webapp',
-    'MWA_users',
 ]
 
 MIDDLEWARE = [
@@ -57,7 +56,7 @@ ROOT_URLCONF = 'mywealthanalyst_django.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -83,6 +82,9 @@ DATABASES = {
     }
 }
 
+# Email BACKEND
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'  # During development only
+EMAIL_FILE_PATH = os.path.join(BASE_DIR, "sent_emails")
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators

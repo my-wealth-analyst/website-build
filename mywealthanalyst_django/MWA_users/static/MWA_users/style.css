@@ -49,6 +49,17 @@
   border: 0px;
 }
 
+.form-signin a.ForgetPwd {
+  font-family: 'Verdana';
+  font-size: 80%;
+  letter-spacing: .1rem;
+  font-weight: bold;
+  padding: 1rem;
+  transition: all 0.2s;
+  color: rgba(34,42,53);
+}
+
+
 .form-label-group {
   position: relative;
   margin-bottom: 1rem;
