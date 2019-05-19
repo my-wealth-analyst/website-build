@@ -28,12 +28,13 @@
               </thead>
               <tbody>
                     <tr>
-                      <td class="currency""><span class="currency_togglable" data-monetary-amount="{{ Gold.last_price|floatformat:2 }}"></span></td>
-                      <td class="currency""><span class="currency_togglable" data-monetary-amount="{{ Silver.last_price|floatformat:2 }}"></span></td>
-                      <td class="currency""><span class="currency_togglable" data-monetary-amount="{{ Property.last_price|floatformat:2 }}"></span></td>
-                      <td class="currency""><span class="currency_togglable" data-monetary-amount="{{ Oil.last_price|floatformat:2 }}"></span></td>
-                      <td class=""><span class="" data-monetary-amount="{{ AllOrds.last_price|floatformat:2 }}"></span></td>
-                      <td class="currency""><span class="currency_togglable" data-monetary-amount="{{ Bitcoin.last_price|floatformat:2 }}"></span></td>
+                      {% for item in Commodities %}
+                                {% if item.commodity_name == "All Ordinaries"%}
+                                <td class=""><span class="" data-monetary-amount="{{ item.last_price|floatformat:2 }}"></span></td>
+                                {% else %}
+                                <td class="currency""><span class="currency_togglable" data-monetary-amount="{{ item.last_price|floatformat:2 }}"></span></td>
+                                {% endif %}
+                      {% endfor %}
                     </tr>
 
                     <tr>
