@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
+from django.contrib.auth.decorators import login_required
 
 from mywealthanalyst_django.settings import BASE_DIR
 import pandas as pd
@@ -11,24 +12,13 @@ from .models import Commodities
 
 # Create your views here.
 
-# def get_current_movement(commodity=None):
-#     filepath = os.path.join(BASE_DIR, f"../media_files/datasets/{commodity}_askprice_avg_aud.csv")
-#     df = pd.read_csv(filepath)
-#
-#
-#     last_price = df.AskPrice_Avg_AUD.values[len(df.AskPrice_Avg_AUD.values)-1]
-#     second_last_price = df.AskPrice_Avg_AUD.values[len(df.AskPrice_Avg_AUD.values)-2]
-#
-#     if last_price > second_last_price:
-#         increase = 1
-#     elif last_price < second_last_price:
-#         increase = -1
-#     elif last_price == second_last_price:
-#         increase = 0
-#
-#     return({'last_price':last_price, 'increase':increase})
+def landingpage(request):
 
-def home(request):
+    return render(request, 'MWA_webapp/landingpage.html')
+
+
+@login_required
+def dashboard(request):
 
     All = Commodities.objects.filter(enabled=True)
     Gold = Commodities.objects.filter(enabled=True).get(commodity_name='Gold')
@@ -41,7 +31,7 @@ def home(request):
 
     return render(request, 'MWA_webapp/main.html', {'Commodities':All , 'Gold':Gold, 'Silver': Silver , 'Property':Property , 'Oil':Oil , 'AllOrds':AllOrds , 'Bitcoin':Bitcoin, 'AUD':AUD })
 
-
+@login_required(redirect_field_name='my_redirect_field')
 def get_data(request):
     commodity_one = request.GET.get('commodity_one', None)
     commodity_two = request.GET.get('commodity_two', None)
