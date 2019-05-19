@@ -1,3 +1,0 @@
-Superuser~~~
-username: admin
-password: mywealthadmin
