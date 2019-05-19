@@ -39,6 +39,7 @@ INSTALLED_APPS = [
 	'django.contrib.sitemaps',
     'widget_tweaks',
     'MWA_webapp',
+    'MWA_users',
 ]
 
 MIDDLEWARE = [
@@ -101,6 +102,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTH_USER_MODEL = 'MWA_users.MWA_usermodel'
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
