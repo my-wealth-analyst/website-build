@@ -25,9 +25,9 @@ def dashboard(request):
     Silver = Commodities.objects.filter(enabled=True).get(commodity_name='Silver')
     Property = Commodities.objects.filter(enabled=True).get(commodity_name='Property')
     Oil = Commodities.objects.filter(enabled=True).get(commodity_name='Oil')
-    AllOrds = Commodities.objects.filter(enabled=True).get(commodity_name='All Ordinaries')
+    AllOrds = Commodities.objects.filter(enabled=True).get(commodity_name='All Ords')
     Bitcoin = Commodities.objects.filter(enabled=True).get(commodity_name='Bitcoin')
-    AUD = Commodities.objects.get(commodity_name='Australian Dollar')
+    AUD = Commodities.objects.get(commodity_name='AUD')
 
     return render(request, 'MWA_webapp/main.html', {'Commodities':All , 'Gold':Gold, 'Silver': Silver , 'Property':Property , 'Oil':Oil , 'AllOrds':AllOrds , 'Bitcoin':Bitcoin, 'AUD':AUD })
 
