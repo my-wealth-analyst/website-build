@@ -6,7 +6,8 @@
 {% block description %} Providing information and analysis on the true value of assets to safeguard your wealth for generations. {% endblock %}
 
 {% block head %}
-<link rel="stylesheet" type="text/css" href="{% static 'MWA_webapp/style.css' %}?id=10" />
+<link rel="stylesheet" type="text/css" href="{% static 'MWA_webapp/style.css' %}?id=11" />
+<script src="{% static 'MWA_webapp/MWA_webapp.js' %}"></script>
 {% endblock %}
 
 {% block content %}
@@ -84,6 +85,16 @@
       <div id="container_gold_silver" style="height: 400px"></div>
       </div>
 </div>
+<div class='row'>
+      <div class='col-md-12'>
+      <div id="container_allordsperatio_identity" style="height: 400px"></div>
+      </div>
+</div>
+<div class='row'>
+      <div class='col-md-12'>
+      <div id="container_bitcoin_gold" style="height: 400px"></div>
+      </div>
+</div>
 </div>
 
 <script>
@@ -108,195 +119,9 @@
     }
   });
 
-  function jsUcfirst(string)
-  {
-      return string.charAt(0).toUpperCase() + string.slice(1);
-  }
-
-  function _formatEpochDate(eTS) {
-    return new Date(eTS).toLocaleDateString();
-  }
-
-  function plot_chart(commodity_one,commodity_two, undervalue, overvalue){
-  var plotbandcolour = 'rgba(127,127,27,0.15)';
-
-  $.getJSON(`http://localhost:8000/getdata/?commodity_one=${commodity_one}&commodity_two=${commodity_two}`, function (data) {
-      // Create the chart
-      Highcharts.stockChart(`container_${commodity_one}_${commodity_two}`, {
-
-
-          rangeSelector: {
-              selected: 3,
-              buttons: [{
-                            type: 'month',
-                            count: 6,
-                            text: '6m'
-                        }, {
-                            type: 'year',
-                            count: 1,
-                            text: '1y'
-                        }, {
-                            type: 'year',
-                            count: 5,
-                            text: '5y'
-                        }, {
-                            type: 'year',
-                            count: 15,
-                            text: '15y'
-                        }, {
-                            type: 'ytd',
-                            text: 'YTD'
-                        }, {
-                            type: 'all',
-                            text: 'ALL'
-                        }]
-          },
-
-          exporting:{enabled:false},
-          title: {
-              enabled: true,
-              text: `${jsUcfirst(commodity_one)} : ${jsUcfirst(commodity_two)}` ,
-              align: 'left',
-              style: {'fontWeight':'bold'},
-          },
-          subtitle: {
-              enabled: true,
-              text: `to ${_formatEpochDate(data[data.length-1][0])}`,
-              align: 'left',
-              style: {'fontSize':'10px'},
-          },
-          series: [{
-              name: `${jsUcfirst(commodity_one)} : ${jsUcfirst(commodity_two)}`,
-              data: data,
-              tooltip: {
-                  valueDecimals: 2
-              }
-          }],
-
-          yAxis: {
-              plotLines: [{
-                            value: undervalue,
-                            label: {
-                                      text:`Switch to ${jsUcfirst(commodity_one)}`,
-                                      style: {'fontSize':'11px', 'color': 'rgba(68,114,196,0.9)',}
-                                    },
-                            color: 'rgba(68,114,196,0.5)',
-                            width: 1,
-                            zIndex: 9,
-                          },
-                          {
-                            value: overvalue,
-                            label: {
-                                      text:`Switch to ${jsUcfirst(commodity_two)}`,
-                                      style: {'fontSize':'11px', 'color': 'rgba(255,80,80,0.9)',}
-                                    },
-                            color: 'rgba(255,80,80,0.5)',
-                            width: 1,
-                            zIndex: 9,
-                          },
-                          ],
-          },
-
-          xAxis: {
-                    plotBands: [{
-                                  color: plotbandcolour, // Color value
-                                  from: 120873600000, // Nov 1973
-                                  to: 162777600000, // Mar 1975
-                                  label: {
-                                          text:'',
-                                          rotation: 90,
-                                          align:'left',
-                                          style:{"fontSize": "11px"},
-                                          y: 3,
-                                          x: 3,
-                                          color: 'rgb(34,42,53)'       },
-                                },
-                                {
-                                  color: plotbandcolour, // Color value
-                                  from: 315446400000, // Jan 1980
-                                  to: 331171200000, //  June 1980
-                                  label: {
-                                          text:'',
-                                          rotation: 90,
-                                          align:'left',
-                                          style:{"fontSize": "11px"},
-                                          y: 3,
-                                          x: 3,
-                                          color: 'rgb(34,42,53)'       },
-                                },
-                                {
-                                  color: plotbandcolour, // Color value
-                                  from: 362707200000, // July 1981
-                                  to: 404870400000, // Nov 1982
-                                  label: {
-                                          text:'',
-                                          rotation: 90,
-                                          align:'left',
-                                          style:{"fontSize": "11px"},
-                                          y: 3,
-                                          x: 3,
-                                          color: 'rgb(34,42,53)'       },
-                                },
-                                {
-                                  color: plotbandcolour, // Color value
-                                  from: 646704000000, // July 1990
-                                  to: 667699200000, // March 1991
-                                  label: {
-                                          text:'',
-                                          rotation: 90,
-                                          align:'left',
-                                          style:{"fontSize": "11px"},
-                                          y: 3,
-                                          x: 3,
-                                          color: 'rgb(34,42,53)'       },
-                                },
-                                {
-                                  color: plotbandcolour, // Color value
-                                  from: 867715200000, // July 1997
-                                  to: 899251200000, // July 1998
-                                  label: {
-                                          text:'',
-                                          rotation: 90,
-                                          align:'left',
-                                          style:{"fontSize": "11px"},
-                                          y: 3,
-                                          x: 3,
-                                          color: 'rgb(34,42,53)'       },
-                                },
-                                {
-                                  color: plotbandcolour, // Color value
-                                  from: 983318400000, // March 2001
-                                  to: 1004486400000, // Nov 2001
-                                  label: {
-                                          text:'',
-                                          rotation: 90,
-                                          align:'left',
-                                          style:{"fontSize": "11px"},
-                                          y: 3,
-                                          x: 3,
-                                          color: 'rgb(34,42,53)'       },
-                                },
-                                {
-                                  color: plotbandcolour, // Color value
-                                  from: 1196380800000, // Dec 2007
-                                  to: 1243728000000, // June 2009
-                                  label: {
-                                          text:'',
-                                          rotation: 90,
-                                          align:'left',
-                                          style:{"fontSize": "11px"},
-                                          y: 3,
-                                          x: 3,
-                                          color: 'rgb(34,42,53)'       },
-                                },
-                                ],
-                },
-      });
-  })};
-
   plot_chart('gold','silver', 45,80)
-  plot_chart('silver','silver')
-  // plot_chart('gold','gold')
+  plot_chart('bitcoin','gold')
+  plot_chart('allordsperatio','identity',12,20)
 
 </script>
 
