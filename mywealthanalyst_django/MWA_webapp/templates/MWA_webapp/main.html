@@ -23,14 +23,14 @@
               <thead>
                     <tr>
                       {% for item in Commodities %}
-                      <th> {{ item.shortname }} </th>
+                      <th> {{ item.commodity_name }} </th>
                       {% endfor %}
                     </tr>
               </thead>
               <tbody>
                     <tr>
                       {% for item in Commodities %}
-                                {% if item.commodity_name == "All Ordinaries"%}
+                                {% if item.commodity_name == "All Ords"%}
                                 <td class=""><span class="" data-monetary-amount="{{ item.last_price|floatformat:2 }}"></span></td>
                                 {% else %}
                                 <td class="currency""><span class="currency_togglable" data-monetary-amount="{{ item.last_price|floatformat:2 }}"></span></td>
@@ -56,6 +56,12 @@
                           {% endif %}
                       {% endfor %}
                     </tr>
+                    <tr>
+                      {% for item in Commodities %}
+                        <td class="price_small" style="font-size:9pt"> {{item.date_last_scraped|date:"M-d H:i"}} </td>
+                      {% endfor %}
+                    </tr>
+
               </tbody>
         </table>
 
@@ -112,7 +118,7 @@
   }
 
   function plot_chart(commodity_one,commodity_two, undervalue, overvalue){
-  var plotbandcolour = 'rgba(255,80,80,0.2)';
+  var plotbandcolour = 'rgba(127,127,27,0.15)';
 
   $.getJSON(`http://localhost:8000/getdata/?commodity_one=${commodity_one}&commodity_two=${commodity_two}`, function (data) {
       // Create the chart
@@ -197,7 +203,7 @@
                                   from: 120873600000, // Nov 1973
                                   to: 162777600000, // Mar 1975
                                   label: {
-                                          text:'recession',
+                                          text:'',
                                           rotation: 90,
                                           align:'left',
                                           style:{"fontSize": "11px"},
@@ -210,7 +216,7 @@
                                   from: 315446400000, // Jan 1980
                                   to: 331171200000, //  June 1980
                                   label: {
-                                          text:'recession',
+                                          text:'',
                                           rotation: 90,
                                           align:'left',
                                           style:{"fontSize": "11px"},
@@ -223,7 +229,7 @@
                                   from: 362707200000, // July 1981
                                   to: 404870400000, // Nov 1982
                                   label: {
-                                          text:'recession',
+                                          text:'',
                                           rotation: 90,
                                           align:'left',
                                           style:{"fontSize": "11px"},
@@ -236,7 +242,20 @@
                                   from: 646704000000, // July 1990
                                   to: 667699200000, // March 1991
                                   label: {
-                                          text:'recession',
+                                          text:'',
+                                          rotation: 90,
+                                          align:'left',
+                                          style:{"fontSize": "11px"},
+                                          y: 3,
+                                          x: 3,
+                                          color: 'rgb(34,42,53)'       },
+                                },
+                                {
+                                  color: plotbandcolour, // Color value
+                                  from: 867715200000, // July 1997
+                                  to: 899251200000, // July 1998
+                                  label: {
+                                          text:'',
                                           rotation: 90,
                                           align:'left',
                                           style:{"fontSize": "11px"},
@@ -249,7 +268,7 @@
                                   from: 983318400000, // March 2001
                                   to: 1004486400000, // Nov 2001
                                   label: {
-                                          text:'recession',
+                                          text:'',
                                           rotation: 90,
                                           align:'left',
                                           style:{"fontSize": "11px"},
@@ -262,7 +281,7 @@
                                   from: 1196380800000, // Dec 2007
                                   to: 1243728000000, // June 2009
                                   label: {
-                                          text:'recession',
+                                          text:'',
                                           rotation: 90,
                                           align:'left',
                                           style:{"fontSize": "11px"},

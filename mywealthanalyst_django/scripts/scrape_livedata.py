@@ -116,9 +116,17 @@ def scrape_all():
     driver = webdriver.Chrome(chrome_options=options)
     driver.set_page_load_timeout(10)
 
+    Commodities.objects.get_or_create(commodity_name="All Ords", enabled=True)
+    Commodities.objects.get_or_create(commodity_name="Gold", enabled=True)
+    Commodities.objects.get_or_create(commodity_name="Silver", enabled=True)
+    Commodities.objects.get_or_create(commodity_name="Oil", enabled=True)
+    Commodities.objects.get_or_create(commodity_name="Bitcoin", enabled=True)
+    Commodities.objects.get_or_create(commodity_name="Property", enabled=True)
+    Commodities.objects.get_or_create(commodity_name="AUD", enabled=False)
+
     try:
         update = scrape_ALLORDS(driver)
-        Commodities.objects.filter(commodity_name="All Ordinaries").update(date_last_scraped=datetime.now(), last_price=update[0], last_movement_nominal=update[1], last_movement_percentage=update[2])
+        Commodities.objects.filter(commodity_name="All Ords").update(date_last_scraped=datetime.now(), last_price=update[0], last_movement_nominal=update[1], last_movement_percentage=update[2])
     except:
         pass
 
@@ -150,7 +158,7 @@ def scrape_all():
         r = requests.get('https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=AUD&to_currency=USD&apikey=M4TA2P8B2OU22SPC')
         json_response = r.json()
 
-        Commodities.objects.filter(commodity_name="Australian Dollar").update(date_last_scraped=datetime.now(), last_price=json_response["Realtime Currency Exchange Rate"]["5. Exchange Rate"])
+        Commodities.objects.filter(commodity_name="AUD").update(date_last_scraped=datetime.now(), last_price=json_response["Realtime Currency Exchange Rate"]["5. Exchange Rate"])
     except:
         pass
 
