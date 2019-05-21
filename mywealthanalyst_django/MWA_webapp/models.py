@@ -13,6 +13,5 @@ class Commodities(models.Model):
     last_movement_nominal = models.FloatField(null=True,blank=True, help_text='Value in USD, or index value')
     last_movement_percentage = models.FloatField(null=True,blank=True, help_text='Value in percent ("5" = 5%)')
 
-
     def __str__(self):
         return "%s" % (self.commodity_name)

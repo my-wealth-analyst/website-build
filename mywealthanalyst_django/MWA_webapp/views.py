@@ -10,12 +10,12 @@ import requests
 
 from .models import Commodities
 
-from scripts.get_historical_data import update_bitcoin
+from scripts.get_historical_data import update_allords
 
 # Create your views here.
 
 def landingpage(request):
-
+    
     return render(request, 'MWA_webapp/landingpage.html')
 
 
@@ -38,8 +38,6 @@ def dashboard(request):
 def get_data(request):
     commodity_one = request.GET.get('commodity_one', None)
     commodity_two = request.GET.get('commodity_two', None)
-
-    print(commodity_two)
 
     filepath_one = os.path.join(BASE_DIR, f"../media_files/datasets/{commodity_one}_askprice_avg_aud.csv")
     filepath_two = os.path.join(BASE_DIR, f"../media_files/datasets/{commodity_two}_askprice_avg_aud.csv")

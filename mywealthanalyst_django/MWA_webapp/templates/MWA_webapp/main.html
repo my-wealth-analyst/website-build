@@ -49,7 +49,7 @@
                                  {% endif %}
 
                           {% else %}
-                          {% if item.commodity_name == "All Ordinaries"%}
+                          {% if item.commodity_name == "All Ords"%}
                         <td class="price_small positive" data-monetary-amount="{{ item.last_movement_nominal|floatformat:2 }}"> ({{item.last_movement_percentage|floatformat:2}}%) </td>
                            {% else %}
                         <td class="price_small positive currency_togglable" data-monetary-amount="{{ item.last_movement_nominal|floatformat:2 }}"> ({{item.last_movement_percentage|floatformat:2}}%) </td>
@@ -62,7 +62,21 @@
                         <td class="price_small" style="font-size:9pt"> {{item.date_last_scraped|date:"M-d H:i"}} </td>
                       {% endfor %}
                     </tr>
-
+                    <tr>
+                      {% for item in Commodities %}
+                            {% if item.commodity_name == "Gold"%}
+                          <td class="price_small" style="font-size:9pt"> <a href="https://www.perthmint.com/" target="_blank" style="font-size:9pt">buy now</a> </td>
+                            {% elif item.commodity_name == "Silver"%}
+                          <td class="price_small" style="font-size:9pt"> <a href="https://www.perthmint.com/" target="_blank" style="font-size:9pt">buy now</a> </td>
+                            {% elif item.commodity_name == "All Ords"%}
+                          <td class="price_small" style="font-size:9pt"> <a href="https://www.plus500.com.au/" target="_blank" style="font-size:9pt">buy now</a> </td>
+                            {% elif item.commodity_name == "Bitcoin"%}
+                          <td class="price_small" style="font-size:9pt"> <a href="https://www.coinbase.com/" target="_blank" style="font-size:9pt">buy now</a> </td>
+                            {% else %}
+                          <td class="price_small" style="font-size:9pt"> </td>
+                            {% endif %}
+                      {% endfor %}
+                    </tr>
               </tbody>
         </table>
 
@@ -78,23 +92,47 @@
 
 
 <br>
-
 <div class='container'>
 <div class='row'>
       <div class='col-md-12'>
       <div id="container_gold_silver" style="height: 400px"></div>
       </div>
 </div>
+
+<br>
+
 <div class='row'>
       <div class='col-md-12'>
-      <div id="container_allordsperatio_identity" style="height: 400px"></div>
+      <div id="container_allordsperatio" style="height: 400px"></div>
       </div>
 </div>
+
+<br>
+
+<div class='row'>
+      <div class='col-md-12'>
+      <div id="container_allords_gold" style="height: 400px"></div>
+      </div>
+</div>
+
+<br>
+
 <div class='row'>
       <div class='col-md-12'>
       <div id="container_bitcoin_gold" style="height: 400px"></div>
       </div>
 </div>
+
+<br>
+
+<div class='row'>
+      <div class='col-md-12'>
+      <div id="container_bitcoin_allords" style="height: 400px"></div>
+      </div>
+</div>
+
+<br>
+
 </div>
 
 <script>
@@ -120,8 +158,10 @@
   });
 
   plot_chart('gold','silver', 45,80)
+  plot_allordsPEratio('allordsperatio',12,20)
+  plot_chart('allords','gold')
   plot_chart('bitcoin','gold')
-  plot_chart('allordsperatio','identity',12,20)
+  plot_chart('bitcoin','allords')
 
 </script>
 
