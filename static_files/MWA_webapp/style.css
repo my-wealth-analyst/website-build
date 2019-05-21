@@ -3,6 +3,7 @@
 
 
 * {
+  font-size: 15pt
    font-family: 'Tw Cen MT';
    color: rgba(34,42,53,1)
 }
@@ -13,24 +14,39 @@ h1, h2, h3, h4, h5 {
 
  /* HEADER AND NAVBAR */
 .navbar {
+  -webkit-box-shadow: 0px 6px 5px 0px rgba(34,42,53,0.5);
+  -moz-box-shadow: 0px 6px 5px 0px rgba(34,42,53,0.5);
+  box-shadow: 0px 6px 5px 0px rgba(34,42,53,0.5);
+
+  background-image: linear-gradient(-122deg, rgba(68, 114, 196, 0) 77%, rgba(255, 255, 255, 0.08) 15%),
+                     linear-gradient(-108deg, rgba(27, 0, 255, 0) 75%, rgba(255, 255, 255, 0.08) 15%),
+                    linear-gradient(-101deg, rgba(68, 114, 196, 0) 74%, rgba(255, 255, 255, 0.08) 15%),
+                    radial-gradient(circle, rgb(68, 114, 196) 0%, rgb(68, 114, 196) 100%);
     background-color: rgb(68, 114, 196);
 }
 
 .nav-item, .nav-link {
     font-family: 'Verdana';
-    color: rgba(34, 42, 53,1) !important;
+    color: rgba(255, 153, 0, 1) !important;
     font-size: 20px;
     margin-left: 15px;
     margin-right: 15px;
  }
 
  .nav-item:hover, .nav-link:hover {
-    color: rgba(255, 153, 0, 1) !important;
+    color: rgba(34, 42, 53, 1) !important;
   }
 
- /* DROPDOWN STYLING */
 
 
+ /* CURRENCY TOGGLE BUTTON */
+ .my-auto{
+   margin-top: auto;
+margin-bottom: auto;
+ }
+ .my-auto button{
+   background-color: rgb(68, 114, 196)
+ }
 
   /* GENERAL STYLING */
   .dashboard {
@@ -38,6 +54,41 @@ h1, h2, h3, h4, h5 {
     border-radius: 10px;
   }
 
+
+
   table.table {
     text-align: center;
+    border-spacing: 0px;
+    border-collapse: collapse;
+    width:100%;
   }
+
+  table tr{
+  border-spacing: 0px;  /* <---- won't really need this if you have border-collapse = collapse */
+  border-collapse: collapse;
+  width:100%;
+ }
+
+  .table td{
+    padding: 0px !important;
+      }
+
+  .table th {
+    padding-top: 4px !important;
+    padding-bottom: 4px !important;
+      }
+
+    /* make the value show up */
+    span[data-monetary-amount]:before {
+      content: attr(data-monetary-amount);
+    }
+    td[data-monetary-amount]:before {
+      content: attr(data-monetary-amount);
+    }
+    .currency::before {
+              content:"$";
+          }
+
+    td.price_small{ font-size: '8pt' !important}
+    td.negative { color: red ; font-size: 10pt   }
+    td.positive { color: green ; font-size: 10pt   }

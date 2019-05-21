@@ -102,6 +102,7 @@ def update_oil():
     df = df[['Date','Open']]
     df.columns = ['Date','AskPrice_Avg_AUD']
     df.to_csv(filepath, index=False)
+    driver.close()
 
 def update_bitcoin():
     """
@@ -130,9 +131,43 @@ def update_allords_PE_ratio():
     with open(os.path.join(BASE_DIR,f"../media_files/datasets/asx-fundamentals.xlsx"), 'wb') as f:
         f.write(r.content)
 
-    df = pd.read_excel('asx-fundamentals.xlsx', header=9)
+    df = pd.read_excel(os.path.join(BASE_DIR,f"../media_files/datasets/asx-fundamentals.xlsx"), header=9)
+
     df = df[['Date','PE Ratio']]
     df.columns = ['Date','AskPrice_Avg_AUD']
     df.dropna(axis=0,how='any',inplace=True)
 
     df.to_csv(filepath, index=False)
+
+def update_allords():
+    """
+    Scrapes Markinsider website for historical WTI crude oil prices (in usd).
+    Data is presented as a single full html table
+    """
+    filepath = os.path.join(BASE_DIR,f"../media_files/datasets/allords_askprice_avg_aud.csv")
+    date = int(time.time())
+
+    options = Options()
+    options.add_argument("--disable-notifications")
+    options.add_argument("--start-maximized")
+
+    driver = webdriver.Chrome(chrome_options=options)
+    driver.set_page_load_timeout(10)
+
+    try:
+        page = driver.get(f'https://au.finance.yahoo.com/quote/%5EAORD/history?period1=460303200&period2={date}&interval=1d&filter=history&frequency=1d')
+    except TimeoutException:
+        pass
+
+    url = driver.find_element_by_xpath('//a[@download="^AORD.csv"]').get_attribute("href")
+
+    driver_cookies = driver.get_cookies()
+    c = {c['name']:c['value'] for c in driver_cookies}
+    res = requests.get(url,cookies=c).content
+    df = pd.read_csv(io.StringIO(res.decode('utf-8')))
+
+    df = df[['Date','Open']]
+    df.columns = ['Date','AskPrice_Avg_AUD']
+    df.to_csv(filepath, index=False)
+
+    driver.close()
