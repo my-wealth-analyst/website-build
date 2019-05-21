@@ -49,11 +49,11 @@
                                  {% endif %}
 
                           {% else %}
-                          {% if item.commodity_name == "All Ords"%}
-                        <td class="price_small positive" data-monetary-amount="{{ item.last_movement_nominal|floatformat:2 }}"> ({{item.last_movement_percentage|floatformat:2}}%) </td>
-                           {% else %}
-                        <td class="price_small positive currency_togglable" data-monetary-amount="{{ item.last_movement_nominal|floatformat:2 }}"> ({{item.last_movement_percentage|floatformat:2}}%) </td>
-                           {% endif %}
+                                {% if item.commodity_name == "All Ords"%}
+                              <td class="price_small positive" data-monetary-amount="{{ item.last_movement_nominal|floatformat:2 }}"> ({{item.last_movement_percentage|floatformat:2}}%) </td>
+                                 {% else %}
+                              <td class="price_small positive currency_togglable" data-monetary-amount="{{ item.last_movement_nominal|floatformat:2 }}"> ({{item.last_movement_percentage|floatformat:2}}%) </td>
+                                 {% endif %}
                           {% endif %}
                       {% endfor %}
                     </tr>
@@ -136,6 +136,11 @@
 </div>
 
 <script>
+
+  function numberformatter(string){
+    return(float(str(string).replace(",","")))
+  }
+
   $('#currency_toggle').on('click', function(event) {
     if (this.innerHTML == 'USD'){
         this.innerHTML = 'AUD';
@@ -143,7 +148,9 @@
         $('#currency_toggle').css("background-color", "rgba(255, 153, 0, 1)");
 
         $(".currency_togglable").each(function() {
-            $(this).attr('data-monetary-amount', (($(this).attr('data-monetary-amount'))/{{AUD.last_price}}).toFixed(2)    );
+            $(this).attr('data-monetary-amount', (($(this).attr('data-monetary-amount'))/{{AUD.last_price}}).toFixed(2)) ;
+
+        console.log(  parseFloat($(this).text().replace("%","").replace("(","").replace(")",""))   )
         });
 
     } else {
