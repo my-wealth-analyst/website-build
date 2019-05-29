@@ -5,18 +5,13 @@
 {% block title %} mywealthanalyst {% endblock %}
 {% block description %} Providing information and analysis on the true value of assets to safeguard your wealth for generations. {% endblock %}
 
-{% block head %}
-<link rel="stylesheet" type="text/css" href="{% static 'MWA_users/style.css' %}?id=12" />
-<link rel="stylesheet" type="text/css" href="{% static 'MWA_webapp/style.css' %}?id=12" />
-{% endblock %}
-
 
 {% block content %}
 
 <br>
 <br>
 
-  <div class="container">
+  <div class="container login">
     <div class="row">
       <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
         <div class="card card-signin my-5">
@@ -30,7 +25,7 @@
                 <label for="inputEmail">email address</label>
               </div>
 
-              <div class="form-label-group">
+              <!-- <div class="form-label-group">
                 <input type="text" name="first_name" id="first_name" class="form-control" placeholder="Given name" required>
                 <label for="first_name">given name</label>
               </div>
@@ -43,22 +38,20 @@
               <div class="form-label-group">
                 <input type="tel" name="phone_number" id="phone_number" class="form-control" placeholder="Mobile number" required>
                 <label for="phone_number">mobile</label>
-              </div>
+              </div> -->
 
               <div class="form-label-group">
                 <input type="password" name="password1" id="inputPassword1" class="form-control" placeholder="Password" required>
                 <label for="inputPassword1">password</label>
+                <p>{{form.password1.errors}}</p>
               </div>
 
               <div class="form-label-group">
                 <input type="password" name="password2" id="inputPassword2" class="form-control" placeholder="Password" required>
                 <label for="inputPassword2">confirm password</label>
+                <p>{{form.password2.errors}}</p>
               </div>
-
-              <div class="custom-control custom-checkbox mb-3">
-                <input type="checkbox" class="custom-control-input" id="customCheck1">
-              </div>
-
+              <br>
               <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">create account</button>
 
             </form>

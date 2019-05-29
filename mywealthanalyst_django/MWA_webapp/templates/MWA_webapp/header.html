@@ -1,11 +1,33 @@
 {% load static %}
 
-<nav class="navbar navbar-expand-md">
+<nav class="navbar navbar-expand-sm">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+     <span class="navbar-toggler-icon"></span>
+   </button>
 
-    <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
-        <ul class="navbar-nav mr-auto">
+    <div class="w-100 navbar-expand-md order-1 order-md-0 dual-collapse2 text-center">
+        <ul class="nav navbar-nav mr-auto">
             <li class="nav-item active">
                 <a class="nav-link" href="#">about us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" data-toggle="modal" data-target="#donate_modal">donate</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="mx-auto order-0">
+        {% if request.user.is_authenticated %}
+          <a href="{% url 'dashboard' %}"><img src="{% static 'MWA_webapp/logos/logo_full_nobackground.png' %}" class="img-fluid" alt="mywealthanalyst" height="200px"></a>
+        {% else %}
+          <a href="{% url 'landingpage' %}"><img src="{% static 'MWA_webapp/logos/logo_full_nobackground.png' %}" class="img-fluid" alt="mywealthanalyst" height="200px"></a>
+        {% endif %}
+    </div>
+
+    <div class="w-100 order-3 dual-collapse2 text-center">
+        <ul class="navbar-nav ml-auto justify-content-end">
+            <li class="nav-item">
+                <!-- <a class="nav-link" href="#">contact us</a> -->
             </li>
             {% if request.user.is_authenticated %}
             <li class="nav-item">
@@ -19,23 +41,33 @@
         </ul>
     </div>
 
-    <div class="mx-auto order-0">
-        {% if request.user.is_authenticated %}
-          <a href="{% url 'dashboard' %}"><img src="{% static 'MWA_webapp/logos/logo_full.png' %}" class="img-fluid" alt="mywealthanalyst" height="200px"></a>
-        {% else %}
-          <a href="{% url 'landingpage' %}"><img src="{% static 'MWA_webapp/logos/logo_full.png' %}" class="img-fluid" alt="mywealthanalyst" height="200px"></a>
-        {% endif %}
-    </div>
-
-    <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="#">contact us</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">donate</a>
-            </li>
-        </ul>
-    </div>
-
 </nav>
+
+
+<!-- Donate Modal -->
+<div class="modal fade" id="donate_modal" tabindex="-1" role="dialog" aria-labelledby="donate_modal_label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+
+      <div class="container login">
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-12 mx-auto">
+            <div class="card card-signin my-5 modal-content ">
+              <div class="card-body">
+                <h5 class="card-title text-center">donate</h5>
+
+                  <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=M9ZJU586N4EKS&source=url" target="_blank" class="btn btn-lg btn-primary btn-block text-uppercase">
+                    <img src="{% static 'MWA_webapp/logos/paypal_logo.png' %}" height="40px"> &nbsp; Donate with PayPal</a>
+                  <br>
+                  <a href="https://commerce.coinbase.com/checkout/071997fa-8d61-406d-89c4-0edc5ac0ea96" target="_blank" class="btn btn-lg btn-primary btn-block text-uppercase">
+                    <img src="{% static 'MWA_webapp/logos/crypto.png' %}" height="40px"> &nbsp; Donate with Cryptocurrency</a>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -6,85 +6,75 @@
 {% block description %} Providing information and analysis on the true value of assets to safeguard your wealth for generations. {% endblock %}
 
 {% block head %}
-<link rel="stylesheet" type="text/css" href="{% static 'MWA_webapp/style.css' %}?id=11" />
 <script src="{% static 'MWA_webapp/MWA_webapp.js' %}"></script>
 {% endblock %}
 
 {% block content %}
 
 
+
 <br>
 <br>
 <div class='container'>
+
 <div class='container dashboard'>
-<div class='row'>
+    <div class='row'>
+          <div class='col-sm-11' align="left">
+                  <table class="table table-responsive-sm">
+                        <thead>
+                              <tr>
+                                {% for item in Commodities %}
+                                <th> {{ item.commodity_name }} </th>
+                                {% endfor %}
+                              </tr>
+                        </thead>
+                        <tbody>
+                              <tr>
+                                {% for item in Commodities %}
+                                          <td class="currency""><span class="currency_togglable" data-monetary-amount="{{ item.last_price|floatformat:2 }}"></span></td>
+                                {% endfor %}
+                              </tr>
 
-<div class='col-sm-11' align="left">
-        <table class="table">
-              <thead>
-                    <tr>
-                      {% for item in Commodities %}
-                      <th> {{ item.commodity_name }} </th>
-                      {% endfor %}
-                    </tr>
-              </thead>
-              <tbody>
-                    <tr>
-                      {% for item in Commodities %}
-                                {% if item.commodity_name == "All Ords"%}
-                                <td class=""><span class="" data-monetary-amount="{{ item.last_price|floatformat:2 }}"></span></td>
-                                {% else %}
-                                <td class="currency""><span class="currency_togglable" data-monetary-amount="{{ item.last_price|floatformat:2 }}"></span></td>
-                                {% endif %}
-                      {% endfor %}
-                    </tr>
+                              <tr>
+                                {% for item in Commodities %}
+                                    {% if 0 > item.last_movement_nominal %}
+                                        <td class="price_small negative currency_togglable" data-monetary-amount="{{ item.last_movement_nominal|floatformat:2 }}"> ({{item.last_movement_percentage|floatformat:2}}%) </td>
+                                    {% else %}
+                                        <td class="price_small positive currency_togglable" data-monetary-amount="{{ item.last_movement_nominal|floatformat:2 }}"> ({{item.last_movement_percentage|floatformat:2}}%) </td>
+                                    {% endif %}
+                                {% endfor %}
+                              </tr>
 
-                    <tr>
-                      {% for item in Commodities %}
-                          {% if 0 > item.last_movement_nominal %}
-                                {% if item.commodity_name == "All Ordinaries"%}
-                              <td class="price_small negative" data-monetary-amount="{{ item.last_movement_nominal|floatformat:2 }}"> ({{item.last_movement_percentage|floatformat:2}}%) </td>
-                                 {% else %}
-                              <td class="price_small negative currency_togglable" data-monetary-amount="{{ item.last_movement_nominal|floatformat:2 }}"> ({{item.last_movement_percentage|floatformat:2}}%) </td>
-                                 {% endif %}
+                              <tr>
+                                {% for item in Commodities %}
+                                  <td class="price_small" style="font-size:9pt"> {{item.date_last_scraped|date:"M-d H:i"}} </td>
+                                {% endfor %}
+                              </tr>
 
-                          {% else %}
-                                {% if item.commodity_name == "All Ords"%}
-                              <td class="price_small positive" data-monetary-amount="{{ item.last_movement_nominal|floatformat:2 }}"> ({{item.last_movement_percentage|floatformat:2}}%) </td>
-                                 {% else %}
-                              <td class="price_small positive currency_togglable" data-monetary-amount="{{ item.last_movement_nominal|floatformat:2 }}"> ({{item.last_movement_percentage|floatformat:2}}%) </td>
-                                 {% endif %}
-                          {% endif %}
-                      {% endfor %}
-                    </tr>
-                    <tr>
-                      {% for item in Commodities %}
-                        <td class="price_small" style="font-size:9pt"> {{item.date_last_scraped|date:"M-d H:i"}} </td>
-                      {% endfor %}
-                    </tr>
-                    <tr>
-                      {% for item in Commodities %}
-                            {% if item.commodity_name == "Gold"%}
-                          <td class="price_small" style="font-size:9pt"> <a href="https://www.perthmint.com/" target="_blank" style="font-size:9pt">buy now</a> </td>
-                            {% elif item.commodity_name == "Silver"%}
-                          <td class="price_small" style="font-size:9pt"> <a href="https://www.perthmint.com/" target="_blank" style="font-size:9pt">buy now</a> </td>
-                            {% elif item.commodity_name == "All Ords"%}
-                          <td class="price_small" style="font-size:9pt"> <a href="https://www.plus500.com.au/" target="_blank" style="font-size:9pt">buy now</a> </td>
-                            {% elif item.commodity_name == "Bitcoin"%}
-                          <td class="price_small" style="font-size:9pt"> <a href="https://www.coinbase.com/" target="_blank" style="font-size:9pt">buy now</a> </td>
-                            {% else %}
-                          <td class="price_small" style="font-size:9pt"> </td>
-                            {% endif %}
-                      {% endfor %}
-                    </tr>
-              </tbody>
-        </table>
+                              <tr>
+                                {% for item in Commodities %}
+                                      {% if item.commodity_name == "Gold"%}
+                                    <td class="price_small" style="font-size:9pt"> <a href="https://www.perthmint.com/" target="_blank" style="font-size:9pt">buy now</a> </td>
+                                      {% elif item.commodity_name == "Silver"%}
+                                    <td class="price_small" style="font-size:9pt"> <a href="https://www.perthmint.com/" target="_blank" style="font-size:9pt">buy now</a> </td>
+                                      {% elif item.commodity_name == "All Ords"%}
+                                    <td class="price_small" style="font-size:9pt"> <a href="https://www.plus500.com.au/" target="_blank" style="font-size:9pt">buy now</a> </td>
+                                      {% elif item.commodity_name == "Bitcoin"%}
+                                    <td class="price_small" style="font-size:9pt"> <a href="https://www.coinbase.com/" target="_blank" style="font-size:9pt">buy now</a> </td>
+                                      {% elif item.commodity_name == "Oil"%}
+                                    <td class="price_small" style="font-size:9pt"> <a href="https://www.plus500.com.au/" target="_blank" style="font-size:9pt">buy now</a> </td>
+                                      {% else %}
+                                    <td class="price_small" style="font-size:9pt"> </td>
+                                      {% endif %}
+                                {% endfor %}
+                              </tr>
+                        </tbody>
+                  </table>
+          </div>
 
-</div>
-
-<div class='col-sm-1 my-auto' align="right" >
-<button type="button" class="btn btn-primary" id="currency_toggle" value="USD" data-toggle="button" aria-pressed="false" autocomplete="off">USD</button>
-</div>
+        <div class='col-xs-1 my-auto' align="right" >
+            <button type="button" class="btn btn-primary" id="currency_toggle" value="USD" data-toggle="button" aria-pressed="false" autocomplete="off">USD</button>
+        </div>
 
 </div>
 </div>
@@ -94,41 +84,31 @@
 <br>
 <div class='container'>
 <div class='row'>
-      <div class='col-md-12'>
-      <div id="container_gold_silver" style="height: 400px"></div>
-      </div>
+      <div id="container_gold_silver" style="height: 400px; width: 100%"></div>
 </div>
 
 <br>
 
 <div class='row'>
-      <div class='col-md-12'>
-      <div id="container_allordsperatio" style="height: 400px"></div>
-      </div>
+      <div id="container_allordsperatio" style="height: 400px; width: 100%"></div>
 </div>
 
 <br>
 
 <div class='row'>
-      <div class='col-md-12'>
-      <div id="container_allords_gold" style="height: 400px"></div>
-      </div>
+      <div id="container_allords_gold" style="height: 400px; width: 100%"></div>
 </div>
 
 <br>
 
 <div class='row'>
-      <div class='col-md-12'>
-      <div id="container_bitcoin_gold" style="height: 400px"></div>
-      </div>
+      <div id="container_bitcoin_gold" style="height: 400px; width: 100%"></div>
 </div>
 
 <br>
 
 <div class='row'>
-      <div class='col-md-12'>
-      <div id="container_bitcoin_allords" style="height: 400px"></div>
-      </div>
+      <div id="container_bitcoin_allords" style="height: 400px; width: 100%"></div>
 </div>
 
 <br>
@@ -140,6 +120,7 @@
   function numberformatter(string){
     return(float(str(string).replace(",","")))
   }
+
 
   $('#currency_toggle').on('click', function(event) {
     if (this.innerHTML == 'USD'){
@@ -165,9 +146,9 @@
   });
 
   plot_chart('gold','silver', 45,80)
-  plot_allordsPEratio('allordsperatio',12,20)
-  plot_chart('allords','gold')
-  plot_chart('bitcoin','gold')
+  plot_allordsPEratio('allordsperatio',12,16)
+  plot_chart('allords','gold', 2.5, 5)
+  plot_chart('bitcoin','gold', 2, 5)
   plot_chart('bitcoin','allords')
 
 </script>

@@ -15,15 +15,17 @@ When Django is launched, prefetch a Queryset of active postcodes (i.e. the postc
 
 class RegistrationForm(forms.ModelForm):
     email = forms.EmailField(widget=forms.EmailInput(attrs={'class':'form-control'}))
-    first_name = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}))
-    last_name = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}))
-    phone_number = forms.CharField(widget=forms.NumberInput(attrs={'class':'form-control'}), required=False)
+    # first_name = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}))
+    # last_name = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}))
+    # phone_number = forms.CharField(widget=forms.NumberInput(attrs={'class':'form-control'}), required=False)
     password1 = forms.CharField(label="Password", widget=forms.PasswordInput(attrs={'class':'form-control'}))
     password2 = forms.CharField(label="Confirm password", widget=forms.PasswordInput(attrs={'class':'form-control'}))
 
     class Meta:
         model = MWA_usermodel
-        fields = ('email', 'first_name', 'last_name', 'phone_number', 'password1', 'password2', )
+        fields = ('email',
+                  # 'first_name', 'last_name', 'phone_number',
+                  'password1', 'password2', )
 
     def clean_password(self):
         password1 = self.cleaned_data.get('password1')
@@ -36,7 +38,7 @@ class RegistrationForm(forms.ModelForm):
         user = super(RegistrationForm, self).save(commit=False)
         user.set_password(self.cleaned_data['password1'])
         user.username = self.cleaned_data.get('email')
-        
+
         if commit:
             user.save()
         return(user)

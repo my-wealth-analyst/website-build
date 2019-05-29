@@ -24,17 +24,17 @@
     <script src="https://code.highcharts.com/stock/highstock.js"></script>
     <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
     <script src="https://code.highcharts.com/stock/modules/export-data.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'MWA_webapp/style.css' %}?id=23" />
+
     {{ form.media.js }}
 
 </head>
 
 <body>
-<div class="wrapper">
-
 {% include 'MWA_webapp/header.html' %}
 {% block content %}{% endblock %}
-
-</wrapper>
+{% include 'MWA_webapp/footer.html' %}
 </body>
 
 </html>

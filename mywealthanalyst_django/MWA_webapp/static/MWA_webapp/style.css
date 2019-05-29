@@ -1,94 +1,249 @@
 
  /* GENERAL - ALL-OF-PAGE */
 
-
 * {
-  font-size: 15pt
    font-family: 'Tw Cen MT';
-   color: rgba(34,42,53,1)
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+  --input-padding-x: 1.5rem;
+  --input-padding-y: .75rem;
 }
 
 h1, h2, h3, h4, h5 {
-   font-family: 'Verdana' !important;
+   font-family: 'Verdana'
 }
 
- /* HEADER AND NAVBAR */
-.navbar {
-  -webkit-box-shadow: 0px 6px 5px 0px rgba(34,42,53,0.5);
-  -moz-box-shadow: 0px 6px 5px 0px rgba(34,42,53,0.5);
-  box-shadow: 0px 6px 5px 0px rgba(34,42,53,0.5);
 
-  background-image: linear-gradient(-122deg, rgba(68, 114, 196, 0) 77%, rgba(255, 255, 255, 0.08) 15%),
-                     linear-gradient(-108deg, rgba(27, 0, 255, 0) 75%, rgba(255, 255, 255, 0.08) 15%),
-                    linear-gradient(-101deg, rgba(68, 114, 196, 0) 74%, rgba(255, 255, 255, 0.08) 15%),
-                    radial-gradient(circle, rgb(68, 114, 196) 0%, rgb(68, 114, 196) 100%);
-    background-color: rgb(68, 114, 196);
+/* HEADER AND NAVBAR */
+.navbar {
+ -webkit-box-shadow: 0px 6px 5px 0px rgba(34,42,53,0.5);
+ -moz-box-shadow: 0px 6px 5px 0px rgba(34,42,53,0.5);
+ box-shadow: 0px 6px 5px 0px rgba(34,42,53,0.5);
+
+ background-image: linear-gradient(-122deg, rgba(68, 114, 196, 0) 77%, rgba(255, 255, 255, 0.08) 15%),
+                    linear-gradient(-108deg, rgba(27, 0, 255, 0) 75%, rgba(255, 255, 255, 0.08) 15%),
+                   linear-gradient(-101deg, rgba(68, 114, 196, 0) 74%, rgba(255, 255, 255, 0.08) 15%),
+                   radial-gradient(circle, rgb(68, 114, 196) 0%, rgb(68, 114, 196) 100%);
+  background-color: rgb(68, 114, 196);
 }
 
 .nav-item, .nav-link {
-    font-family: 'Verdana';
-    color: rgba(255, 153, 0, 1) !important;
-    font-size: 20px;
-    margin-left: 15px;
-    margin-right: 15px;
+   font-family: 'Verdana';
+   color: rgba(255, 153, 0, 1);
+   font-size: 22px;
+   margin-left: 15px;
+   margin-right: 15px;
+}
+
+.nav-item:hover, .nav-link:hover {
+   color: rgba(34, 42, 53, 1)
  }
 
- .nav-item:hover, .nav-link:hover {
-    color: rgba(34, 42, 53, 1) !important;
-  }
+ /* FOOTER */
+ .footer {
+   -webkit-box-shadow: 0px -6px 5px 0px rgba(34,42,53,0.5);
+   -moz-box-shadow: 0px -6px 5px 0px rgba(34,42,53,0.5);
+   box-shadow: 0px -6px 5px 0px rgba(34,42,53,0.5);
 
+   background-image: linear-gradient(79deg, rgba(68, 114, 196, 0) 54%, rgba(255, 255, 255, 0.08) 15%),
+                     linear-gradient(72deg, rgba(27, 0, 255, 0) 55%, rgba(255, 255, 255, 0.08) 15%),
+                    linear-gradient(58deg, rgba(68, 114, 196, 0) 57%, rgba(255, 255, 255, 0.08) 15%),
+                    radial-gradient(circle, rgb(68, 114, 196) 0%, rgb(68, 114, 196) 100%);
+   background-color: rgb(68, 114, 196);
+   padding-top: 20px;
+ }
 
+ .footer_bar {
+  background:rgba(34, 42, 53, 1);
+  color:rgba(255, 153, 0, 1);
+ }
+
+  .footer_bar #disclaimer:hover, .footer_bar #disclaimer:focus {
+   color:rgba(255, 153, 0, 0.7);
+   text-decoration: none;
+   cursor: pointer;
+ }
+
+ .footer_bar h5 {
+   padding-top: 5px;
+  font-size: 8pt
+}
+
+ /* DASHBOARD STYLING */
+ .dashboard {
+   background-color: rgba(68, 114, 196, 0.2);
+   border-radius: 10px;
+   -webkit-box-shadow: 1px 2px 5px 0px rgba(34,42,53,0.5);
+   -moz-box-shadow: 1px 2px 5px 0px rgba(34,42,53,0.5);
+   box-shadow: 1px 2px 5px 0px rgba(34,42,53,0.5);
+ }
 
  /* CURRENCY TOGGLE BUTTON */
- .my-auto{
-   margin-top: auto;
+ .dashboard .my-auto{
 margin-bottom: auto;
  }
- .my-auto button{
+  .dashboard .my-auto button{
    background-color: rgb(68, 114, 196)
  }
 
-  /* GENERAL STYLING */
-  .dashboard {
-    background-color: rgba(68, 114, 196, 0.2) !important;
-    border-radius: 10px;
-  }
-
-
-
-  table.table {
-    text-align: center;
-    border-spacing: 0px;
-    border-collapse: collapse;
-    width:100%;
-  }
-
-  table tr{
-  border-spacing: 0px;  /* <---- won't really need this if you have border-collapse = collapse */
-  border-collapse: collapse;
-  width:100%;
+ .dashboard table.table {
+   text-align: center;
+   border-spacing: 0px;
+   border-collapse: collapse;
+   width:100%;
  }
 
-  .table td{
-    padding: 0px !important;
-      }
+ .dashboard table tr{
+ border-spacing: 0px;  /* <---- won't really need this if you have border-collapse = collapse */
+ border-collapse: collapse;
+ width:100%;
+ }
 
-  .table th {
-    padding-top: 4px !important;
-    padding-bottom: 4px !important;
-      }
+ .dashboard .table td{
+   padding: 0px;
+     }
 
-    /* make the value show up */
-    span[data-monetary-amount]:before {
-      content: attr(data-monetary-amount);
-    }
-    td[data-monetary-amount]:before {
-      content: attr(data-monetary-amount);
-    }
-    .currency::before {
-              content:"$";
-          }
+ .dashboard .table th {
+   padding-top: 4px;
+   padding-bottom: 4px;
+     }
 
-    td.price_small{ font-size: '8pt' !important}
-    td.negative { color: red ; font-size: 10pt   }
-    td.positive { color: green ; font-size: 10pt   }
+   /* make the value show up */
+  .dashboard span[data-monetary-amount]:before {
+     content: attr(data-monetary-amount);
+   }
+  .dashboard td[data-monetary-amount]:before {
+     content: attr(data-monetary-amount);
+   }
+  .dashboard .currency::before {
+             content:"$";
+         }
+
+  .dashboard td.price_small{ font-size: '8pt'}
+  .dashboard td.negative { color: red ; font-size: 10pt   }
+  .dashboard td.positive { color: green ; font-size: 10pt   }
+
+  @media(max-width:500px){
+  .table-responsive{overflow-x:scroll;}
+}
+
+
+ /* LOGIN FORMS */
+
+ .login .card-signin {
+   border: 20pt;
+   box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+ }
+
+ .login .card-signin .card-title {
+   margin-bottom: 2rem;
+   font-size: 1.5rem;
+ }
+
+ .login .card-signin .card-body {
+   background-clip: padding-box;
+   background-color: rgba(68,114,196,0.3);
+   border-radius: 3pt;
+   overflow: hidden;
+   -webkit-box-shadow: 3px 6px 5px 0px rgba(34,42,53,0.5);
+   -moz-box-shadow: 3px 6px 5px 0px rgba(34,42,53,0.5);
+   box-shadow: 3px 6px 5px 0px rgba(34,42,53,0.5);
+ }
+
+ .login .card-signin .btn {
+   font-family: 'Verdana';
+   font-size: 80%;
+   border-radius: 5rem;
+   letter-spacing: .1rem;
+   font-weight: bold;
+   padding: 1rem;
+   transition: all 0.2s;
+   background-color: rgba(255,255,255,0.8);
+   color: rgba(34,42,53);
+   border: 0px;
+   -webkit-box-shadow: 1px 1px 5px 0px rgba(34,42,53,0.5);
+   -moz-box-shadow: 1px 1px 5px 0px rgba(34,42,53,0.5);
+   box-shadow: 1px 1px 5px 0px rgba(34,42,53,0.5);
+ }
+
+ .login .card-signin .btn:hover , .login .form-signin .btn:focus {
+   background-color: rgba(68,114,196,0.5);
+ }
+
+ .login a#ForgetPwd {
+   font-family: 'Verdana';
+   font-size: 80%;
+   letter-spacing: .1rem;
+   font-weight: bold;
+   padding: 1rem;
+   transition: all 0.2s;
+   color: rgba(34,42,53);
+ }
+
+
+ .login .form-label-group {
+   position: relative;
+   margin-bottom: 1rem;
+ }
+
+ .login .form-label-group input {
+   height: auto;
+   border-radius: 2rem;
+ }
+
+ .login .form-label-group>input,
+ .login .form-label-group>label {
+   padding: var(--input-padding-y) var(--input-padding-x);
+ }
+
+ .login .form-label-group>label {
+   border: 0px;
+   font-family: 'Verdana';
+   position: absolute;
+   top: 0;
+   left: 0;
+   display: block;
+   width: 100%;
+   margin-bottom: 0;
+   /* Override default `<label>` margin */
+   line-height: 1.5;
+   color: #495057;
+   border: 0px solid transparent;
+   border-radius: .25rem;
+   transition: all .1s ease-in-out;
+ }
+
+ .login .form-label-group input::-webkit-input-placeholder {
+   color: transparent;
+ }
+
+ .login .form-label-group input:-ms-input-placeholder {
+   color: transparent;
+ }
+
+ .login .form-label-group input::-ms-input-placeholder {
+   color: transparent;
+ }
+
+ .login .form-label-group input::-moz-placeholder {
+   color: transparent;
+ }
+
+ .login .form-label-group input::placeholder {
+   color: transparent;
+ }
+
+ .login .form-label-group input:not(:placeholder-shown) {
+   padding-top: calc(var(--input-padding-y) + var(--input-padding-y) * (2 / 3));
+   padding-bottom: calc(var(--input-padding-y) / 3);
+ }
+
+ .login .form-label-group input:not(:placeholder-shown)~label {
+   padding-top: calc(var(--input-padding-y) / 3);
+   padding-bottom: calc(var(--input-padding-y) / 3);
+   font-size: 12px;
+   color: #777;
+ }
