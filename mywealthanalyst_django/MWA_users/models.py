@@ -33,14 +33,16 @@ class MWA_usermodelManager(BaseUserManager):
         user.save(using=self._db)
         return user
 
+
 class MWA_usermodel(AbstractUser):
     objects = MWA_usermodelManager()
     USERNAME_FIELD = 'email'
 
     email = models.EmailField(_('email address'), unique=True) # changes email to unique and blank to false
-    REQUIRED_FIELDS = [] # removes email from REQUIRED_FIELDS
+    REQUIRED_FIELDS = []  # removes email from REQUIRED_FIELDS
 
-    phone_number = models.CharField(null=True, blank=True, validators=[my_validator], max_length=15)
+    phone_number = models.CharField(null=True, blank=True,
+                                    validators=[my_validator], max_length=15)
     country = models.CharField(null=True, blank=True, max_length=20)
 
     def has_perm(self, perm, obj=None):
@@ -54,4 +56,4 @@ class MWA_usermodel(AbstractUser):
         return True
 
     def __str__(self):
-        return "%s" % (self.username)
+        return "%s" % (self.email)

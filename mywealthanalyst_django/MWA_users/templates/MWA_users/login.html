@@ -25,7 +25,7 @@
             <form class="form-signin" method='post'>
               {% csrf_token %}
               <div class="form-label-group">
-                <input type="email" name="query" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
                 <label for="inputEmail">Email address</label>
               </div>
 
@@ -33,6 +33,17 @@
                 <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
                 <label for="inputPassword">Password</label>
               </div>
+
+              {% for field in form %}
+                    {% if field.errors %}
+                        {% for error in field.errors %}
+                        <div class='row text-center error' id='errors'>
+                          <div class='col'>{{ error }}</div>
+                        </div>
+                        {% endfor %}
+                    {% endif %}
+              {% endfor %}
+
               <div class="custom-control custom-checkbox mb-3">
                 <input type="checkbox" class="custom-control-input" id="customCheck1">
               </div>

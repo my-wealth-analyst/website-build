@@ -9,15 +9,8 @@ from django.contrib.auth.forms import UserCreationForm
 from .models import MWA_usermodel
 
 
-"""
-When Django is launched, prefetch a Queryset of active postcodes (i.e. the postcodes in which a distributor is active)
-"""
-
 class RegistrationForm(forms.ModelForm):
     email = forms.EmailField(widget=forms.EmailInput(attrs={'class':'form-control'}))
-    # first_name = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}))
-    # last_name = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}))
-    # phone_number = forms.CharField(widget=forms.NumberInput(attrs={'class':'form-control'}), required=False)
     password1 = forms.CharField(label="Password", widget=forms.PasswordInput(attrs={'class':'form-control'}))
     password2 = forms.CharField(label="Confirm password", widget=forms.PasswordInput(attrs={'class':'form-control'}))
 
@@ -27,11 +20,24 @@ class RegistrationForm(forms.ModelForm):
                   # 'first_name', 'last_name', 'phone_number',
                   'password1', 'password2', )
 
-    def clean_password(self):
+    def clean_email(self):
+        # Get the email
+        email = self.cleaned_data.get('email')
+
+        # Check to see if any users already exist with this email as a username
+        try:
+            match = MWA_usermodel.objects.get(email=email)
+        except MWA_usermodel.DoesNotExist:
+            # Unable to find a user, this is fine
+            return(email)
+        # A user was found with this as a username, raise an error.
+        raise forms.ValidationError('this email address is already in use')
+
+    def clean_password2(self):
         password1 = self.cleaned_data.get('password1')
         password2 = self.cleaned_data.get('password2')
-        if password1 and password2 and (password1 != password2):
-            raise forms.ValidationError("Passwords do not match")
+        if password1 != password2:
+            raise forms.ValidationError("passwords do not match")
         return(password2)
 
     def save(self, commit=True):
@@ -45,20 +51,22 @@ class RegistrationForm(forms.ModelForm):
 
 
 class UserLoginForm(forms.Form):
-    query = forms.CharField(label='Email')
+    email = forms.CharField(label='Email')
     password = forms.CharField(label='Password', widget=forms.PasswordInput)
 
-    def clean(self,*args,**kwargs):
-        query = self.cleaned_data.get('query')
-        password = self.cleaned_data.get('password')
-        user_qs_final = MWA_usermodel.objects.filter(
-                Q(username__iexact=query) |
-                Q(email__iexact=query)
-        ).distinct()
 
-        if not user_qs_final.exists() and user_qs_final.count != 1:
-            raise forms.ValidationError("Invalid credentials - user does not exist")
-        user_obj = user_qs_final.first()
+    def clean(self,*args,**kwargs):
+        email = self.cleaned_data.get('email')
+        password = self.cleaned_data.get('password')
+
+        try:
+            match = MWA_usermodel.objects.get(email=email)
+            # return(email)
+        except MWA_usermodel.DoesNotExist:
+            # Unable to find a user
+            raise forms.ValidationError("Email does not exist")
+
+        user_obj = match
         if not user_obj.check_password(password):
             raise forms.ValidationError("Invalid credentials")
         self.cleaned_data["user_obj"] = user_obj
