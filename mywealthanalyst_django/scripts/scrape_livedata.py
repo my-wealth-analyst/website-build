@@ -111,7 +111,10 @@ def scrape_all():
 
     options = Options()
     options.add_argument("--disable-notifications")
-    options.add_argument("--start-maximized")
+    options.add_argument("--no-sandbox")
+    options.add_argument("--disable-dev-shm-usage")
+    options.headless = True
+
     driver = webdriver.Chrome(chrome_options=options)
     driver.set_page_load_timeout(10)
 
