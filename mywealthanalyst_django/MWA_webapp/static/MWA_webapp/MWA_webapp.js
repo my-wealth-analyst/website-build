@@ -18,7 +18,7 @@
   function plot_chart(commodity_one, commodity_two, undervalue, overvalue){
   var plotbandcolour = 'rgba(127,127,27,0.15)';
 
-  $.getJSON(`http://localhost:8000/getdata/?commodity_one=${commodity_one}&commodity_two=${commodity_two}`, function (data) {
+  $.getJSON(`/getdata/?commodity_one=${commodity_one}&commodity_two=${commodity_two}`, function (data) {
       // Create the chart
 
       Highcharts.stockChart(`container_${commodity_one}_${commodity_two}`, {
@@ -198,7 +198,7 @@
   function plot_allordsPEratio(commodity_one, undervalue, overvalue){
   var plotbandcolour = 'rgba(127,127,27,0.15)';
 
-  $.getJSON(`http://localhost:8000/getdata/?commodity_one=${commodity_one}&commodity_two=identity`, function (data) {
+  $.getJSON(`/getdata/?commodity_one=${commodity_one}&commodity_two=identity`, function (data) {
       // Create the chart
 
       Highcharts.stockChart(`container_${commodity_one}`, {
