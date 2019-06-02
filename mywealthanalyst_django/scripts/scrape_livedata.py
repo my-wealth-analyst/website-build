@@ -115,46 +115,50 @@ def scrape_all():
     options.add_argument("--disable-dev-shm-usage")
     options.headless = True
 
+    user_agent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.50 Safari/537.36'
+    options.add_argument('user-agent={0}'.format(user_agent))
+
+
     driver = webdriver.Chrome(chrome_options=options)
     driver.set_page_load_timeout(10)
 
     try:
         update = scrape_ALLORDS(driver)
         Commodities.objects.filter(commodity_name="All Ords").update(date_last_scraped=datetime.now(), last_price=update[0], last_movement_nominal=update[1], last_movement_percentage=update[2])
-    except:
-        print('error scraping ALLORDS')
+    except Exception as e:
+        print('error scraping ALLORDS: ', e)
 
     try:
         update = scrape_OIL(driver)
         Commodities.objects.filter(commodity_name="Oil").update(date_last_scraped=datetime.now(), last_price=update[0], last_movement_nominal=update[1], last_movement_percentage=update[2])
-    except:
-        print('error scraping Oil')
+    except Exception as e:
+        print('error scraping OIL: ', e)
 
     try:
         update = scrape_BITCOIN(driver)
         Commodities.objects.filter(commodity_name="Bitcoin").update(date_last_scraped=datetime.now(), last_price=update[0], last_movement_nominal=update[1], last_movement_percentage=update[2])
-    except:
-        print('error scraping Bitcoin')
+    except Exception as e:
+        print('error scraping BITCOIN: ', e)
 
     try:
         update = scrape_GOLD(driver)
         Commodities.objects.filter(commodity_name="Gold").update(date_last_scraped=datetime.now(), last_price=update[0], last_movement_nominal=update[1], last_movement_percentage=update[2])
-    except:
-        print('error scraping Gold')
+    except Exception as e:
+        print('error scraping GOLD: ', e)
 
     try:
         update = scrape_SILVER(driver)
         Commodities.objects.filter(commodity_name="Silver").update(date_last_scraped=datetime.now(), last_price=update[0], last_movement_nominal=update[1], last_movement_percentage=update[2])
-    except:
-        print('error scraping Silver')
+    except Exception as e:
+        print('error scraping SILVER: ', e)
 
     try:
         r = requests.get('https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=AUD&to_currency=USD&apikey=M4TA2P8B2OU22SPC')
         json_response = r.json()
 
         Commodities.objects.filter(commodity_name="AUD").update(date_last_scraped=datetime.now(), last_price=json_response["Realtime Currency Exchange Rate"]["5. Exchange Rate"])
-    except:
-        print('error scraping AUD')
+    except Exception as e:
+        print('error scraping AUD: ', e)
 
 
     driver.close()
