@@ -75,7 +75,7 @@
               plotLines: [{
                             value: undervalue,
                             label: {
-                                      text:`Switch to ${jsUcfirst(commodity_one)}`,
+                                      text:`Switch to ${jsUcfirst(prettifystringnames(commodity_one))}`,
                                       style: {'fontSize':'11px', 'color': 'rgba(68,114,196,0.9)',}
                                     },
                             color: 'rgba(68,114,196,0.5)',
@@ -85,7 +85,7 @@
                           {
                             value: overvalue,
                             label: {
-                                      text:`Switch to ${jsUcfirst(commodity_two)}`,
+                                      text:`Switch to ${jsUcfirst(prettifystringnames(commodity_two))}`,
                                       style: {'fontSize':'11px', 'color': 'rgba(255,80,80,0.9)',}
                                     },
                             color: 'rgba(255,80,80,0.5)',
