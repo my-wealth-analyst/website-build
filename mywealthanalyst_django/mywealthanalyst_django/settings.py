@@ -26,6 +26,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['localhost',
                  '104.248.152.99',
+                 'www.mywealthanalyst.com',
                 ]
 
 
@@ -74,6 +75,15 @@ TEMPLATES = [
 WSGI_APPLICATION = 'mywealthanalyst_django.wsgi.application'
 
 
+# CELERY STUFF
+BROKER_URL = 'redis://localhost:6379'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379'
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TIMEZONE = 'Australia/Sydney'
+
+
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
@@ -87,6 +97,8 @@ DATABASES = {
         'PORT': '',
     }
 }
+
+
 
 # Email BACKEND
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'  # During development only

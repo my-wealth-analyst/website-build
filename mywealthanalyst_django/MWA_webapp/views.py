@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse, JsonResponse
 from django.contrib.auth.decorators import login_required
 
@@ -14,9 +14,12 @@ from scripts.get_historical_data import update_allords
 
 # Create your views here.
 
+
 def landingpage(request):
-    
-    return render(request, 'MWA_webapp/landingpage.html')
+    if request.user.is_authenticated:
+        return redirect('dashboard')
+    else:
+        return render(request, 'MWA_webapp/landingpage.html')
 
 
 @login_required
@@ -31,8 +34,8 @@ def dashboard(request):
     Bitcoin = Commodities.objects.filter(enabled=True).get(commodity_name='Bitcoin')
     AUD = Commodities.objects.get(commodity_name='AUD')
 
-
     return render(request, 'MWA_webapp/main.html', {'Commodities':All , 'Gold':Gold, 'Silver': Silver , 'Property':Property , 'Oil':Oil , 'AllOrds':AllOrds , 'Bitcoin':Bitcoin, 'AUD':AUD })
+
 
 @login_required(redirect_field_name='my_redirect_field')
 def get_data(request):

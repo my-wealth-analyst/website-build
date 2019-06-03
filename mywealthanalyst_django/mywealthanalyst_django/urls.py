@@ -16,10 +16,21 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url, include
+from django.contrib.sitemaps.views import sitemap
+from MWA_webapp.sitemaps import StaticViewSitemap
+
+## Sitemap
+sitemaps = {
+    'home': StaticViewSitemap,
+}
+###########################
 
 urlpatterns = [
     path('admin/', admin.site.urls),
 	url(r'^', include('MWA_webapp.urls')),
 	url(r'^', include('MWA_users.urls')),
 
-]
+    #### Sitemap
+    url(r'^sitemap\.xml$', sitemap, {'sitemaps': sitemaps},
+        name='django.contrib.sitemaps.views.sitemap'),
+    ]

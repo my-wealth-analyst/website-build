@@ -49,7 +49,7 @@
                             text: 'ALL'
                         }]
           },
-
+          credits:{enabled:false},
           exporting:{enabled:false},
           title: {
               enabled: true,
@@ -229,7 +229,7 @@
                             text: 'ALL'
                         }]
           },
-
+          credits:{enabled:false},
           exporting:{enabled:false},
           title: {
               enabled: true,
