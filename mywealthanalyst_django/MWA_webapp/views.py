@@ -25,7 +25,7 @@ def landingpage(request):
 @login_required
 def dashboard(request):
 
-    All = Commodities.objects.filter(enabled=True)
+    All = Commodities.objects.order_by('commodity_name').filter(enabled=True)
     Gold = Commodities.objects.filter(enabled=True).get(commodity_name='Gold')
     Silver = Commodities.objects.filter(enabled=True).get(commodity_name='Silver')
     Property = Commodities.objects.filter(enabled=True).get(commodity_name='Property')
@@ -34,7 +34,9 @@ def dashboard(request):
     Bitcoin = Commodities.objects.filter(enabled=True).get(commodity_name='Bitcoin')
     AUD = Commodities.objects.get(commodity_name='AUD')
 
-    return render(request, 'MWA_webapp/main.html', {'Commodities':All , 'Gold':Gold, 'Silver': Silver , 'Property':Property , 'Oil':Oil , 'AllOrds':AllOrds , 'Bitcoin':Bitcoin, 'AUD':AUD })
+    return render(request, 'MWA_webapp/main.html', {'Commodities': All, 'Gold': Gold, 'Silver': Silver,
+    'Property':Property , 'Oil': Oil , 'AllOrds': AllOrds , 'Bitcoin': Bitcoin, 'AUD': AUD
+    })
 
 
 @login_required(redirect_field_name='my_redirect_field')
