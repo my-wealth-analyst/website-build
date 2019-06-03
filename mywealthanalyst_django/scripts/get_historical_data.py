@@ -16,7 +16,7 @@ from bs4 import BeautifulSoup
 
 def goldsilver_scraperfunction(commodity = None):
     """
-    Scrapes Perthmint website for historical silver and gold prices.
+    Scrapes Perthmint website for historical silver and gold prices (in AUD)
     Perth mint stores these as CSV files, in same format for silver and gold.
     This function is generalised for 'commodity' and is called below for each of 'gold' and 'silver'
     """
@@ -77,7 +77,7 @@ def update_gold_and_silver():
 
 def update_oil():
     """
-    Scrapes Markinsider website for historical WTI crude oil prices (in usd).
+    Scrapes Markinsider website for historical WTI crude oil prices (in USD).
     Data is presented as a single full html table
     """
     options = Options()
@@ -112,7 +112,7 @@ def update_oil():
 
 def update_bitcoin():
     """
-    Scrapes Coinmarketcap website for historical bitcoin prices (in usd).
+    Scrapes Coinmarketcap website for historical bitcoin prices (in USD).
     Data is presented as a single full html table
     """
     filepath = os.path.join(BASE_DIR,f"../media_files/datasets/bitcoin_askprice_avg_aud.csv")
@@ -128,6 +128,9 @@ def update_bitcoin():
     df.to_csv(filepath, index=False)
 
 def update_allords_PE_ratio():
+    """
+    Scrapes marketindex website for historical Allords price earnings ratio (dimensionless).
+    """
 
     filepath = os.path.join(BASE_DIR,f"../media_files/datasets/allordsperatio_askprice_avg_aud.csv")
 
@@ -147,9 +150,10 @@ def update_allords_PE_ratio():
 
 def update_allords():
     """
-    Scrapes Markinsider website for historical WTI crude oil prices (in usd).
-    Data is presented as a single full html table
+    Scrapes Yahoo finance for historical all ords price (in AUD).
+    Data is loaded from csv on yahoo website.
     """
+
     filepath = os.path.join(BASE_DIR,f"../media_files/datasets/allords_askprice_avg_aud.csv")
     date = int(time.time())
 

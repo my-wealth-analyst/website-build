@@ -119,10 +119,22 @@ def scrape_all():
 
 
     driver = webdriver.Chrome(chrome_options=options)
-    driver.set_page_load_timeout(10)
+    driver.set_page_load_timeout(15)
+
+    try:
+        r = requests.get('https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=AUD&to_currency=USD&apikey=M4TA2P8B2OU22SPC')
+        json_response = r.json()
+
+        Commodities.objects.filter(commodity_name="AUD").update(date_last_scraped=datetime.now(), last_price=json_response["Realtime Currency Exchange Rate"]["5. Exchange Rate"])
+    except Exception as e:
+        print('error scraping AUD: ', e)
 
     try:
         update = scrape_ALLORDS(driver)
+        exch_rate = Commodities.objects.get(commodity_name="AUD").last_price
+        update[0] = update[0]*exch_rate
+        update[1] = update[1]*exch_rate
+
         Commodities.objects.filter(commodity_name="All Ords").update(date_last_scraped=datetime.now(), last_price=update[0], last_movement_nominal=update[1], last_movement_percentage=update[2])
     except Exception as e:
         print('error scraping ALLORDS: ', e)
@@ -150,14 +162,6 @@ def scrape_all():
         Commodities.objects.filter(commodity_name="Silver").update(date_last_scraped=datetime.now(), last_price=update[0], last_movement_nominal=update[1], last_movement_percentage=update[2])
     except Exception as e:
         print('error scraping SILVER: ', e)
-
-    try:
-        r = requests.get('https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=AUD&to_currency=USD&apikey=M4TA2P8B2OU22SPC')
-        json_response = r.json()
-
-        Commodities.objects.filter(commodity_name="AUD").update(date_last_scraped=datetime.now(), last_price=json_response["Realtime Currency Exchange Rate"]["5. Exchange Rate"])
-    except Exception as e:
-        print('error scraping AUD: ', e)
 
 
     driver.close()

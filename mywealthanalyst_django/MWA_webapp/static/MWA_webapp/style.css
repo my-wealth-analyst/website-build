@@ -58,7 +58,7 @@ h1, h2, h3, h4, h5 {
   color:rgba(255, 153, 0, 1);
  }
 
-  .footer_bar #disclaimer:hover, .footer_bar #disclaimer:focus {
+  #disclaimer:hover, .footer_bar #disclaimer:focus {
    color:rgba(255, 153, 0, 0.7);
    text-decoration: none;
    cursor: pointer;
