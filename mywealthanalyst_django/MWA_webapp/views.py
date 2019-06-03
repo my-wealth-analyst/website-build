@@ -60,10 +60,21 @@ def get_data(request):
     else:
         commodity_two_df = pd.read_csv(filepath_two)
         commodity_two_df.Date = pd.to_datetime(commodity_two_df.Date)
-        commodity_two_df.columns = ['Date',commodity_one]
+        commodity_two_df.columns = ['Date',commodity_two]
         commodity_two_df = commodity_two_df.set_index('Date')
         commodity_two_df.sort_index(axis=0,ascending=True,inplace=True)
         commodity_two_df = commodity_two_df.loc[~commodity_two_df.index.duplicated(keep='first')]
+
+    # """ This block for converting AUD data sources to USD.
+    #     BUT this needs more thinking, because the AUD/USD exchange rate is not
+    #     constant over time. To do this properly we need a AUD/USD time series
+    #     going back to 1980........
+    # """
+    # exch_rate = Commodities.objects.get(commodity_name="AUD").last_price
+    # for df in [commodity_one_df,commodity_two_df]:
+    #     if df.columns[0] in ['gold','silver','allords']:
+    #         df.iloc[:,0] = df.iloc[:,0]*exch_rate
+
 
     df = commodity_one_df.merge(commodity_two_df, left_index=True,right_index=True)
     df.dropna(axis=0,how='any',inplace=True)
