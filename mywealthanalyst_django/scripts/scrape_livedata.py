@@ -92,7 +92,6 @@ def scrape_BITCOIN(driver):
     soup = BeautifulSoup(driver.page_source, 'html.parser')
 
     bitcoin_last_price = float(re.sub("[^0-9.]", "", soup.find("span",{'class':'details-panel-item--price__value'}).text))
-    print(bitcoin_last_price)
 
     if soup.find('span',{'class':'negative_change'}) is None:
         bitcoin_last_movement_percentage = abs(float(re.sub("[^0-9.]", "", soup.find("span",{'data-format-percentage':True})['data-format-value'])))
