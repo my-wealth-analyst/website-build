@@ -164,4 +164,5 @@ def scrape_all():
         print('error scraping SILVER: ', e)
 
 
-    driver.close()
+    driver.quit()
+    del(driver)
