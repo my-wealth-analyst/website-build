@@ -6,36 +6,119 @@
 {% block description %} Providing information and analysis on the true value of assets to safeguard your wealth for generations. {% endblock %}
 
 {% block head %}
-<link rel="stylesheet" type="text/css" href="{% static 'MWA_webapp/style.css' %}?id=10" />
 {% endblock %}
 
 {% block content %}
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+<div class='wrapper'> <!-- wrapper  -->
+<div class='container landingpage'> <!-- main body  -->
+
+<div class='row align-items-center'>
+    <div class='col-lg-4 col-12'>
+        <h3> The <strong>information</strong> you need to preserve your wealth for <strong>generations</strong></h3>
+        <br>
+        <ul>
+          <li> <img src="{%static 'MWA_webapp/icons/magnifier.png' %}" height="30px" style="padding-top:0px; padding-bottom:0px"> <span class="subheading">Clarity</span> &mdash; directly compare performance of asset </li>
+          <li> <img src="{%static 'MWA_webapp/icons/notification.png' %}" height="30px" style="padding-top:0px; padding-bottom:0px"> <span class="subheading">Notifications</span> &mdash; don't miss critical cycle changes </li>
+          <li> <img src="{%static 'MWA_webapp/icons/free_lunch.png' %}" height="30px" style="padding-top:0px; padding-bottom:0px"> <span class="subheading">Free</span> &mdash; donate & support us support you </li>
+        </ul>
+    <a class="btn btn-lg btn-primary text-uppercase custombutton" href="{% url 'register' %}">Get started</a>
+    </div>
+    <div class='col-lg-8 col-12 landingpage_img1'>
+      <img src="{%static 'MWA_webapp/images/Dashboard_desktop&mobile2.png' %}" alt="" class = "img-responsive" width = "100%" >
+    </div>
+</div>
+
+
+<div class='row align-items-center'>
+    <div class='col-lg-8 col-12 order-1 order-lg-0'>
+      <img src="{%static 'MWA_webapp/images/clarity.jpg' %}" alt="" class = "img-responsive" width = "100%" >
+    </div>
+    <div class='col-lg-4 col-12 order-0 order-lg-1 text-right'>
+        <h3> Bringing <strong>clarity</strong> to investment <strong>decisions</strong></h3>
+        <span class="subheading">Remove the noise and compare assets directly for relative performance, and identify long term cycles & trends </span>
+    </div>
+</div>
+
+
+<div class='row align-items-center'>
+  <div class='col-lg-6 col-12 order-md-1 order-lg-0'>
+      <h3> Do not miss <strong>critical</strong> cycle changes with email <strong>notifications</strong></h3>
+      <span class="subheading">Remain informed as key turning points are reached with email notifications, allowing you to modify your asset investment strategy on the go.</span>
+  </div>
+    <div class='offset-lg-2 col-lg-4 offset-1 col-12 order-md-1 order-lg-0'>
+      <img src="{%static 'MWA_webapp/images/Phone_Notifications.png' %}" alt="" class = "img-responsive" max-height="400px" >
+    </div>
+</div>
+
+
+<div class='row align-items-center'>
+  <div class='col-lg-7 col-12 order-lg-1 text-right'>
+      <br>
+      <h3> One <strong>click</strong> access to purchase <strong>quality</strong> investment assets</h3>
+      <span class="subheading">We partner with specialist suppliers of quality assets for you to seemlessly and efficiently manage your investments.</span>
+  </div>
+    <div class='col-lg-5 offset-lg-0 offset-1 col-10 order-lg-0 text-center'>
+      <img src="{%static 'MWA_webapp/images/commodities.png' %}" alt="" class = "img-responsive" height = "300px" >
+      <a class="btn btn-lg btn-primary btn-block text-uppercase custombutton" href="{% url 'register' %}">Buy now</a>
+    </div>
+
+</div>
+
+
+<div class='row align-items-center'>
+  <div class='col-12'>
+      <h3> How John uses <strong>mywealthanalyst</strong> to increase his <strong>wealth</strong></h3>
+  </div>
+
+  <div class='col-sm-1 offset-sm-1 col-3'>
+      <img src="{%static 'MWA_webapp/icons/man_icon.png' %}" class = "img-responsive" width="100%">
+  </div>
+  <div class='col-9'>
+      <span class="subheading">In 13 years John has doubled his wealth increasing from 1 oz. to 2.9 oz. of Gold</span>
+  </div>
+
+  <div class='offset-1 col-lg-3 col-8'>
+      <img src="{%static 'MWA_webapp/images/graph.png' %}" class = "img-responsive" width="100%">
+  </div>
+
+  <div class='offset-lg-7 offset-3'></div>
+
+  <div class='col-sm-1 offset-sm-1 col-3'>
+      <img src="{%static 'MWA_webapp/icons/woman_icon.png' %}" class = "img-responsive" width="100%">
+  </div>
+  <div class='col-9'>
+      <span class="subheading" style='color:rgba(68,114,196,1)'>Jane’s wealth doesn’t change</span>
+  </div>
+
+</div>
+
+
+<div class='row align-items-center'>
+  <div class='col-12'>
+      <h3><strong>Frequently Asked Questions</strong></h3>
+      <span class="subheading"> How much does it cost?</span>
+      <p> There is no cost, access is free. However, feel free to donate and support us!</p>
+      <span class="subheading"> How Frequently is the live data refreshed?</span>
+      <p> Live data prices are refreshed every 5 minutes with property values refreshed quarterly</p>
+      <span class="subheading"> How frequently are the graphs refreshed?</span>
+      <p> Graphs data is accumulated twice daily and quarterly for property values</p>
+</div>
+</div>
+
+
+</div> <!-- end main body  -->
+</div><!-- end wrapper  -->
+
 <br>
 
-<span class='text-center'> LANDING PAGE HERE </span>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+<script>
+  $(window).scroll(function(){
+      var scrollTop = $(this).scrollTop();
+      $('.flyIns').each(function(i, element){
+          if($(element).offset().top < scrollTop + 400){
+              $(element).animate({left:'50px'}, 300);
+          }
+      });
+  });
+</script>
 {% endblock %}

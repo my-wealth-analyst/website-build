@@ -16,10 +16,7 @@ from scripts.get_historical_data import update_allords
 
 
 def landingpage(request):
-    if request.user.is_authenticated:
-        return redirect('dashboard')
-    else:
-        return render(request, 'MWA_webapp/landingpage.html')
+    return render(request, 'MWA_webapp/landingpage.html')
 
 
 @login_required
