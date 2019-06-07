@@ -58,7 +58,7 @@ h1, h2, h3, h4, h5 {
   color:rgba(255, 153, 0, 1);
  }
 
-  .footer_bar #disclaimer:hover, .footer_bar #disclaimer:focus {
+  #disclaimer:hover, .footer_bar #disclaimer:focus {
    color:rgba(255, 153, 0, 0.7);
    text-decoration: none;
    cursor: pointer;
@@ -150,7 +150,7 @@ margin-bottom: auto;
    box-shadow: 3px 6px 5px 0px rgba(34,42,53,0.5);
  }
 
- .login .card-signin .btn {
+ .login .card-signin .btn, .custombutton {
    font-family: 'Verdana';
    font-size: 80%;
    border-radius: 5rem;
@@ -250,3 +250,49 @@ margin-bottom: auto;
     font-family: 'Verdana';
     font-size: 11pt;
   }
+
+
+ /* LANDING PAGE */
+ .landingpage img {
+   padding-top: 10px;
+   padding-bottom: 10px
+ }
+
+ .landingpage .row{
+   margin-top: 100px;
+   margin-bottom: 50px;
+ }
+
+ .landingpage strong{
+   color: rgba(68,114,196,1);
+ }
+
+ .landingpage ul, .landingpage p{
+   font-size: 16pt;
+   padding: 0;
+   list-style: none;
+ }
+
+ .landingpage .subheading{
+   color: rgba(255,153,0,1);
+   font-size: 16pt;
+   font-weight: 550;
+ }
+
+
+@media(max-width:500px){
+
+.landingpage h3 {
+  font-size: 18pt;
+}
+
+.landingpage ul, .landingpage p{
+  font-size: 12pt;
+}
+
+.landingpage .subheading{
+  font-size: 14pt;
+}
+
+
+}
