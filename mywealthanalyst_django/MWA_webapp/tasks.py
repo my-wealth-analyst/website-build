@@ -5,8 +5,8 @@ from celery.utils.log import get_task_logger
 from scripts import scrape_livedata_v2
 # from scripts.get_historical_data import update_gold_and_silver, update_oil, update_bitcoin, update_allords_PE_ratio, update_allords
 
-
 logger = get_task_logger(__name__)
+
 
 
 @periodic_task(
