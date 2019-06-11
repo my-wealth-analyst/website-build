@@ -1,6 +1,7 @@
 from django.apps import AppConfig
 
-
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 
 
 class MwaWebappConfig(AppConfig):
@@ -8,4 +9,15 @@ class MwaWebappConfig(AppConfig):
     verbose_name = "MyWealthAnalyst Django Web App"
 
     def ready(self):
-        pass
+
+        options = Options()
+        options.add_argument("--disable-notifications")
+        options.add_argument("--no-sandbox")
+        options.add_argument("--disable-dev-shm-usage")
+        # options.headless = True
+        user_agent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.50 Safari/537.36'
+        options.add_argument('user-agent={0}'.format(user_agent))
+
+        global driver
+        driver = webdriver.Chrome(chrome_options=options)
+        page = driver.get('https://au.investing.com/?ref=www')

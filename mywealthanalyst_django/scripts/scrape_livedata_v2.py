@@ -6,22 +6,8 @@ from datetime import datetime
 import warnings
 warnings.filterwarnings("ignore", category=RuntimeWarning)
 
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
+from MWA_webapp.apps import driver
 
-
-# options = Options()
-# options.add_argument("--disable-notifications")
-# options.add_argument("--no-sandbox")
-# options.add_argument("--disable-dev-shm-usage")
-# options.headless = True
-# user_agent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.50 Safari/537.36'
-# options.add_argument('user-agent={0}'.format(user_agent))
-#
-# driver = webdriver.Chrome(chrome_options=options)
-# page = driver.get('https://au.investing.com/?ref=www')
-
-driver = None
 
 def helper(soup=None, title=None):
     base_element = soup.find("a",{'title':title})
