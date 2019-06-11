@@ -27,14 +27,11 @@ def refresh_historical_data(ModelAdmin, request, queryset):
 #     create_commodities()
 #     scrape_all()
 
-def restart_driver_test(ModelAdmin, request, queryset):
-    scrape_livedata_v2.restart_driver()
-
 def scrape_live_data(ModelAdmin, request, queryset):
     scrape_livedata_v2.scrape_current()
 
 class CommoditiesAdmin(admin.ModelAdmin):
-    actions = [refresh_historical_data, scrape_live_data, restart_driver_test]
+    actions = [refresh_historical_data, scrape_live_data]
     readonly_fields = ["date_last_scraped"]
     list_display = ['commodity_name','enabled','date_last_scraped','last_price']
 

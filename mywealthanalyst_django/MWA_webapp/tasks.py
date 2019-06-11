@@ -10,7 +10,7 @@ logger = get_task_logger(__name__)
 
 
 @periodic_task(
-    run_every=(crontab(minute='*/1')),
+    run_every=(crontab(minute='*/5')),
     name="update_live_prices",
     ignore_result=True
 )
