@@ -22,5 +22,6 @@ class MwaWebappConfig(AppConfig):
         options.add_argument('user-agent={0}'.format(user_agent))
 
         global driver
-        driver = webdriver.Chrome(chrome_options=options)
+        # driver = webdriver.Chrome(chrome_options=options)
+        driver = None
         page = driver.get('https://au.investing.com/?ref=www')
