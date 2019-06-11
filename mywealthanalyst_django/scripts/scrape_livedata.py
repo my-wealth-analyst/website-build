@@ -64,6 +64,7 @@ def scrape_GOLD(driver):
     GOLD = [gold_last_price,gold_last_movement_nominal,gold_last_movement_percentage]
     return(GOLD)
 
+
 def scrape_SILVER(driver):
     """ SILVER """
     try:
@@ -82,6 +83,7 @@ def scrape_SILVER(driver):
 
     SILVER = [silver_last_price,silver_last_movement_nominal,silver_last_movement_percentage]
     return(SILVER)
+
 
 def scrape_BITCOIN(driver):
     """ BITCOIN """
@@ -102,8 +104,6 @@ def scrape_BITCOIN(driver):
 
     BITCOIN = [bitcoin_last_price,silver_last_movement_nominal,bitcoin_last_movement_percentage]
     return(BITCOIN)
-
-
 
 
 def scrape_all():
