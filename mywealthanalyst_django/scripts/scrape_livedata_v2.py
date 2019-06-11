@@ -1,7 +1,6 @@
 from bs4 import BeautifulSoup
 from MWA_webapp.models import Commodities
 from datetime import datetime
-# from MWA_webapp.tasks import driver
 
 import warnings
 warnings.filterwarnings("ignore", category=RuntimeWarning)
