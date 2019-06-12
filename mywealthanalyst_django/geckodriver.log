@@ -433,3 +433,23 @@ console.error: BroadcastService:
   Stack:
     remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:203:13
 
+1560302728777	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "--disable-notifications" "--no-sandbox" "--disable-dev-shm-usage" "user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.50 Safari/537.36" "-headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.2muBDKEag7ul"
+*** You are running in headless mode.
+1560302729845	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1560302729846	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1560302729846	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1560302733988	Marionette	INFO	Listening on port 36445
+1560302733996	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Parent 7845, Gecko_IOThread] WARNING: pipe error: Broken pipe: file /build/firefox-gHMaBx/firefox-67.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 726
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: http://%(server)s/dummy/blocklist//buckets/monitor/collections/changes/records?_expected=%221560280104202%22 is not a valid URL..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:203:13
+
+Exiting due to channel error.
+[Child 8097, Chrome_ChildThread] WARNING: pipe error (35): Connection reset by peer: file /build/firefox-gHMaBx/firefox-67.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Exiting due to channel error.
+Exiting due to channel error.
