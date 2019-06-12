@@ -6,9 +6,7 @@ from django.conf import settings
 import warnings
 warnings.filterwarnings("ignore", category=RuntimeWarning)
 
-# from MWA_webapp.apps import driver
 from selenium import webdriver
-# from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.firefox.options import Options
 options = Options()
 options.add_argument("--disable-notifications")
@@ -16,19 +14,16 @@ options.add_argument("--no-sandbox")
 options.add_argument("--disable-dev-shm-usage")
 user_agent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.50 Safari/537.36'
 options.add_argument('user-agent={0}'.format(user_agent))
-# if settings.DEBUG:
-#     options.headless = False
-# else:
-#     options.headless = True
 options.headless = True
 
 
 
 class BrowserSession(object):
     def __init__(self):
-        self.driver = webdriver.Firefox(executable_path=r'geckodriver.exe', options=options)
+        # self.driver = webdriver.Firefox(executable_path=r'geckodriver.exe', options=options)
+        self.driver = webdriver.Firefox(executable_path=r'./geckodriver', options=options)
         self.driver.get('https://au.investing.com/?ref=www')
-        print("Driver started")
+        print("Driver started - GET request made")
 
 
 def helper(soup=None, title=None):
@@ -45,7 +40,7 @@ def helper(soup=None, title=None):
 
 
 def scrape_current():
-    global Driver_Live
+    global Driver
     try:
         Driver
     except:
