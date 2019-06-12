@@ -21,7 +21,7 @@ options.headless = True
 class BrowserSession(object):
     def __init__(self):
         # self.driver = webdriver.Firefox(executable_path=r'geckodriver.exe', options=options)
-        self.driver = webdriver.Firefox(executable_path=r'./geckodriver', options=options)
+        self.driver = webdriver.Firefox(executable_path=r'/home/geckodriver', options=options)
         self.driver.get('https://au.investing.com/?ref=www')
         print("Driver started - GET request made")
 
