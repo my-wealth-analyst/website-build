@@ -17,9 +17,8 @@ def update_live_prices():
     Scrape live prices (to be run every 5 minutes)
     """
     try:
-        scrape_livedata_v2.scrape_current()
+        scrape_current()
         logger.info("Live prices updated")
-
     except Exception as exc:
         raise self.retry(exc=exc, countdown=60, max_retries=2)
 
