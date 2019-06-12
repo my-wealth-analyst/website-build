@@ -1582,3 +1582,197 @@ Traceback (most recent call last):
   File "/home/website-build/mywealthanalyst_django/MWA_webapp/apps.py", line 34, in ready
     print(page)
 NameError: name 'page' is not defined
+[2019-06-12 11:27:29,957: INFO/MainProcess] Connected to redis://localhost:6379//
+[2019-06-12 11:27:29,970: INFO/MainProcess] mingle: searching for neighbors
+[2019-06-12 11:27:30,996: INFO/MainProcess] mingle: all alone
+[2019-06-12 11:27:31,008: INFO/MainProcess] celery@mywealthanalyst ready.
+[2019-06-12 11:27:31,128: INFO/MainProcess] Received task: update_live_prices[12826e48-12d7-44bc-af71-79c1bbcf8542]  
+[2019-06-12 11:27:31,133: ERROR/ForkPoolWorker-1] Task update_live_prices[12826e48-12d7-44bc-af71-79c1bbcf8542] raised unexpected: NameError("name 'self' is not defined",)
+Traceback (most recent call last):
+  File "/home/website-build/mywealthanalyst_django/MWA_webapp/tasks.py", line 20, in update_live_prices
+    scrape_livedata_v2.scrape_current()
+NameError: name 'scrape_livedata_v2' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/app/trace.py", line 385, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/app/trace.py", line 648, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/home/website-build/mywealthanalyst_django/MWA_webapp/tasks.py", line 24, in update_live_prices
+    raise self.retry(exc=exc, countdown=60, max_retries=2)
+NameError: name 'self' is not defined
+[2019-06-12 11:30:00,003: INFO/MainProcess] Received task: update_live_prices[9bc8a690-c374-4282-8b1b-329479793628]  
+[2019-06-12 11:30:00,004: ERROR/ForkPoolWorker-1] Task update_live_prices[9bc8a690-c374-4282-8b1b-329479793628] raised unexpected: NameError("name 'self' is not defined",)
+Traceback (most recent call last):
+  File "/home/website-build/mywealthanalyst_django/MWA_webapp/tasks.py", line 20, in update_live_prices
+    scrape_livedata_v2.scrape_current()
+NameError: name 'scrape_livedata_v2' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/app/trace.py", line 385, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/app/trace.py", line 648, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/home/website-build/mywealthanalyst_django/MWA_webapp/tasks.py", line 24, in update_live_prices
+    raise self.retry(exc=exc, countdown=60, max_retries=2)
+NameError: name 'self' is not defined
+[2019-06-12 11:35:00,076: INFO/MainProcess] Received task: update_live_prices[ea968879-d61a-4cad-9a1c-bc0644eff4ee]  
+[2019-06-12 11:35:00,077: ERROR/ForkPoolWorker-1] Task update_live_prices[ea968879-d61a-4cad-9a1c-bc0644eff4ee] raised unexpected: NameError("name 'self' is not defined",)
+Traceback (most recent call last):
+  File "/home/website-build/mywealthanalyst_django/MWA_webapp/tasks.py", line 20, in update_live_prices
+    scrape_livedata_v2.scrape_current()
+NameError: name 'scrape_livedata_v2' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/app/trace.py", line 385, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/app/trace.py", line 648, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/home/website-build/mywealthanalyst_django/MWA_webapp/tasks.py", line 24, in update_live_prices
+    raise self.retry(exc=exc, countdown=60, max_retries=2)
+NameError: name 'self' is not defined
+[2019-06-12 11:40:00,040: INFO/MainProcess] Received task: update_live_prices[101dab6b-a4b3-4085-b339-c3e7345ef092]  
+[2019-06-12 11:40:00,041: ERROR/ForkPoolWorker-1] Task update_live_prices[101dab6b-a4b3-4085-b339-c3e7345ef092] raised unexpected: NameError("name 'self' is not defined",)
+Traceback (most recent call last):
+  File "/home/website-build/mywealthanalyst_django/MWA_webapp/tasks.py", line 20, in update_live_prices
+    scrape_livedata_v2.scrape_current()
+NameError: name 'scrape_livedata_v2' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/app/trace.py", line 385, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/app/trace.py", line 648, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/home/website-build/mywealthanalyst_django/MWA_webapp/tasks.py", line 24, in update_live_prices
+    raise self.retry(exc=exc, countdown=60, max_retries=2)
+NameError: name 'self' is not defined
+[2019-06-12 11:45:00,091: INFO/MainProcess] Received task: update_live_prices[cfb1c596-6367-4cee-9cfd-eff3781733f7]  
+[2019-06-12 11:45:00,093: ERROR/ForkPoolWorker-1] Task update_live_prices[cfb1c596-6367-4cee-9cfd-eff3781733f7] raised unexpected: NameError("name 'self' is not defined",)
+Traceback (most recent call last):
+  File "/home/website-build/mywealthanalyst_django/MWA_webapp/tasks.py", line 20, in update_live_prices
+    scrape_livedata_v2.scrape_current()
+NameError: name 'scrape_livedata_v2' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/app/trace.py", line 385, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/app/trace.py", line 648, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/home/website-build/mywealthanalyst_django/MWA_webapp/tasks.py", line 24, in update_live_prices
+    raise self.retry(exc=exc, countdown=60, max_retries=2)
+NameError: name 'self' is not defined
+[2019-06-12 11:50:00,095: INFO/MainProcess] Received task: update_live_prices[2d350185-0b63-4efd-a66c-17efc1a4d560]  
+[2019-06-12 11:50:00,096: ERROR/ForkPoolWorker-1] Task update_live_prices[2d350185-0b63-4efd-a66c-17efc1a4d560] raised unexpected: NameError("name 'self' is not defined",)
+Traceback (most recent call last):
+  File "/home/website-build/mywealthanalyst_django/MWA_webapp/tasks.py", line 20, in update_live_prices
+    scrape_livedata_v2.scrape_current()
+NameError: name 'scrape_livedata_v2' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/app/trace.py", line 385, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/app/trace.py", line 648, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/home/website-build/mywealthanalyst_django/MWA_webapp/tasks.py", line 24, in update_live_prices
+    raise self.retry(exc=exc, countdown=60, max_retries=2)
+NameError: name 'self' is not defined
+[2019-06-12 11:52:32,105: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/home/mwa_env/lib/python3.6/site-packages/redis/connection.py", line 185, in _read_from_socket
+    raise socket.error(SERVER_CLOSED_CONNECTION_ERROR)
+OSError: Connection closed by server.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/worker/consumer/consumer.py", line 596, in start
+    c.loop(*c.loop_args())
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/worker/loops.py", line 91, in asynloop
+    next(loop)
+  File "/home/mwa_env/lib/python3.6/site-packages/kombu/asynchronous/hub.py", line 362, in create_loop
+    cb(*cbargs)
+  File "/home/mwa_env/lib/python3.6/site-packages/kombu/transport/redis.py", line 1070, in on_readable
+    self.cycle.on_readable(fileno)
+  File "/home/mwa_env/lib/python3.6/site-packages/kombu/transport/redis.py", line 348, in on_readable
+    chan.handlers[type]()
+  File "/home/mwa_env/lib/python3.6/site-packages/kombu/transport/redis.py", line 679, in _receive
+    ret.append(self._receive_one(c))
+  File "/home/mwa_env/lib/python3.6/site-packages/kombu/transport/redis.py", line 690, in _receive_one
+    response = c.parse_response()
+  File "/home/mwa_env/lib/python3.6/site-packages/redis/client.py", line 3036, in parse_response
+    return self._execute(connection, connection.read_response)
+  File "/home/mwa_env/lib/python3.6/site-packages/redis/client.py", line 3013, in _execute
+    return command(*args)
+  File "/home/mwa_env/lib/python3.6/site-packages/redis/connection.py", line 637, in read_response
+    response = self._parser.read_response()
+  File "/home/mwa_env/lib/python3.6/site-packages/redis/connection.py", line 290, in read_response
+    response = self._buffer.readline()
+  File "/home/mwa_env/lib/python3.6/site-packages/redis/connection.py", line 224, in readline
+    self._read_from_socket()
+  File "/home/mwa_env/lib/python3.6/site-packages/redis/connection.py", line 199, in _read_from_socket
+    (e.args,))
+redis.exceptions.ConnectionError: Error while reading from socket: ('Connection closed by server.',)
+[2019-06-12 11:53:56,518: INFO/MainProcess] Connected to redis://localhost:6379//
+[2019-06-12 11:53:56,526: INFO/MainProcess] mingle: searching for neighbors
+[2019-06-12 11:53:57,544: INFO/MainProcess] mingle: all alone
+[2019-06-12 11:53:57,561: INFO/MainProcess] celery@mywealthanalyst ready.
+[2019-06-12 11:55:00,023: INFO/MainProcess] Received task: update_live_prices[3bae68eb-30b9-4b63-98a9-91b260d8b6c5]  
+[2019-06-12 11:55:00,038: ERROR/ForkPoolWorker-1] Task update_live_prices[3bae68eb-30b9-4b63-98a9-91b260d8b6c5] raised unexpected: NameError("name 'self' is not defined",)
+Traceback (most recent call last):
+  File "/home/website-build/mywealthanalyst_django/scripts/scrape_livedata_v2.py", line 45, in scrape_current
+    Driver
+NameError: name 'Driver' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mwa_env/lib/python3.6/site-packages/selenium/webdriver/common/service.py", line 76, in start
+    stdin=PIPE)
+  File "/usr/lib/python3.6/subprocess.py", line 709, in __init__
+    restore_signals, start_new_session)
+  File "/usr/lib/python3.6/subprocess.py", line 1344, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+PermissionError: [Errno 13] Permission denied: './geckodriver'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/website-build/mywealthanalyst_django/MWA_webapp/tasks.py", line 20, in update_live_prices
+    scrape_current()
+  File "/home/website-build/mywealthanalyst_django/scripts/scrape_livedata_v2.py", line 47, in scrape_current
+    Driver = BrowserSession()
+  File "/home/website-build/mywealthanalyst_django/scripts/scrape_livedata_v2.py", line 24, in __init__
+    self.driver = webdriver.Firefox(executable_path=r'./geckodriver', options=options)
+  File "/home/mwa_env/lib/python3.6/site-packages/selenium/webdriver/firefox/webdriver.py", line 164, in __init__
+    self.service.start()
+  File "/home/mwa_env/lib/python3.6/site-packages/selenium/webdriver/common/service.py", line 88, in start
+    os.path.basename(self.path), self.start_error_message)
+selenium.common.exceptions.WebDriverException: Message: 'geckodriver' executable may have wrong permissions. 
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/app/trace.py", line 385, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/app/trace.py", line 648, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/home/website-build/mywealthanalyst_django/MWA_webapp/tasks.py", line 23, in update_live_prices
+    raise self.retry(exc=exc, countdown=60, max_retries=2)
+NameError: name 'self' is not defined
