@@ -8,7 +8,8 @@ import warnings
 warnings.filterwarnings("ignore", category=RuntimeWarning)
 
 from selenium import webdriver
-from selenium.webdriver.firefox.options import Options
+# from selenium.webdriver.firefox.options import Options
+from selenium.webdriver.chrome.options import Options
 options = Options()
 options.add_argument("--disable-notifications")
 options.add_argument("--no-sandbox")
@@ -22,7 +23,8 @@ logger = get_task_logger(__name__)
 class BrowserSession(object):
     def __init__(self):
         # self.driver = webdriver.Firefox(executable_path=r'geckodriver.exe', options=options)
-        self.driver = webdriver.Firefox(executable_path=r'/home/geckodriver', options=options)
+        # self.driver = webdriver.Firefox(executable_path=r'/home/geckodriver', options=options)
+        self.driver = webdriver.Chrome(chrome_options=options)
         self.driver.get('https://au.investing.com/?ref=www')
         logger.info("Driver started - GET request made")
 
