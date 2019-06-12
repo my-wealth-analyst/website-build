@@ -20,7 +20,8 @@ def update_live_prices():
         scrape_current()
         logger.info("Live prices updated")
     except Exception as exc:
-        raise self.retry(exc=exc, countdown=60, max_retries=2)
+        logger.warning(exc)
+        raise Exception
 
 
 
