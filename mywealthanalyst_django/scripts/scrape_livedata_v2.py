@@ -2,6 +2,7 @@ from bs4 import BeautifulSoup
 from MWA_webapp.models import Commodities
 from datetime import datetime
 from django.conf import settings
+from celery.utils.log import get_task_logger
 
 import warnings
 warnings.filterwarnings("ignore", category=RuntimeWarning)
@@ -16,14 +17,14 @@ user_agent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Ge
 options.add_argument('user-agent={0}'.format(user_agent))
 options.headless = True
 
-
+logger = get_task_logger(__name__)
 
 class BrowserSession(object):
     def __init__(self):
         # self.driver = webdriver.Firefox(executable_path=r'geckodriver.exe', options=options)
         self.driver = webdriver.Firefox(executable_path=r'./geckodriver', options=options)
         self.driver.get('https://au.investing.com/?ref=www')
-        print("Driver started - GET request made")
+        logger.info("Driver started - GET request made")
 
 
 def helper(soup=None, title=None):
