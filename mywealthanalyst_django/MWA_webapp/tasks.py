@@ -2,12 +2,10 @@ from celery.task.schedules import crontab
 from celery.decorators import periodic_task
 from celery.utils.log import get_task_logger
 
-from scripts import scrape_livedata_v2
+from scripts.scrape_livedata_v2 import scrape_current
 # from scripts.get_historical_data import update_gold_and_silver, update_oil, update_bitcoin, update_allords_PE_ratio, update_allords
 
 logger = get_task_logger(__name__)
-
-
 
 @periodic_task(
     run_every=(crontab(minute='*/5')),
@@ -23,7 +21,6 @@ def update_live_prices():
         logger.info("Live prices updated")
 
     except Exception as exc:
-        # overrides the default delay to retry after 1 minute
         raise self.retry(exc=exc, countdown=60, max_retries=2)
 
 
