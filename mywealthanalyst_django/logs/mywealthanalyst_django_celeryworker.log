@@ -1,0 +1,1584 @@
+Traceback (most recent call last):
+  File "/home/mwa_env/bin/celery", line 10, in <module>
+    sys.exit(main())
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/__main__.py", line 16, in main
+    _main()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 322, in main
+    cmd.execute_from_commandline(argv)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 496, in execute_from_commandline
+    super(CeleryCommand, self).execute_from_commandline(argv)))
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/base.py", line 298, in execute_from_commandline
+    return self.handle_argv(self.prog_name, argv[1:])
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 488, in handle_argv
+    return self.execute(command, argv)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 420, in execute
+    ).run_from_argv(self.prog_name, argv[1:], command=argv[0])
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/worker.py", line 223, in run_from_argv
+    return self(*args, **options)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/base.py", line 252, in __call__
+    ret = self.run(*args, **kwargs)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/worker.py", line 257, in run
+    **kwargs)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/worker/worker.py", line 96, in __init__
+    self.app.loader.init_worker()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/loaders/base.py", line 114, in init_worker
+    self.import_default_modules()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/loaders/base.py", line 108, in import_default_modules
+    raise response
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/utils/dispatch/signal.py", line 288, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/fixups/django.py", line 84, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/fixups/django.py", line 122, in validate_models
+    self.django_setup()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/fixups/django.py", line 118, in django_setup
+    django.setup()
+  File "/home/mwa_env/lib/python3.6/site-packages/django/__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/home/mwa_env/lib/python3.6/site-packages/django/apps/registry.py", line 122, in populate
+    app_config.ready()
+  File "/home/mwa_env/lib/python3.6/site-packages/django/contrib/admin/apps.py", line 24, in ready
+    self.module.autodiscover()
+  File "/home/mwa_env/lib/python3.6/site-packages/django/contrib/admin/__init__.py", line 26, in autodiscover
+    autodiscover_modules('admin', register_to=site)
+  File "/home/mwa_env/lib/python3.6/site-packages/django/utils/module_loading.py", line 47, in autodiscover_modules
+    import_module('%s.%s' % (app_config.name, module_to_search))
+  File "/home/mwa_env/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/website-build/mywealthanalyst_django/MWA_webapp/admin.py", line 7, in <module>
+    from scripts import scrape_livedata_v2
+  File "/home/website-build/mywealthanalyst_django/scripts/scrape_livedata_v2.py", line 21, in <module>
+    driver = webdriver.Chrome(chrome_options=options)
+  File "/home/mwa_env/lib/python3.6/site-packages/selenium/webdriver/chrome/webdriver.py", line 81, in __init__
+    desired_capabilities=desired_capabilities)
+  File "/home/mwa_env/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 157, in __init__
+    self.start_session(capabilities, browser_profile)
+  File "/home/mwa_env/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 252, in start_session
+    response = self.execute(Command.NEW_SESSION, parameters)
+  File "/home/mwa_env/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/home/mwa_env/lib/python3.6/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: unknown error: Chrome failed to start: exited abnormally
+  (unknown error: DevToolsActivePort file doesn't exist)
+  (The process started from chrome location /usr/bin/google-chrome is no longer running, so ChromeDriver is assuming that Chrome has crashed.)
+  (Driver info: chromedriver=74.0.3729.6 (255758eccf3d244491b8a1317aa76e1ce10d57e9-refs/branch-heads/3729@{#29}),platform=Linux 4.15.0-51-generic x86_64)
+
+Traceback (most recent call last):
+  File "/home/mwa_env/bin/celery", line 10, in <module>
+    sys.exit(main())
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/__main__.py", line 16, in main
+    _main()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 322, in main
+    cmd.execute_from_commandline(argv)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 496, in execute_from_commandline
+    super(CeleryCommand, self).execute_from_commandline(argv)))
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/base.py", line 298, in execute_from_commandline
+    return self.handle_argv(self.prog_name, argv[1:])
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 488, in handle_argv
+    return self.execute(command, argv)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 420, in execute
+    ).run_from_argv(self.prog_name, argv[1:], command=argv[0])
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/worker.py", line 223, in run_from_argv
+    return self(*args, **options)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/base.py", line 252, in __call__
+    ret = self.run(*args, **kwargs)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/worker.py", line 257, in run
+    **kwargs)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/worker/worker.py", line 96, in __init__
+    self.app.loader.init_worker()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/loaders/base.py", line 114, in init_worker
+    self.import_default_modules()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/loaders/base.py", line 108, in import_default_modules
+    raise response
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/utils/dispatch/signal.py", line 288, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/fixups/django.py", line 84, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/fixups/django.py", line 122, in validate_models
+    self.django_setup()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/fixups/django.py", line 118, in django_setup
+    django.setup()
+  File "/home/mwa_env/lib/python3.6/site-packages/django/__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/home/mwa_env/lib/python3.6/site-packages/django/apps/registry.py", line 122, in populate
+    app_config.ready()
+  File "/home/mwa_env/lib/python3.6/site-packages/django/contrib/admin/apps.py", line 24, in ready
+    self.module.autodiscover()
+  File "/home/mwa_env/lib/python3.6/site-packages/django/contrib/admin/__init__.py", line 26, in autodiscover
+    autodiscover_modules('admin', register_to=site)
+  File "/home/mwa_env/lib/python3.6/site-packages/django/utils/module_loading.py", line 47, in autodiscover_modules
+    import_module('%s.%s' % (app_config.name, module_to_search))
+  File "/home/mwa_env/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/website-build/mywealthanalyst_django/MWA_webapp/admin.py", line 7, in <module>
+    from scripts import scrape_livedata_v2
+  File "/home/website-build/mywealthanalyst_django/scripts/scrape_livedata_v2.py", line 21, in <module>
+    driver = webdriver.Chrome(chrome_options=options)
+  File "/home/mwa_env/lib/python3.6/site-packages/selenium/webdriver/chrome/webdriver.py", line 81, in __init__
+    desired_capabilities=desired_capabilities)
+  File "/home/mwa_env/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 157, in __init__
+    self.start_session(capabilities, browser_profile)
+  File "/home/mwa_env/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 252, in start_session
+    response = self.execute(Command.NEW_SESSION, parameters)
+  File "/home/mwa_env/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/home/mwa_env/lib/python3.6/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: unknown error: Chrome failed to start: exited abnormally
+  (unknown error: DevToolsActivePort file doesn't exist)
+  (The process started from chrome location /usr/bin/google-chrome is no longer running, so ChromeDriver is assuming that Chrome has crashed.)
+  (Driver info: chromedriver=74.0.3729.6 (255758eccf3d244491b8a1317aa76e1ce10d57e9-refs/branch-heads/3729@{#29}),platform=Linux 4.15.0-51-generic x86_64)
+
+Traceback (most recent call last):
+  File "/home/mwa_env/bin/celery", line 10, in <module>
+    sys.exit(main())
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/__main__.py", line 16, in main
+    _main()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 322, in main
+    cmd.execute_from_commandline(argv)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 496, in execute_from_commandline
+    super(CeleryCommand, self).execute_from_commandline(argv)))
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/base.py", line 298, in execute_from_commandline
+    return self.handle_argv(self.prog_name, argv[1:])
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 488, in handle_argv
+    return self.execute(command, argv)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 420, in execute
+    ).run_from_argv(self.prog_name, argv[1:], command=argv[0])
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/worker.py", line 223, in run_from_argv
+    return self(*args, **options)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/base.py", line 252, in __call__
+    ret = self.run(*args, **kwargs)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/worker.py", line 257, in run
+    **kwargs)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/worker/worker.py", line 96, in __init__
+    self.app.loader.init_worker()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/loaders/base.py", line 114, in init_worker
+    self.import_default_modules()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/loaders/base.py", line 108, in import_default_modules
+    raise response
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/utils/dispatch/signal.py", line 288, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/fixups/django.py", line 84, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/fixups/django.py", line 122, in validate_models
+    self.django_setup()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/fixups/django.py", line 118, in django_setup
+    django.setup()
+  File "/home/mwa_env/lib/python3.6/site-packages/django/__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/home/mwa_env/lib/python3.6/site-packages/django/apps/registry.py", line 122, in populate
+    app_config.ready()
+  File "/home/mwa_env/lib/python3.6/site-packages/django/contrib/admin/apps.py", line 24, in ready
+    self.module.autodiscover()
+  File "/home/mwa_env/lib/python3.6/site-packages/django/contrib/admin/__init__.py", line 26, in autodiscover
+    autodiscover_modules('admin', register_to=site)
+  File "/home/mwa_env/lib/python3.6/site-packages/django/utils/module_loading.py", line 47, in autodiscover_modules
+    import_module('%s.%s' % (app_config.name, module_to_search))
+  File "/home/mwa_env/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/website-build/mywealthanalyst_django/MWA_webapp/admin.py", line 7, in <module>
+    from scripts import scrape_livedata_v2
+  File "/home/website-build/mywealthanalyst_django/scripts/scrape_livedata_v2.py", line 21, in <module>
+    driver = webdriver.Chrome(chrome_options=options)
+  File "/home/mwa_env/lib/python3.6/site-packages/selenium/webdriver/chrome/webdriver.py", line 81, in __init__
+    desired_capabilities=desired_capabilities)
+  File "/home/mwa_env/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 157, in __init__
+    self.start_session(capabilities, browser_profile)
+  File "/home/mwa_env/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 252, in start_session
+    response = self.execute(Command.NEW_SESSION, parameters)
+  File "/home/mwa_env/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/home/mwa_env/lib/python3.6/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: unknown error: Chrome failed to start: exited abnormally
+  (unknown error: DevToolsActivePort file doesn't exist)
+  (The process started from chrome location /usr/bin/google-chrome is no longer running, so ChromeDriver is assuming that Chrome has crashed.)
+  (Driver info: chromedriver=74.0.3729.6 (255758eccf3d244491b8a1317aa76e1ce10d57e9-refs/branch-heads/3729@{#29}),platform=Linux 4.15.0-51-generic x86_64)
+
+Traceback (most recent call last):
+  File "/home/mwa_env/bin/celery", line 10, in <module>
+    sys.exit(main())
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/__main__.py", line 16, in main
+    _main()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 322, in main
+    cmd.execute_from_commandline(argv)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 496, in execute_from_commandline
+    super(CeleryCommand, self).execute_from_commandline(argv)))
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/base.py", line 298, in execute_from_commandline
+    return self.handle_argv(self.prog_name, argv[1:])
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 488, in handle_argv
+    return self.execute(command, argv)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 420, in execute
+    ).run_from_argv(self.prog_name, argv[1:], command=argv[0])
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/worker.py", line 223, in run_from_argv
+    return self(*args, **options)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/base.py", line 252, in __call__
+    ret = self.run(*args, **kwargs)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/worker.py", line 257, in run
+    **kwargs)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/worker/worker.py", line 96, in __init__
+    self.app.loader.init_worker()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/loaders/base.py", line 114, in init_worker
+    self.import_default_modules()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/loaders/base.py", line 108, in import_default_modules
+    raise response
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/utils/dispatch/signal.py", line 288, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/fixups/django.py", line 84, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/fixups/django.py", line 122, in validate_models
+    self.django_setup()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/fixups/django.py", line 118, in django_setup
+    django.setup()
+  File "/home/mwa_env/lib/python3.6/site-packages/django/__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/home/mwa_env/lib/python3.6/site-packages/django/apps/registry.py", line 122, in populate
+    app_config.ready()
+  File "/home/mwa_env/lib/python3.6/site-packages/django/contrib/admin/apps.py", line 24, in ready
+    self.module.autodiscover()
+  File "/home/mwa_env/lib/python3.6/site-packages/django/contrib/admin/__init__.py", line 26, in autodiscover
+    autodiscover_modules('admin', register_to=site)
+  File "/home/mwa_env/lib/python3.6/site-packages/django/utils/module_loading.py", line 47, in autodiscover_modules
+    import_module('%s.%s' % (app_config.name, module_to_search))
+  File "/home/mwa_env/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/website-build/mywealthanalyst_django/MWA_webapp/admin.py", line 7, in <module>
+    from scripts import scrape_livedata_v2
+  File "/home/website-build/mywealthanalyst_django/scripts/scrape_livedata_v2.py", line 21, in <module>
+    driver = webdriver.Chrome(chrome_options=options)
+  File "/home/mwa_env/lib/python3.6/site-packages/selenium/webdriver/chrome/webdriver.py", line 81, in __init__
+    desired_capabilities=desired_capabilities)
+  File "/home/mwa_env/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 157, in __init__
+    self.start_session(capabilities, browser_profile)
+  File "/home/mwa_env/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 252, in start_session
+    response = self.execute(Command.NEW_SESSION, parameters)
+  File "/home/mwa_env/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/home/mwa_env/lib/python3.6/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: unknown error: Chrome failed to start: exited abnormally
+  (unknown error: DevToolsActivePort file doesn't exist)
+  (The process started from chrome location /usr/bin/google-chrome is no longer running, so ChromeDriver is assuming that Chrome has crashed.)
+  (Driver info: chromedriver=74.0.3729.6 (255758eccf3d244491b8a1317aa76e1ce10d57e9-refs/branch-heads/3729@{#29}),platform=Linux 4.15.0-51-generic x86_64)
+
+Traceback (most recent call last):
+  File "/home/mwa_env/bin/celery", line 10, in <module>
+    sys.exit(main())
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/__main__.py", line 16, in main
+    _main()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 322, in main
+    cmd.execute_from_commandline(argv)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 496, in execute_from_commandline
+    super(CeleryCommand, self).execute_from_commandline(argv)))
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/base.py", line 298, in execute_from_commandline
+    return self.handle_argv(self.prog_name, argv[1:])
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 488, in handle_argv
+    return self.execute(command, argv)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 420, in execute
+    ).run_from_argv(self.prog_name, argv[1:], command=argv[0])
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/worker.py", line 223, in run_from_argv
+    return self(*args, **options)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/base.py", line 252, in __call__
+    ret = self.run(*args, **kwargs)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/worker.py", line 257, in run
+    **kwargs)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/worker/worker.py", line 96, in __init__
+    self.app.loader.init_worker()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/loaders/base.py", line 114, in init_worker
+    self.import_default_modules()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/loaders/base.py", line 108, in import_default_modules
+    raise response
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/utils/dispatch/signal.py", line 288, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/fixups/django.py", line 84, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/fixups/django.py", line 122, in validate_models
+    self.django_setup()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/fixups/django.py", line 118, in django_setup
+    django.setup()
+  File "/home/mwa_env/lib/python3.6/site-packages/django/__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/home/mwa_env/lib/python3.6/site-packages/django/apps/registry.py", line 122, in populate
+    app_config.ready()
+  File "/home/mwa_env/lib/python3.6/site-packages/django/contrib/admin/apps.py", line 24, in ready
+    self.module.autodiscover()
+  File "/home/mwa_env/lib/python3.6/site-packages/django/contrib/admin/__init__.py", line 26, in autodiscover
+    autodiscover_modules('admin', register_to=site)
+  File "/home/mwa_env/lib/python3.6/site-packages/django/utils/module_loading.py", line 47, in autodiscover_modules
+    import_module('%s.%s' % (app_config.name, module_to_search))
+  File "/home/mwa_env/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/website-build/mywealthanalyst_django/MWA_webapp/admin.py", line 7, in <module>
+    from scripts import scrape_livedata_v2
+  File "/home/website-build/mywealthanalyst_django/scripts/scrape_livedata_v2.py", line 22, in <module>
+    page = driver.get('https://au.investing.com/?ref=www')
+  File "/home/mwa_env/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 333, in get
+    self.execute(Command.GET, {'url': url})
+  File "/home/mwa_env/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/home/mwa_env/lib/python3.6/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: timeout
+  (Session info: headless chrome=74.0.3729.169)
+  (Driver info: chromedriver=74.0.3729.6 (255758eccf3d244491b8a1317aa76e1ce10d57e9-refs/branch-heads/3729@{#29}),platform=Linux 4.15.0-51-generic x86_64)
+
+Traceback (most recent call last):
+  File "/home/mwa_env/bin/celery", line 10, in <module>
+    sys.exit(main())
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/__main__.py", line 16, in main
+    _main()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 322, in main
+    cmd.execute_from_commandline(argv)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 496, in execute_from_commandline
+    super(CeleryCommand, self).execute_from_commandline(argv)))
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/base.py", line 298, in execute_from_commandline
+    return self.handle_argv(self.prog_name, argv[1:])
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 488, in handle_argv
+    return self.execute(command, argv)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 420, in execute
+    ).run_from_argv(self.prog_name, argv[1:], command=argv[0])
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/worker.py", line 223, in run_from_argv
+    return self(*args, **options)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/base.py", line 252, in __call__
+    ret = self.run(*args, **kwargs)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/worker.py", line 257, in run
+    **kwargs)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/worker/worker.py", line 96, in __init__
+    self.app.loader.init_worker()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/loaders/base.py", line 114, in init_worker
+    self.import_default_modules()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/loaders/base.py", line 108, in import_default_modules
+    raise response
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/utils/dispatch/signal.py", line 288, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/fixups/django.py", line 84, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/fixups/django.py", line 122, in validate_models
+    self.django_setup()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/fixups/django.py", line 118, in django_setup
+    django.setup()
+  File "/home/mwa_env/lib/python3.6/site-packages/django/__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/home/mwa_env/lib/python3.6/site-packages/django/apps/registry.py", line 122, in populate
+    app_config.ready()
+  File "/home/mwa_env/lib/python3.6/site-packages/django/contrib/admin/apps.py", line 24, in ready
+    self.module.autodiscover()
+  File "/home/mwa_env/lib/python3.6/site-packages/django/contrib/admin/__init__.py", line 26, in autodiscover
+    autodiscover_modules('admin', register_to=site)
+  File "/home/mwa_env/lib/python3.6/site-packages/django/utils/module_loading.py", line 47, in autodiscover_modules
+    import_module('%s.%s' % (app_config.name, module_to_search))
+  File "/home/mwa_env/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/website-build/mywealthanalyst_django/MWA_webapp/admin.py", line 7, in <module>
+    from scripts import scrape_livedata_v2
+  File "/home/website-build/mywealthanalyst_django/scripts/scrape_livedata_v2.py", line 21, in <module>
+    driver = webdriver.Chrome(chrome_options=options)
+  File "/home/mwa_env/lib/python3.6/site-packages/selenium/webdriver/chrome/webdriver.py", line 73, in __init__
+    self.service.start()
+  File "/home/mwa_env/lib/python3.6/site-packages/selenium/webdriver/common/service.py", line 76, in start
+    stdin=PIPE)
+  File "/usr/lib/python3.6/subprocess.py", line 709, in __init__
+    restore_signals, start_new_session)
+  File "/usr/lib/python3.6/subprocess.py", line 1275, in _execute_child
+    restore_signals, start_new_session, preexec_fn)
+OSError: [Errno 12] Cannot allocate memory
+Traceback (most recent call last):
+  File "/home/mwa_env/bin/celery", line 10, in <module>
+    sys.exit(main())
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/__main__.py", line 16, in main
+    _main()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 322, in main
+    cmd.execute_from_commandline(argv)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 496, in execute_from_commandline
+    super(CeleryCommand, self).execute_from_commandline(argv)))
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/base.py", line 298, in execute_from_commandline
+    return self.handle_argv(self.prog_name, argv[1:])
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 488, in handle_argv
+    return self.execute(command, argv)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 420, in execute
+    ).run_from_argv(self.prog_name, argv[1:], command=argv[0])
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/worker.py", line 223, in run_from_argv
+    return self(*args, **options)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/base.py", line 252, in __call__
+    ret = self.run(*args, **kwargs)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/worker.py", line 257, in run
+    **kwargs)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/worker/worker.py", line 96, in __init__
+    self.app.loader.init_worker()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/loaders/base.py", line 114, in init_worker
+    self.import_default_modules()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/loaders/base.py", line 108, in import_default_modules
+    raise response
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/utils/dispatch/signal.py", line 288, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/fixups/django.py", line 84, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/fixups/django.py", line 122, in validate_models
+    self.django_setup()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/fixups/django.py", line 118, in django_setup
+    django.setup()
+  File "/home/mwa_env/lib/python3.6/site-packages/django/__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/home/mwa_env/lib/python3.6/site-packages/django/apps/registry.py", line 122, in populate
+    app_config.ready()
+  File "/home/mwa_env/lib/python3.6/site-packages/django/contrib/admin/apps.py", line 24, in ready
+    self.module.autodiscover()
+  File "/home/mwa_env/lib/python3.6/site-packages/django/contrib/admin/__init__.py", line 26, in autodiscover
+    autodiscover_modules('admin', register_to=site)
+  File "/home/mwa_env/lib/python3.6/site-packages/django/utils/module_loading.py", line 47, in autodiscover_modules
+    import_module('%s.%s' % (app_config.name, module_to_search))
+  File "/home/mwa_env/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/website-build/mywealthanalyst_django/MWA_webapp/admin.py", line 7, in <module>
+    from scripts import scrape_livedata_v2
+  File "/home/website-build/mywealthanalyst_django/scripts/scrape_livedata_v2.py", line 21, in <module>
+    driver = webdriver.Chrome(chrome_options=options)
+  File "/home/mwa_env/lib/python3.6/site-packages/selenium/webdriver/chrome/webdriver.py", line 73, in __init__
+    self.service.start()
+  File "/home/mwa_env/lib/python3.6/site-packages/selenium/webdriver/common/service.py", line 76, in start
+    stdin=PIPE)
+  File "/usr/lib/python3.6/subprocess.py", line 709, in __init__
+    restore_signals, start_new_session)
+  File "/usr/lib/python3.6/subprocess.py", line 1275, in _execute_child
+    restore_signals, start_new_session, preexec_fn)
+OSError: [Errno 12] Cannot allocate memory
+[2019-06-11 23:32:27,632: INFO/MainProcess] Connected to redis://localhost:6379//
+[2019-06-11 23:32:27,713: INFO/MainProcess] mingle: searching for neighbors
+[2019-06-11 23:32:28,897: INFO/MainProcess] mingle: all alone
+[2019-06-11 23:32:29,043: INFO/MainProcess] celery@mywealthanalyst ready.
+[2019-06-11 23:32:29,273: INFO/MainProcess] Received task: update_live_prices[50c05c81-10ff-44fd-bd90-2029285834ca]  
+[2019-06-11 23:32:29,327: INFO/MainProcess] Received task: update_live_prices[cf321589-531f-4486-8b7c-ace050a27f98]  
+[2019-06-11 23:32:29,360: INFO/MainProcess] Received task: update_live_prices[a5813eaf-ce39-4d7c-9e77-1ba7e02bd16d]  
+[2019-06-11 23:32:46,578: INFO/ForkPoolWorker-1] update_live_prices[50c05c81-10ff-44fd-bd90-2029285834ca]: Live prices updated
+[2019-06-11 23:32:46,592: INFO/ForkPoolWorker-1] Task update_live_prices[50c05c81-10ff-44fd-bd90-2029285834ca] succeeded in 17.24370631299996s: None
+[2019-06-11 23:33:29,364: INFO/ForkPoolWorker-1] update_live_prices[cf321589-531f-4486-8b7c-ace050a27f98]: Live prices updated
+[2019-06-11 23:33:29,384: INFO/ForkPoolWorker-1] Task update_live_prices[cf321589-531f-4486-8b7c-ace050a27f98] succeeded in 42.74246753099999s: None
+[2019-06-11 23:35:13,322: INFO/MainProcess] Received task: update_live_prices[5c0120c0-f41e-411b-9885-16186e65bb32]  
+[2019-06-11 23:36:16,182: ERROR/ForkPoolWorker-1] Task update_live_prices[a5813eaf-ce39-4d7c-9e77-1ba7e02bd16d] raised unexpected: NameError("name 'self' is not defined",)
+Traceback (most recent call last):
+  File "/home/website-build/mywealthanalyst_django/MWA_webapp/tasks.py", line 22, in update_live_prices
+    scrape_livedata_v2.scrape_current()
+  File "/home/website-build/mywealthanalyst_django/scripts/scrape_livedata_v2.py", line 46, in scrape_current
+    soup = BeautifulSoup(driver.page_source, 'html.parser')
+  File "/home/mwa_env/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 679, in page_source
+    return self.execute(Command.GET_PAGE_SOURCE)['value']
+  File "/home/mwa_env/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/home/mwa_env/lib/python3.6/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: unknown error: session deleted because of page crash
+from unknown error: cannot determine loading status
+from tab crashed
+  (Session info: headless chrome=74.0.3729.169)
+  (Driver info: chromedriver=74.0.3729.6 (255758eccf3d244491b8a1317aa76e1ce10d57e9-refs/branch-heads/3729@{#29}),platform=Linux 4.15.0-51-generic x86_64)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/app/trace.py", line 385, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/app/trace.py", line 648, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/home/website-build/mywealthanalyst_django/MWA_webapp/tasks.py", line 27, in update_live_prices
+    raise self.retry(exc=exc, countdown=60, max_retries=2)
+NameError: name 'self' is not defined
+[2019-06-11 23:36:16,190: ERROR/ForkPoolWorker-1] Task update_live_prices[5c0120c0-f41e-411b-9885-16186e65bb32] raised unexpected: NameError("name 'self' is not defined",)
+Traceback (most recent call last):
+  File "/home/website-build/mywealthanalyst_django/MWA_webapp/tasks.py", line 22, in update_live_prices
+    scrape_livedata_v2.scrape_current()
+  File "/home/website-build/mywealthanalyst_django/scripts/scrape_livedata_v2.py", line 46, in scrape_current
+    soup = BeautifulSoup(driver.page_source, 'html.parser')
+  File "/home/mwa_env/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 679, in page_source
+    return self.execute(Command.GET_PAGE_SOURCE)['value']
+  File "/home/mwa_env/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/home/mwa_env/lib/python3.6/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: invalid session id
+  (Driver info: chromedriver=74.0.3729.6 (255758eccf3d244491b8a1317aa76e1ce10d57e9-refs/branch-heads/3729@{#29}),platform=Linux 4.15.0-51-generic x86_64)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/app/trace.py", line 385, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/app/trace.py", line 648, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/home/website-build/mywealthanalyst_django/MWA_webapp/tasks.py", line 27, in update_live_prices
+    raise self.retry(exc=exc, countdown=60, max_retries=2)
+NameError: name 'self' is not defined
+[2019-06-11 23:37:07,839: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/home/mwa_env/lib/python3.6/site-packages/redis/connection.py", line 185, in _read_from_socket
+    raise socket.error(SERVER_CLOSED_CONNECTION_ERROR)
+OSError: Connection closed by server.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/worker/consumer/consumer.py", line 596, in start
+    c.loop(*c.loop_args())
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/worker/loops.py", line 91, in asynloop
+    next(loop)
+  File "/home/mwa_env/lib/python3.6/site-packages/kombu/asynchronous/hub.py", line 362, in create_loop
+    cb(*cbargs)
+  File "/home/mwa_env/lib/python3.6/site-packages/kombu/transport/redis.py", line 1070, in on_readable
+    self.cycle.on_readable(fileno)
+  File "/home/mwa_env/lib/python3.6/site-packages/kombu/transport/redis.py", line 348, in on_readable
+    chan.handlers[type]()
+  File "/home/mwa_env/lib/python3.6/site-packages/kombu/transport/redis.py", line 679, in _receive
+    ret.append(self._receive_one(c))
+  File "/home/mwa_env/lib/python3.6/site-packages/kombu/transport/redis.py", line 690, in _receive_one
+    response = c.parse_response()
+  File "/home/mwa_env/lib/python3.6/site-packages/redis/client.py", line 3036, in parse_response
+    return self._execute(connection, connection.read_response)
+  File "/home/mwa_env/lib/python3.6/site-packages/redis/client.py", line 3013, in _execute
+    return command(*args)
+  File "/home/mwa_env/lib/python3.6/site-packages/redis/connection.py", line 637, in read_response
+    response = self._parser.read_response()
+  File "/home/mwa_env/lib/python3.6/site-packages/redis/connection.py", line 290, in read_response
+    response = self._buffer.readline()
+  File "/home/mwa_env/lib/python3.6/site-packages/redis/connection.py", line 224, in readline
+    self._read_from_socket()
+  File "/home/mwa_env/lib/python3.6/site-packages/redis/connection.py", line 199, in _read_from_socket
+    (e.args,))
+redis.exceptions.ConnectionError: Error while reading from socket: ('Connection closed by server.',)
+[2019-06-11 23:38:31,453: INFO/MainProcess] Connected to redis://localhost:6379//
+[2019-06-11 23:38:31,467: INFO/MainProcess] mingle: searching for neighbors
+[2019-06-11 23:38:32,497: INFO/MainProcess] mingle: all alone
+[2019-06-11 23:38:32,506: INFO/MainProcess] celery@mywealthanalyst ready.
+[2019-06-11 23:38:32,649: INFO/MainProcess] Received task: update_live_prices[24ff9174-a7a2-40a0-b897-3f791e443666]  
+[2019-06-11 23:38:32,655: ERROR/ForkPoolWorker-1] Task update_live_prices[24ff9174-a7a2-40a0-b897-3f791e443666] raised unexpected: NameError("name 'self' is not defined",)
+Traceback (most recent call last):
+  File "/home/website-build/mywealthanalyst_django/MWA_webapp/tasks.py", line 22, in update_live_prices
+    scrape_livedata_v2.scrape_current()
+  File "/home/website-build/mywealthanalyst_django/scripts/scrape_livedata_v2.py", line 47, in scrape_current
+    soup = BeautifulSoup(driver.page_source, 'html.parser')
+AttributeError: 'NoneType' object has no attribute 'page_source'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/app/trace.py", line 385, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/app/trace.py", line 648, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/home/website-build/mywealthanalyst_django/MWA_webapp/tasks.py", line 27, in update_live_prices
+    raise self.retry(exc=exc, countdown=60, max_retries=2)
+NameError: name 'self' is not defined
+[2019-06-11 23:40:00,002: INFO/MainProcess] Received task: update_live_prices[2c8c0db7-1f27-4e80-ba12-e6ce526d4b22]  
+[2019-06-11 23:40:00,004: ERROR/ForkPoolWorker-1] Task update_live_prices[2c8c0db7-1f27-4e80-ba12-e6ce526d4b22] raised unexpected: NameError("name 'self' is not defined",)
+Traceback (most recent call last):
+  File "/home/website-build/mywealthanalyst_django/MWA_webapp/tasks.py", line 22, in update_live_prices
+    scrape_livedata_v2.scrape_current()
+  File "/home/website-build/mywealthanalyst_django/scripts/scrape_livedata_v2.py", line 47, in scrape_current
+    soup = BeautifulSoup(driver.page_source, 'html.parser')
+AttributeError: 'NoneType' object has no attribute 'page_source'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/app/trace.py", line 385, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/app/trace.py", line 648, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/home/website-build/mywealthanalyst_django/MWA_webapp/tasks.py", line 27, in update_live_prices
+    raise self.retry(exc=exc, countdown=60, max_retries=2)
+NameError: name 'self' is not defined
+[2019-06-11 23:45:00,062: INFO/MainProcess] Received task: update_live_prices[89242e17-ce16-4407-8a9e-df33983aa8fe]  
+[2019-06-11 23:45:00,063: ERROR/ForkPoolWorker-1] Task update_live_prices[89242e17-ce16-4407-8a9e-df33983aa8fe] raised unexpected: NameError("name 'self' is not defined",)
+Traceback (most recent call last):
+  File "/home/website-build/mywealthanalyst_django/MWA_webapp/tasks.py", line 22, in update_live_prices
+    scrape_livedata_v2.scrape_current()
+  File "/home/website-build/mywealthanalyst_django/scripts/scrape_livedata_v2.py", line 47, in scrape_current
+    soup = BeautifulSoup(driver.page_source, 'html.parser')
+AttributeError: 'NoneType' object has no attribute 'page_source'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/app/trace.py", line 385, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/app/trace.py", line 648, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/home/website-build/mywealthanalyst_django/MWA_webapp/tasks.py", line 27, in update_live_prices
+    raise self.retry(exc=exc, countdown=60, max_retries=2)
+NameError: name 'self' is not defined
+[2019-06-11 23:50:00,035: INFO/MainProcess] Received task: update_live_prices[8ba0d2cf-3bdb-4f7c-bae7-f8ccbb92f628]  
+[2019-06-11 23:50:00,036: ERROR/ForkPoolWorker-1] Task update_live_prices[8ba0d2cf-3bdb-4f7c-bae7-f8ccbb92f628] raised unexpected: NameError("name 'self' is not defined",)
+Traceback (most recent call last):
+  File "/home/website-build/mywealthanalyst_django/MWA_webapp/tasks.py", line 22, in update_live_prices
+    scrape_livedata_v2.scrape_current()
+  File "/home/website-build/mywealthanalyst_django/scripts/scrape_livedata_v2.py", line 47, in scrape_current
+    soup = BeautifulSoup(driver.page_source, 'html.parser')
+AttributeError: 'NoneType' object has no attribute 'page_source'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/app/trace.py", line 385, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/app/trace.py", line 648, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/home/website-build/mywealthanalyst_django/MWA_webapp/tasks.py", line 27, in update_live_prices
+    raise self.retry(exc=exc, countdown=60, max_retries=2)
+NameError: name 'self' is not defined
+[2019-06-11 23:53:03,593: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/home/mwa_env/lib/python3.6/site-packages/redis/connection.py", line 185, in _read_from_socket
+    raise socket.error(SERVER_CLOSED_CONNECTION_ERROR)
+OSError: Connection closed by server.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/worker/consumer/consumer.py", line 596, in start
+    c.loop(*c.loop_args())
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/worker/loops.py", line 91, in asynloop
+    next(loop)
+  File "/home/mwa_env/lib/python3.6/site-packages/kombu/asynchronous/hub.py", line 362, in create_loop
+    cb(*cbargs)
+  File "/home/mwa_env/lib/python3.6/site-packages/kombu/transport/redis.py", line 1070, in on_readable
+    self.cycle.on_readable(fileno)
+  File "/home/mwa_env/lib/python3.6/site-packages/kombu/transport/redis.py", line 348, in on_readable
+    chan.handlers[type]()
+  File "/home/mwa_env/lib/python3.6/site-packages/kombu/transport/redis.py", line 679, in _receive
+    ret.append(self._receive_one(c))
+  File "/home/mwa_env/lib/python3.6/site-packages/kombu/transport/redis.py", line 690, in _receive_one
+    response = c.parse_response()
+  File "/home/mwa_env/lib/python3.6/site-packages/redis/client.py", line 3036, in parse_response
+    return self._execute(connection, connection.read_response)
+  File "/home/mwa_env/lib/python3.6/site-packages/redis/client.py", line 3013, in _execute
+    return command(*args)
+  File "/home/mwa_env/lib/python3.6/site-packages/redis/connection.py", line 637, in read_response
+    response = self._parser.read_response()
+  File "/home/mwa_env/lib/python3.6/site-packages/redis/connection.py", line 290, in read_response
+    response = self._buffer.readline()
+  File "/home/mwa_env/lib/python3.6/site-packages/redis/connection.py", line 224, in readline
+    self._read_from_socket()
+  File "/home/mwa_env/lib/python3.6/site-packages/redis/connection.py", line 199, in _read_from_socket
+    (e.args,))
+redis.exceptions.ConnectionError: Error while reading from socket: ('Connection closed by server.',)
+Traceback (most recent call last):
+  File "/home/mwa_env/bin/celery", line 10, in <module>
+    sys.exit(main())
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/__main__.py", line 16, in main
+    _main()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 322, in main
+    cmd.execute_from_commandline(argv)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 496, in execute_from_commandline
+    super(CeleryCommand, self).execute_from_commandline(argv)))
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/base.py", line 298, in execute_from_commandline
+    return self.handle_argv(self.prog_name, argv[1:])
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 488, in handle_argv
+    return self.execute(command, argv)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 420, in execute
+    ).run_from_argv(self.prog_name, argv[1:], command=argv[0])
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/worker.py", line 223, in run_from_argv
+    return self(*args, **options)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/base.py", line 252, in __call__
+    ret = self.run(*args, **kwargs)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/worker.py", line 257, in run
+    **kwargs)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/worker/worker.py", line 96, in __init__
+    self.app.loader.init_worker()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/loaders/base.py", line 114, in init_worker
+    self.import_default_modules()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/loaders/base.py", line 108, in import_default_modules
+    raise response
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/utils/dispatch/signal.py", line 288, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/fixups/django.py", line 84, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/fixups/django.py", line 122, in validate_models
+    self.django_setup()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/fixups/django.py", line 118, in django_setup
+    django.setup()
+  File "/home/mwa_env/lib/python3.6/site-packages/django/__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/home/mwa_env/lib/python3.6/site-packages/django/apps/registry.py", line 122, in populate
+    app_config.ready()
+  File "/home/website-build/mywealthanalyst_django/MWA_webapp/apps.py", line 22, in ready
+    driver = webdriver.Chrome(chrome_options=options)
+  File "/home/mwa_env/lib/python3.6/site-packages/selenium/webdriver/chrome/webdriver.py", line 81, in __init__
+    desired_capabilities=desired_capabilities)
+  File "/home/mwa_env/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 157, in __init__
+    self.start_session(capabilities, browser_profile)
+  File "/home/mwa_env/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 252, in start_session
+    response = self.execute(Command.NEW_SESSION, parameters)
+  File "/home/mwa_env/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/home/mwa_env/lib/python3.6/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: unknown error: Chrome failed to start: exited abnormally
+  (unknown error: DevToolsActivePort file doesn't exist)
+  (The process started from chrome location /usr/bin/google-chrome is no longer running, so ChromeDriver is assuming that Chrome has crashed.)
+  (Driver info: chromedriver=74.0.3729.6 (255758eccf3d244491b8a1317aa76e1ce10d57e9-refs/branch-heads/3729@{#29}),platform=Linux 4.15.0-51-generic x86_64)
+
+Traceback (most recent call last):
+  File "/home/mwa_env/bin/celery", line 10, in <module>
+    sys.exit(main())
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/__main__.py", line 16, in main
+    _main()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 322, in main
+    cmd.execute_from_commandline(argv)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 496, in execute_from_commandline
+    super(CeleryCommand, self).execute_from_commandline(argv)))
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/base.py", line 298, in execute_from_commandline
+    return self.handle_argv(self.prog_name, argv[1:])
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 488, in handle_argv
+    return self.execute(command, argv)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 420, in execute
+    ).run_from_argv(self.prog_name, argv[1:], command=argv[0])
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/worker.py", line 223, in run_from_argv
+    return self(*args, **options)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/base.py", line 252, in __call__
+    ret = self.run(*args, **kwargs)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/worker.py", line 257, in run
+    **kwargs)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/worker/worker.py", line 96, in __init__
+    self.app.loader.init_worker()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/loaders/base.py", line 114, in init_worker
+    self.import_default_modules()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/loaders/base.py", line 108, in import_default_modules
+    raise response
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/utils/dispatch/signal.py", line 288, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/fixups/django.py", line 84, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/fixups/django.py", line 122, in validate_models
+    self.django_setup()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/fixups/django.py", line 118, in django_setup
+    django.setup()
+  File "/home/mwa_env/lib/python3.6/site-packages/django/__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/home/mwa_env/lib/python3.6/site-packages/django/apps/registry.py", line 122, in populate
+    app_config.ready()
+  File "/home/website-build/mywealthanalyst_django/MWA_webapp/apps.py", line 22, in ready
+    driver = webdriver.Chrome(chrome_options=options)
+  File "/home/mwa_env/lib/python3.6/site-packages/selenium/webdriver/chrome/webdriver.py", line 81, in __init__
+    desired_capabilities=desired_capabilities)
+  File "/home/mwa_env/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 157, in __init__
+    self.start_session(capabilities, browser_profile)
+  File "/home/mwa_env/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 252, in start_session
+    response = self.execute(Command.NEW_SESSION, parameters)
+  File "/home/mwa_env/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/home/mwa_env/lib/python3.6/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: unknown error: Chrome failed to start: exited abnormally
+  (unknown error: DevToolsActivePort file doesn't exist)
+  (The process started from chrome location /usr/bin/google-chrome is no longer running, so ChromeDriver is assuming that Chrome has crashed.)
+  (Driver info: chromedriver=74.0.3729.6 (255758eccf3d244491b8a1317aa76e1ce10d57e9-refs/branch-heads/3729@{#29}),platform=Linux 4.15.0-51-generic x86_64)
+
+Traceback (most recent call last):
+  File "/home/mwa_env/bin/celery", line 10, in <module>
+    sys.exit(main())
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/__main__.py", line 16, in main
+    _main()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 322, in main
+    cmd.execute_from_commandline(argv)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 496, in execute_from_commandline
+    super(CeleryCommand, self).execute_from_commandline(argv)))
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/base.py", line 298, in execute_from_commandline
+    return self.handle_argv(self.prog_name, argv[1:])
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 488, in handle_argv
+    return self.execute(command, argv)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 420, in execute
+    ).run_from_argv(self.prog_name, argv[1:], command=argv[0])
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/worker.py", line 223, in run_from_argv
+    return self(*args, **options)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/base.py", line 252, in __call__
+    ret = self.run(*args, **kwargs)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/worker.py", line 257, in run
+    **kwargs)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/worker/worker.py", line 96, in __init__
+    self.app.loader.init_worker()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/loaders/base.py", line 114, in init_worker
+    self.import_default_modules()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/loaders/base.py", line 108, in import_default_modules
+    raise response
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/utils/dispatch/signal.py", line 288, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/fixups/django.py", line 84, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/fixups/django.py", line 122, in validate_models
+    self.django_setup()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/fixups/django.py", line 118, in django_setup
+    django.setup()
+  File "/home/mwa_env/lib/python3.6/site-packages/django/__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/home/mwa_env/lib/python3.6/site-packages/django/apps/registry.py", line 122, in populate
+    app_config.ready()
+  File "/home/website-build/mywealthanalyst_django/MWA_webapp/apps.py", line 22, in ready
+    driver = webdriver.Chrome(chrome_options=options)
+  File "/home/mwa_env/lib/python3.6/site-packages/selenium/webdriver/chrome/webdriver.py", line 81, in __init__
+    desired_capabilities=desired_capabilities)
+  File "/home/mwa_env/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 157, in __init__
+    self.start_session(capabilities, browser_profile)
+  File "/home/mwa_env/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 252, in start_session
+    response = self.execute(Command.NEW_SESSION, parameters)
+  File "/home/mwa_env/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/home/mwa_env/lib/python3.6/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: unknown error: Chrome failed to start: exited abnormally
+  (unknown error: DevToolsActivePort file doesn't exist)
+  (The process started from chrome location /usr/bin/google-chrome is no longer running, so ChromeDriver is assuming that Chrome has crashed.)
+  (Driver info: chromedriver=74.0.3729.6 (255758eccf3d244491b8a1317aa76e1ce10d57e9-refs/branch-heads/3729@{#29}),platform=Linux 4.15.0-51-generic x86_64)
+
+Traceback (most recent call last):
+  File "/home/mwa_env/bin/celery", line 10, in <module>
+    sys.exit(main())
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/__main__.py", line 16, in main
+    _main()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 322, in main
+    cmd.execute_from_commandline(argv)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 496, in execute_from_commandline
+    super(CeleryCommand, self).execute_from_commandline(argv)))
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/base.py", line 298, in execute_from_commandline
+    return self.handle_argv(self.prog_name, argv[1:])
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 488, in handle_argv
+    return self.execute(command, argv)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 420, in execute
+    ).run_from_argv(self.prog_name, argv[1:], command=argv[0])
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/worker.py", line 223, in run_from_argv
+    return self(*args, **options)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/base.py", line 252, in __call__
+    ret = self.run(*args, **kwargs)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/worker.py", line 257, in run
+    **kwargs)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/worker/worker.py", line 96, in __init__
+    self.app.loader.init_worker()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/loaders/base.py", line 114, in init_worker
+    self.import_default_modules()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/loaders/base.py", line 108, in import_default_modules
+    raise response
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/utils/dispatch/signal.py", line 288, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/fixups/django.py", line 84, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/fixups/django.py", line 122, in validate_models
+    self.django_setup()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/fixups/django.py", line 118, in django_setup
+    django.setup()
+  File "/home/mwa_env/lib/python3.6/site-packages/django/__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/home/mwa_env/lib/python3.6/site-packages/django/apps/registry.py", line 122, in populate
+    app_config.ready()
+  File "/home/website-build/mywealthanalyst_django/MWA_webapp/apps.py", line 22, in ready
+    driver = webdriver.Chrome(chrome_options=options)
+  File "/home/mwa_env/lib/python3.6/site-packages/selenium/webdriver/chrome/webdriver.py", line 81, in __init__
+    desired_capabilities=desired_capabilities)
+  File "/home/mwa_env/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 157, in __init__
+    self.start_session(capabilities, browser_profile)
+  File "/home/mwa_env/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 252, in start_session
+    response = self.execute(Command.NEW_SESSION, parameters)
+  File "/home/mwa_env/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/home/mwa_env/lib/python3.6/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: unknown error: Chrome failed to start: exited abnormally
+  (unknown error: DevToolsActivePort file doesn't exist)
+  (The process started from chrome location /usr/bin/google-chrome is no longer running, so ChromeDriver is assuming that Chrome has crashed.)
+  (Driver info: chromedriver=74.0.3729.6 (255758eccf3d244491b8a1317aa76e1ce10d57e9-refs/branch-heads/3729@{#29}),platform=Linux 4.15.0-51-generic x86_64)
+
+[2019-06-11 23:58:58,130: INFO/MainProcess] Connected to redis://localhost:6379//
+[2019-06-11 23:58:58,278: INFO/MainProcess] mingle: searching for neighbors
+[2019-06-11 23:58:59,602: INFO/MainProcess] mingle: all alone
+[2019-06-11 23:59:00,194: INFO/MainProcess] celery@mywealthanalyst ready.
+[2019-06-11 23:59:00,434: INFO/MainProcess] Received task: update_live_prices[562f356c-c88f-47e5-aefb-b99d4d68e1c2]  
+[2019-06-11 23:59:43,516: INFO/ForkPoolWorker-1] update_live_prices[562f356c-c88f-47e5-aefb-b99d4d68e1c2]: Live prices updated
+[2019-06-11 23:59:43,522: INFO/ForkPoolWorker-1] Task update_live_prices[562f356c-c88f-47e5-aefb-b99d4d68e1c2] succeeded in 42.88756271700001s: None
+[2019-06-12 00:00:03,802: INFO/MainProcess] Received task: update_live_prices[7dbe324e-6e1a-4293-928a-63e199f86340]  
+[2019-06-12 00:00:18,659: INFO/ForkPoolWorker-1] update_live_prices[7dbe324e-6e1a-4293-928a-63e199f86340]: Live prices updated
+[2019-06-12 00:00:18,660: INFO/ForkPoolWorker-1] Task update_live_prices[7dbe324e-6e1a-4293-928a-63e199f86340] succeeded in 6.167182875999998s: None
+[2019-06-12 00:01:14,711: INFO/MainProcess] Received task: update_live_prices[6a69af5e-939e-43e5-899e-e543a02a0898]  
+[2019-06-12 00:01:14,771: ERROR/ForkPoolWorker-1] Task update_live_prices[6a69af5e-939e-43e5-899e-e543a02a0898] raised unexpected: NameError("name 'self' is not defined",)
+Traceback (most recent call last):
+  File "/home/website-build/mywealthanalyst_django/MWA_webapp/tasks.py", line 22, in update_live_prices
+    scrape_livedata_v2.scrape_current()
+  File "/home/website-build/mywealthanalyst_django/scripts/scrape_livedata_v2.py", line 32, in scrape_current
+    soup = BeautifulSoup(driver.page_source, 'html.parser')
+  File "/home/mwa_env/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 679, in page_source
+    return self.execute(Command.GET_PAGE_SOURCE)['value']
+  File "/home/mwa_env/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/home/mwa_env/lib/python3.6/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: unknown error: session deleted because of page crash
+from tab crashed
+  (Session info: headless chrome=74.0.3729.169)
+  (Driver info: chromedriver=74.0.3729.6 (255758eccf3d244491b8a1317aa76e1ce10d57e9-refs/branch-heads/3729@{#29}),platform=Linux 4.15.0-51-generic x86_64)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/app/trace.py", line 385, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/app/trace.py", line 648, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/home/website-build/mywealthanalyst_django/MWA_webapp/tasks.py", line 27, in update_live_prices
+    raise self.retry(exc=exc, countdown=60, max_retries=2)
+NameError: name 'self' is not defined
+[2019-06-12 00:03:56,695: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/home/mwa_env/lib/python3.6/site-packages/redis/connection.py", line 185, in _read_from_socket
+    raise socket.error(SERVER_CLOSED_CONNECTION_ERROR)
+OSError: Connection closed by server.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/worker/consumer/consumer.py", line 596, in start
+    c.loop(*c.loop_args())
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/worker/loops.py", line 91, in asynloop
+    next(loop)
+  File "/home/mwa_env/lib/python3.6/site-packages/kombu/asynchronous/hub.py", line 362, in create_loop
+    cb(*cbargs)
+  File "/home/mwa_env/lib/python3.6/site-packages/kombu/transport/redis.py", line 1070, in on_readable
+    self.cycle.on_readable(fileno)
+  File "/home/mwa_env/lib/python3.6/site-packages/kombu/transport/redis.py", line 348, in on_readable
+    chan.handlers[type]()
+  File "/home/mwa_env/lib/python3.6/site-packages/kombu/transport/redis.py", line 679, in _receive
+    ret.append(self._receive_one(c))
+  File "/home/mwa_env/lib/python3.6/site-packages/kombu/transport/redis.py", line 690, in _receive_one
+    response = c.parse_response()
+  File "/home/mwa_env/lib/python3.6/site-packages/redis/client.py", line 3036, in parse_response
+    return self._execute(connection, connection.read_response)
+  File "/home/mwa_env/lib/python3.6/site-packages/redis/client.py", line 3013, in _execute
+    return command(*args)
+  File "/home/mwa_env/lib/python3.6/site-packages/redis/connection.py", line 637, in read_response
+    response = self._parser.read_response()
+  File "/home/mwa_env/lib/python3.6/site-packages/redis/connection.py", line 290, in read_response
+    response = self._buffer.readline()
+  File "/home/mwa_env/lib/python3.6/site-packages/redis/connection.py", line 224, in readline
+    self._read_from_socket()
+  File "/home/mwa_env/lib/python3.6/site-packages/redis/connection.py", line 199, in _read_from_socket
+    (e.args,))
+redis.exceptions.ConnectionError: Error while reading from socket: ('Connection closed by server.',)
+Traceback (most recent call last):
+  File "/home/mwa_env/bin/celery", line 10, in <module>
+    sys.exit(main())
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/__main__.py", line 16, in main
+    _main()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 322, in main
+    cmd.execute_from_commandline(argv)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 496, in execute_from_commandline
+    super(CeleryCommand, self).execute_from_commandline(argv)))
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/base.py", line 298, in execute_from_commandline
+    return self.handle_argv(self.prog_name, argv[1:])
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 488, in handle_argv
+    return self.execute(command, argv)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 420, in execute
+    ).run_from_argv(self.prog_name, argv[1:], command=argv[0])
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/worker.py", line 223, in run_from_argv
+    return self(*args, **options)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/base.py", line 252, in __call__
+    ret = self.run(*args, **kwargs)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/worker.py", line 257, in run
+    **kwargs)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/worker/worker.py", line 96, in __init__
+    self.app.loader.init_worker()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/loaders/base.py", line 114, in init_worker
+    self.import_default_modules()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/loaders/base.py", line 108, in import_default_modules
+    raise response
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/utils/dispatch/signal.py", line 288, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/fixups/django.py", line 84, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/fixups/django.py", line 122, in validate_models
+    self.django_setup()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/fixups/django.py", line 118, in django_setup
+    django.setup()
+  File "/home/mwa_env/lib/python3.6/site-packages/django/__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/home/mwa_env/lib/python3.6/site-packages/django/apps/registry.py", line 122, in populate
+    app_config.ready()
+  File "/home/website-build/mywealthanalyst_django/MWA_webapp/apps.py", line 27, in ready
+    page = driver.get('https://au.investing.com/?ref=www')
+AttributeError: 'NoneType' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/mwa_env/bin/celery", line 10, in <module>
+    sys.exit(main())
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/__main__.py", line 16, in main
+    _main()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 322, in main
+    cmd.execute_from_commandline(argv)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 496, in execute_from_commandline
+    super(CeleryCommand, self).execute_from_commandline(argv)))
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/base.py", line 298, in execute_from_commandline
+    return self.handle_argv(self.prog_name, argv[1:])
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 488, in handle_argv
+    return self.execute(command, argv)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 420, in execute
+    ).run_from_argv(self.prog_name, argv[1:], command=argv[0])
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/worker.py", line 223, in run_from_argv
+    return self(*args, **options)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/base.py", line 252, in __call__
+    ret = self.run(*args, **kwargs)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/worker.py", line 257, in run
+    **kwargs)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/worker/worker.py", line 96, in __init__
+    self.app.loader.init_worker()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/loaders/base.py", line 114, in init_worker
+    self.import_default_modules()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/loaders/base.py", line 108, in import_default_modules
+    raise response
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/utils/dispatch/signal.py", line 288, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/fixups/django.py", line 84, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/fixups/django.py", line 122, in validate_models
+    self.django_setup()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/fixups/django.py", line 118, in django_setup
+    django.setup()
+  File "/home/mwa_env/lib/python3.6/site-packages/django/__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/home/mwa_env/lib/python3.6/site-packages/django/apps/registry.py", line 122, in populate
+    app_config.ready()
+  File "/home/website-build/mywealthanalyst_django/MWA_webapp/apps.py", line 27, in ready
+    page = driver.get('https://au.investing.com/?ref=www')
+AttributeError: 'NoneType' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/mwa_env/bin/celery", line 10, in <module>
+    sys.exit(main())
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/__main__.py", line 16, in main
+    _main()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 322, in main
+    cmd.execute_from_commandline(argv)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 496, in execute_from_commandline
+    super(CeleryCommand, self).execute_from_commandline(argv)))
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/base.py", line 298, in execute_from_commandline
+    return self.handle_argv(self.prog_name, argv[1:])
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 488, in handle_argv
+    return self.execute(command, argv)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 420, in execute
+    ).run_from_argv(self.prog_name, argv[1:], command=argv[0])
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/worker.py", line 223, in run_from_argv
+    return self(*args, **options)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/base.py", line 252, in __call__
+    ret = self.run(*args, **kwargs)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/worker.py", line 257, in run
+    **kwargs)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/worker/worker.py", line 96, in __init__
+    self.app.loader.init_worker()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/loaders/base.py", line 114, in init_worker
+    self.import_default_modules()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/loaders/base.py", line 108, in import_default_modules
+    raise response
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/utils/dispatch/signal.py", line 288, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/fixups/django.py", line 84, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/fixups/django.py", line 122, in validate_models
+    self.django_setup()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/fixups/django.py", line 118, in django_setup
+    django.setup()
+  File "/home/mwa_env/lib/python3.6/site-packages/django/__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/home/mwa_env/lib/python3.6/site-packages/django/apps/registry.py", line 122, in populate
+    app_config.ready()
+  File "/home/website-build/mywealthanalyst_django/MWA_webapp/apps.py", line 27, in ready
+    page = driver.get('https://au.investing.com/?ref=www')
+AttributeError: 'NoneType' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/mwa_env/bin/celery", line 10, in <module>
+    sys.exit(main())
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/__main__.py", line 16, in main
+    _main()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 322, in main
+    cmd.execute_from_commandline(argv)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 496, in execute_from_commandline
+    super(CeleryCommand, self).execute_from_commandline(argv)))
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/base.py", line 298, in execute_from_commandline
+    return self.handle_argv(self.prog_name, argv[1:])
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 488, in handle_argv
+    return self.execute(command, argv)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 420, in execute
+    ).run_from_argv(self.prog_name, argv[1:], command=argv[0])
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/worker.py", line 223, in run_from_argv
+    return self(*args, **options)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/base.py", line 252, in __call__
+    ret = self.run(*args, **kwargs)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/worker.py", line 257, in run
+    **kwargs)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/worker/worker.py", line 96, in __init__
+    self.app.loader.init_worker()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/loaders/base.py", line 114, in init_worker
+    self.import_default_modules()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/loaders/base.py", line 108, in import_default_modules
+    raise response
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/utils/dispatch/signal.py", line 288, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/fixups/django.py", line 84, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/fixups/django.py", line 122, in validate_models
+    self.django_setup()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/fixups/django.py", line 118, in django_setup
+    django.setup()
+  File "/home/mwa_env/lib/python3.6/site-packages/django/__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/home/mwa_env/lib/python3.6/site-packages/django/apps/registry.py", line 122, in populate
+    app_config.ready()
+  File "/home/website-build/mywealthanalyst_django/MWA_webapp/apps.py", line 27, in ready
+    page = driver.get('https://au.investing.com/?ref=www')
+AttributeError: 'NoneType' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/mwa_env/bin/celery", line 10, in <module>
+    sys.exit(main())
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/__main__.py", line 16, in main
+    _main()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 322, in main
+    cmd.execute_from_commandline(argv)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 496, in execute_from_commandline
+    super(CeleryCommand, self).execute_from_commandline(argv)))
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/base.py", line 298, in execute_from_commandline
+    return self.handle_argv(self.prog_name, argv[1:])
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 488, in handle_argv
+    return self.execute(command, argv)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 420, in execute
+    ).run_from_argv(self.prog_name, argv[1:], command=argv[0])
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/worker.py", line 223, in run_from_argv
+    return self(*args, **options)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/base.py", line 252, in __call__
+    ret = self.run(*args, **kwargs)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/worker.py", line 257, in run
+    **kwargs)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/worker/worker.py", line 96, in __init__
+    self.app.loader.init_worker()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/loaders/base.py", line 114, in init_worker
+    self.import_default_modules()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/loaders/base.py", line 108, in import_default_modules
+    raise response
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/utils/dispatch/signal.py", line 288, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/fixups/django.py", line 84, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/fixups/django.py", line 122, in validate_models
+    self.django_setup()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/fixups/django.py", line 118, in django_setup
+    django.setup()
+  File "/home/mwa_env/lib/python3.6/site-packages/django/__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/home/mwa_env/lib/python3.6/site-packages/django/apps/registry.py", line 122, in populate
+    app_config.ready()
+  File "/home/website-build/mywealthanalyst_django/MWA_webapp/apps.py", line 32, in ready
+    page = driver.get('https://au.investing.com/?ref=www')
+  File "/home/mwa_env/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 333, in get
+    self.execute(Command.GET, {'url': url})
+  File "/home/mwa_env/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/home/mwa_env/lib/python3.6/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: unknown error: session deleted because of page crash
+from unknown error: cannot determine loading status
+from tab crashed
+  (Session info: chrome=74.0.3729.169)
+  (Driver info: chromedriver=74.0.3729.6 (255758eccf3d244491b8a1317aa76e1ce10d57e9-refs/branch-heads/3729@{#29}),platform=Linux 4.15.0-51-generic x86_64)
+
+Traceback (most recent call last):
+  File "/home/mwa_env/bin/celery", line 10, in <module>
+    sys.exit(main())
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/__main__.py", line 16, in main
+    _main()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 322, in main
+    cmd.execute_from_commandline(argv)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 496, in execute_from_commandline
+    super(CeleryCommand, self).execute_from_commandline(argv)))
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/base.py", line 298, in execute_from_commandline
+    return self.handle_argv(self.prog_name, argv[1:])
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 488, in handle_argv
+    return self.execute(command, argv)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 420, in execute
+    ).run_from_argv(self.prog_name, argv[1:], command=argv[0])
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/worker.py", line 223, in run_from_argv
+    return self(*args, **options)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/base.py", line 252, in __call__
+    ret = self.run(*args, **kwargs)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/worker.py", line 257, in run
+    **kwargs)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/worker/worker.py", line 96, in __init__
+    self.app.loader.init_worker()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/loaders/base.py", line 114, in init_worker
+    self.import_default_modules()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/loaders/base.py", line 108, in import_default_modules
+    raise response
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/utils/dispatch/signal.py", line 288, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/fixups/django.py", line 84, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/fixups/django.py", line 122, in validate_models
+    self.django_setup()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/fixups/django.py", line 118, in django_setup
+    django.setup()
+  File "/home/mwa_env/lib/python3.6/site-packages/django/__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/home/mwa_env/lib/python3.6/site-packages/django/apps/registry.py", line 122, in populate
+    app_config.ready()
+  File "/home/website-build/mywealthanalyst_django/MWA_webapp/apps.py", line 30, in ready
+    driver = webdriver.Chrome(chrome_options=options)
+  File "/home/mwa_env/lib/python3.6/site-packages/selenium/webdriver/chrome/webdriver.py", line 81, in __init__
+    desired_capabilities=desired_capabilities)
+  File "/home/mwa_env/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 157, in __init__
+    self.start_session(capabilities, browser_profile)
+  File "/home/mwa_env/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 252, in start_session
+    response = self.execute(Command.NEW_SESSION, parameters)
+  File "/home/mwa_env/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/home/mwa_env/lib/python3.6/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: unknown error: unable to discover open pages
+  (Driver info: chromedriver=74.0.3729.6 (255758eccf3d244491b8a1317aa76e1ce10d57e9-refs/branch-heads/3729@{#29}),platform=Linux 4.15.0-51-generic x86_64)
+
+Traceback (most recent call last):
+  File "/home/mwa_env/bin/celery", line 10, in <module>
+    sys.exit(main())
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/__main__.py", line 16, in main
+    _main()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 322, in main
+    cmd.execute_from_commandline(argv)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 496, in execute_from_commandline
+    super(CeleryCommand, self).execute_from_commandline(argv)))
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/base.py", line 298, in execute_from_commandline
+    return self.handle_argv(self.prog_name, argv[1:])
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 488, in handle_argv
+    return self.execute(command, argv)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 420, in execute
+    ).run_from_argv(self.prog_name, argv[1:], command=argv[0])
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/worker.py", line 223, in run_from_argv
+    return self(*args, **options)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/base.py", line 252, in __call__
+    ret = self.run(*args, **kwargs)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/worker.py", line 257, in run
+    **kwargs)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/worker/worker.py", line 96, in __init__
+    self.app.loader.init_worker()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/loaders/base.py", line 114, in init_worker
+    self.import_default_modules()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/loaders/base.py", line 108, in import_default_modules
+    raise response
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/utils/dispatch/signal.py", line 288, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/fixups/django.py", line 84, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/fixups/django.py", line 122, in validate_models
+    self.django_setup()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/fixups/django.py", line 118, in django_setup
+    django.setup()
+  File "/home/mwa_env/lib/python3.6/site-packages/django/__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/home/mwa_env/lib/python3.6/site-packages/django/apps/registry.py", line 122, in populate
+    app_config.ready()
+  File "/home/website-build/mywealthanalyst_django/MWA_webapp/apps.py", line 32, in ready
+    page = driver.get('https://au.investing.com/?ref=www')
+  File "/home/mwa_env/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 333, in get
+    self.execute(Command.GET, {'url': url})
+  File "/home/mwa_env/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/home/mwa_env/lib/python3.6/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: unknown error: session deleted because of page crash
+from tab crashed
+  (Session info: chrome=74.0.3729.169)
+  (Driver info: chromedriver=74.0.3729.6 (255758eccf3d244491b8a1317aa76e1ce10d57e9-refs/branch-heads/3729@{#29}),platform=Linux 4.15.0-51-generic x86_64)
+
+[2019-06-12 00:21:49,566: INFO/MainProcess] Connected to redis://localhost:6379//
+[2019-06-12 00:21:49,591: INFO/MainProcess] mingle: searching for neighbors
+[2019-06-12 00:21:50,634: INFO/MainProcess] mingle: all alone
+[2019-06-12 00:21:50,652: INFO/MainProcess] celery@mywealthanalyst ready.
+[2019-06-12 00:21:50,812: INFO/MainProcess] Received task: update_live_prices[4c99373e-6c00-4fa5-a7f1-2c6fe19f92a6]  
+[2019-06-12 00:21:50,834: ERROR/ForkPoolWorker-1] Task update_live_prices[4c99373e-6c00-4fa5-a7f1-2c6fe19f92a6] raised unexpected: NameError("name 'self' is not defined",)
+Traceback (most recent call last):
+  File "/home/website-build/mywealthanalyst_django/MWA_webapp/tasks.py", line 22, in update_live_prices
+    scrape_livedata_v2.scrape_current()
+  File "/home/website-build/mywealthanalyst_django/scripts/scrape_livedata_v2.py", line 32, in scrape_current
+    soup = BeautifulSoup(driver.page_source, 'html.parser')
+  File "/home/mwa_env/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 679, in page_source
+    return self.execute(Command.GET_PAGE_SOURCE)['value']
+  File "/home/mwa_env/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/home/mwa_env/lib/python3.6/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: chrome not reachable
+  (Session info: chrome=74.0.3729.169)
+  (Driver info: chromedriver=74.0.3729.6 (255758eccf3d244491b8a1317aa76e1ce10d57e9-refs/branch-heads/3729@{#29}),platform=Linux 4.15.0-51-generic x86_64)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/app/trace.py", line 385, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/app/trace.py", line 648, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/home/website-build/mywealthanalyst_django/MWA_webapp/tasks.py", line 27, in update_live_prices
+    raise self.retry(exc=exc, countdown=60, max_retries=2)
+NameError: name 'self' is not defined
+[2019-06-12 00:22:52,044: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/home/mwa_env/lib/python3.6/site-packages/redis/connection.py", line 185, in _read_from_socket
+    raise socket.error(SERVER_CLOSED_CONNECTION_ERROR)
+OSError: Connection closed by server.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/worker/consumer/consumer.py", line 596, in start
+    c.loop(*c.loop_args())
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/worker/loops.py", line 91, in asynloop
+    next(loop)
+  File "/home/mwa_env/lib/python3.6/site-packages/kombu/asynchronous/hub.py", line 362, in create_loop
+    cb(*cbargs)
+  File "/home/mwa_env/lib/python3.6/site-packages/kombu/transport/redis.py", line 1070, in on_readable
+    self.cycle.on_readable(fileno)
+  File "/home/mwa_env/lib/python3.6/site-packages/kombu/transport/redis.py", line 348, in on_readable
+    chan.handlers[type]()
+  File "/home/mwa_env/lib/python3.6/site-packages/kombu/transport/redis.py", line 679, in _receive
+    ret.append(self._receive_one(c))
+  File "/home/mwa_env/lib/python3.6/site-packages/kombu/transport/redis.py", line 690, in _receive_one
+    response = c.parse_response()
+  File "/home/mwa_env/lib/python3.6/site-packages/redis/client.py", line 3036, in parse_response
+    return self._execute(connection, connection.read_response)
+  File "/home/mwa_env/lib/python3.6/site-packages/redis/client.py", line 3013, in _execute
+    return command(*args)
+  File "/home/mwa_env/lib/python3.6/site-packages/redis/connection.py", line 637, in read_response
+    response = self._parser.read_response()
+  File "/home/mwa_env/lib/python3.6/site-packages/redis/connection.py", line 290, in read_response
+    response = self._buffer.readline()
+  File "/home/mwa_env/lib/python3.6/site-packages/redis/connection.py", line 224, in readline
+    self._read_from_socket()
+  File "/home/mwa_env/lib/python3.6/site-packages/redis/connection.py", line 199, in _read_from_socket
+    (e.args,))
+redis.exceptions.ConnectionError: Error while reading from socket: ('Connection closed by server.',)
+Traceback (most recent call last):
+  File "/home/mwa_env/bin/celery", line 10, in <module>
+    sys.exit(main())
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/__main__.py", line 16, in main
+    _main()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 322, in main
+    cmd.execute_from_commandline(argv)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 496, in execute_from_commandline
+    super(CeleryCommand, self).execute_from_commandline(argv)))
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/base.py", line 298, in execute_from_commandline
+    return self.handle_argv(self.prog_name, argv[1:])
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 488, in handle_argv
+    return self.execute(command, argv)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 420, in execute
+    ).run_from_argv(self.prog_name, argv[1:], command=argv[0])
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/worker.py", line 223, in run_from_argv
+    return self(*args, **options)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/base.py", line 252, in __call__
+    ret = self.run(*args, **kwargs)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/worker.py", line 257, in run
+    **kwargs)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/worker/worker.py", line 96, in __init__
+    self.app.loader.init_worker()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/loaders/base.py", line 114, in init_worker
+    self.import_default_modules()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/loaders/base.py", line 108, in import_default_modules
+    raise response
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/utils/dispatch/signal.py", line 288, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/fixups/django.py", line 84, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/fixups/django.py", line 122, in validate_models
+    self.django_setup()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/fixups/django.py", line 118, in django_setup
+    django.setup()
+  File "/home/mwa_env/lib/python3.6/site-packages/django/__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/home/mwa_env/lib/python3.6/site-packages/django/apps/registry.py", line 122, in populate
+    app_config.ready()
+  File "/home/website-build/mywealthanalyst_django/MWA_webapp/apps.py", line 34, in ready
+    print(page)
+NameError: name 'page' is not defined
+Traceback (most recent call last):
+  File "/home/mwa_env/bin/celery", line 10, in <module>
+    sys.exit(main())
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/__main__.py", line 16, in main
+    _main()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 322, in main
+    cmd.execute_from_commandline(argv)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 496, in execute_from_commandline
+    super(CeleryCommand, self).execute_from_commandline(argv)))
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/base.py", line 298, in execute_from_commandline
+    return self.handle_argv(self.prog_name, argv[1:])
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 488, in handle_argv
+    return self.execute(command, argv)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 420, in execute
+    ).run_from_argv(self.prog_name, argv[1:], command=argv[0])
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/worker.py", line 223, in run_from_argv
+    return self(*args, **options)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/base.py", line 252, in __call__
+    ret = self.run(*args, **kwargs)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/worker.py", line 257, in run
+    **kwargs)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/worker/worker.py", line 96, in __init__
+    self.app.loader.init_worker()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/loaders/base.py", line 114, in init_worker
+    self.import_default_modules()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/loaders/base.py", line 108, in import_default_modules
+    raise response
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/utils/dispatch/signal.py", line 288, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/fixups/django.py", line 84, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/fixups/django.py", line 122, in validate_models
+    self.django_setup()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/fixups/django.py", line 118, in django_setup
+    django.setup()
+  File "/home/mwa_env/lib/python3.6/site-packages/django/__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/home/mwa_env/lib/python3.6/site-packages/django/apps/registry.py", line 122, in populate
+    app_config.ready()
+  File "/home/website-build/mywealthanalyst_django/MWA_webapp/apps.py", line 34, in ready
+    print(page)
+NameError: name 'page' is not defined
+Traceback (most recent call last):
+  File "/home/mwa_env/bin/celery", line 10, in <module>
+    sys.exit(main())
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/__main__.py", line 16, in main
+    _main()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 322, in main
+    cmd.execute_from_commandline(argv)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 496, in execute_from_commandline
+    super(CeleryCommand, self).execute_from_commandline(argv)))
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/base.py", line 298, in execute_from_commandline
+    return self.handle_argv(self.prog_name, argv[1:])
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 488, in handle_argv
+    return self.execute(command, argv)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 420, in execute
+    ).run_from_argv(self.prog_name, argv[1:], command=argv[0])
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/worker.py", line 223, in run_from_argv
+    return self(*args, **options)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/base.py", line 252, in __call__
+    ret = self.run(*args, **kwargs)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/worker.py", line 257, in run
+    **kwargs)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/worker/worker.py", line 96, in __init__
+    self.app.loader.init_worker()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/loaders/base.py", line 114, in init_worker
+    self.import_default_modules()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/loaders/base.py", line 108, in import_default_modules
+    raise response
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/utils/dispatch/signal.py", line 288, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/fixups/django.py", line 84, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/fixups/django.py", line 122, in validate_models
+    self.django_setup()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/fixups/django.py", line 118, in django_setup
+    django.setup()
+  File "/home/mwa_env/lib/python3.6/site-packages/django/__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/home/mwa_env/lib/python3.6/site-packages/django/apps/registry.py", line 122, in populate
+    app_config.ready()
+  File "/home/website-build/mywealthanalyst_django/MWA_webapp/apps.py", line 34, in ready
+    print(page)
+NameError: name 'page' is not defined
+Traceback (most recent call last):
+  File "/home/mwa_env/bin/celery", line 10, in <module>
+    sys.exit(main())
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/__main__.py", line 16, in main
+    _main()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 322, in main
+    cmd.execute_from_commandline(argv)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 496, in execute_from_commandline
+    super(CeleryCommand, self).execute_from_commandline(argv)))
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/base.py", line 298, in execute_from_commandline
+    return self.handle_argv(self.prog_name, argv[1:])
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 488, in handle_argv
+    return self.execute(command, argv)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/celery.py", line 420, in execute
+    ).run_from_argv(self.prog_name, argv[1:], command=argv[0])
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/worker.py", line 223, in run_from_argv
+    return self(*args, **options)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/base.py", line 252, in __call__
+    ret = self.run(*args, **kwargs)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/bin/worker.py", line 257, in run
+    **kwargs)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/worker/worker.py", line 96, in __init__
+    self.app.loader.init_worker()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/loaders/base.py", line 114, in init_worker
+    self.import_default_modules()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/loaders/base.py", line 108, in import_default_modules
+    raise response
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/utils/dispatch/signal.py", line 288, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/fixups/django.py", line 84, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/fixups/django.py", line 122, in validate_models
+    self.django_setup()
+  File "/home/mwa_env/lib/python3.6/site-packages/celery/fixups/django.py", line 118, in django_setup
+    django.setup()
+  File "/home/mwa_env/lib/python3.6/site-packages/django/__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/home/mwa_env/lib/python3.6/site-packages/django/apps/registry.py", line 122, in populate
+    app_config.ready()
+  File "/home/website-build/mywealthanalyst_django/MWA_webapp/apps.py", line 34, in ready
+    print(page)
+NameError: name 'page' is not defined
