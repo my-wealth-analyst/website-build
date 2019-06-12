@@ -18,7 +18,6 @@ def update_live_prices():
     """
     try:
         scrape_current()
-        logger.info("Live prices updated")
     except Exception as exc:
         logger.warning(exc)
         raise Exception

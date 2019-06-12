@@ -55,7 +55,7 @@ def scrape_current():
     #     element.click()
     # except:
     #     pass
-
+    soup = None
     soup = BeautifulSoup(Driver.driver.page_source, 'html.parser')
 
     AUD = helper(soup=soup, title='AUD/USD - Australian Dollar US Dollar')
@@ -100,3 +100,5 @@ def scrape_current():
                                                                  last_price=ALLORDS_USD["price"],
                                                                  last_movement_nominal=ALLORDS_USD["price_change"],
                                                                  last_movement_percentage=ALLORDS_USD["price_change_perc"])
+
+    logger.info("Live prices updated")
