@@ -22,7 +22,7 @@ logger = get_task_logger(__name__)
 class BrowserSession(object):
     def __init__(self):
         # self.driver = webdriver.Firefox(executable_path=r'geckodriver.exe', options=options)
-        self.driver = webdriver.Firefox(executable_path=r'./geckodriver', options=options)
+        self.driver = webdriver.Firefox(executable_path=r'/home/geckodriver', options=options)
         self.driver.get('https://au.investing.com/?ref=www')
         logger.info("Driver started - GET request made")
 
