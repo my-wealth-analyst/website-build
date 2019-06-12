@@ -1,11 +1,34 @@
 from bs4 import BeautifulSoup
 from MWA_webapp.models import Commodities
 from datetime import datetime
+from django.conf import settings
 
 import warnings
 warnings.filterwarnings("ignore", category=RuntimeWarning)
 
-from MWA_webapp.apps import driver
+# from MWA_webapp.apps import driver
+from selenium import webdriver
+# from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.firefox.options import Options
+options = Options()
+options.add_argument("--disable-notifications")
+options.add_argument("--no-sandbox")
+options.add_argument("--disable-dev-shm-usage")
+user_agent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.50 Safari/537.36'
+options.add_argument('user-agent={0}'.format(user_agent))
+# if settings.DEBUG:
+#     options.headless = False
+# else:
+#     options.headless = True
+options.headless = True
+
+
+
+class BrowserSession(object):
+    def __init__(self):
+        self.driver = webdriver.Firefox(executable_path=r'geckodriver.exe', options=options)
+        self.driver.get('https://au.investing.com/?ref=www')
+        print("Driver started")
 
 
 def helper(soup=None, title=None):
@@ -21,7 +44,13 @@ def helper(soup=None, title=None):
     return({'price': price, 'price_change': price_change, 'price_change_perc': price_change_perc})
 
 
-def scrape_current(driver=driver):
+def scrape_current():
+    global Driver_Live
+    try:
+        Driver
+    except:
+        Driver = BrowserSession()
+
     # First check for and close any popups (turns out this isn't even necessary)
     # try:
     #     element = driver.find_element_by_xpath("//i[@class='popupCloseIcon largeBannerCloser']")
@@ -29,7 +58,7 @@ def scrape_current(driver=driver):
     # except:
     #     pass
 
-    soup = BeautifulSoup(driver.page_source, 'html.parser')
+    soup = BeautifulSoup(Driver.driver.page_source, 'html.parser')
 
     AUD = helper(soup=soup, title='AUD/USD - Australian Dollar US Dollar')
 
