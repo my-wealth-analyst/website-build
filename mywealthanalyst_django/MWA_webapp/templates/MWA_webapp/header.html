@@ -1,20 +1,18 @@
 {% load static %}
 
 <nav class="navbar navbar-expand-sm">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-     <span class="navbar-toggler-icon"></span>
-   </button>
-
-    <div class="w-100 navbar-expand-md order-1 order-md-0 dual-collapse2 text-center">
+    <div class="w-100 navbar-expand-md order-1 order-md-0 text-center">
         <ul class="nav navbar-nav mr-auto">
             <li class="nav-item active">
                 <a class="nav-link" href="{% url 'landingpage' %}">about</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link" href="#" data-toggle="modal" data-target="#donate_modal">donate</a>
             </li>
         </ul>
     </div>
+
+
 
     <div class="mx-auto order-0">
         {% if request.user.is_authenticated %}
@@ -24,7 +22,7 @@
         {% endif %}
     </div>
 
-    <div class="w-100 order-3 dual-collapse2 text-center">
+    <div class="w-100 order-3 text-center">
         <ul class="navbar-nav ml-auto justify-content-end">
             <li class="nav-item">
                 <!-- <a class="nav-link" href="#">contact us</a> -->
