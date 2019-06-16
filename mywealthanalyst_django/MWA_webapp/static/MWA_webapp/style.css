@@ -1,13 +1,12 @@
-
  /* GENERAL - ALL-OF-PAGE */
 
 html, body {
   font-family: 'Tw Cen MT';
-  margin: 0;
-  height: 100%;
-  width: 100%;
-  --input-padding-x: 1.5rem;
-  --input-padding-y: .75rem;
+  overflow-x: hidden;
+}
+
+body {
+    overflow-y: hidden !important;
 }
 
 h1, h2, h3, h4, h5 {
@@ -26,6 +25,9 @@ h1, h2, h3, h4, h5 {
                    linear-gradient(-101deg, rgba(68, 114, 196, 0) 74%, rgba(255, 255, 255, 0.08) 15%),
                    radial-gradient(circle, rgb(68, 114, 196) 0%, rgb(68, 114, 196) 100%);
   background-color: rgb(68, 114, 196);
+  padding: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .nav-item, .nav-link {
@@ -39,6 +41,9 @@ h1, h2, h3, h4, h5 {
 .nav-item:hover, .nav-link:hover {
    color: rgba(34, 42, 53, 1)
  }
+
+ .navbar-nav > li > a {padding-top:2px !important; padding-bottom:5px !important;}
+ .navbar {min-height:10px !important}
 
  /* FOOTER */
  .footer {
@@ -54,20 +59,61 @@ h1, h2, h3, h4, h5 {
    padding-top: 20px;
  }
 
+ .footer .heading-row{
+   font-size:16pt;
+   font-family:'Verdana';
+   text-align: right;
+   line-height: 20pt;
+ }
+ .footer .heading-row .value{
+    font-size:12pt;
+  }
+
  .footer_bar {
   background:rgba(34, 42, 53, 1);
   color:rgba(255, 153, 0, 1);
  }
 
-  #disclaimer:hover, .footer_bar #disclaimer:focus {
-   color:rgba(255, 153, 0, 0.7);
-   text-decoration: none;
-   cursor: pointer;
+ .footer .col-centered{
+     float: none;
+     margin: 0 auto;
  }
 
  .footer_bar h5 {
    padding-top: 5px;
-  font-size: 8pt
+   font-size: 8pt
+}
+
+ .disclaimer-text{
+   line-height: 12pt;
+   padding: -5pt;
+   padding-bottom: 15px;
+   padding-top: 15px
+ }
+
+ @media(max-width:800px){
+   .footer .heading-row{
+     font-size:12pt;
+   }
+   .footer .heading-row .value{
+      font-size:10pt;
+    }
+}
+
+@media(max-width:575px){
+  .footer .heading-row{
+    font-size:10pt;
+    text-align: left;
+  }
+  .footer .heading-row .value{
+     font-size:9pt;
+     text-align: left;
+   }
+   .disclaimer-text{
+     font-size: 8pt;
+   line-height: 7pt;
+   padding-top: 5px
+}
 }
 
  /* DASHBOARD STYLING */
@@ -254,15 +300,81 @@ margin-bottom: auto;
 
 
  /* LANDING PAGE */
- .landingpage img {
-   padding-top: 10px;
-   padding-bottom: 10px
+ .wrapper{
+  padding: 30px
  }
 
- .landingpage .row{
-   margin-top: 100px;
-   margin-bottom: 50px;
+#Dashboard_mobile1 {
+  position: absolute;
+  top:15px;
+  right:0
+}
+
+#Dashboard_desktop {
+  top:0;
+  right: 0;
+}
+
+#phone_img{
+  width: 75%;
+  left: 26%;
+  top: 20%;
+}
+
+#notification_img{
+  position: absolute;
+  width: 40%;
+  left: 51%;
+  transform: translate(-50%,0);
+  top: 20%;
+}
+
+.commodity-icon{
+  height: 150px;
+  width: 150px;
+  position: relative;
+}
+
+#JohnJaneDiv{
+  height: 6000px;
+}
+
+.fixed-row{
+  position: fixed;
+  top: 200px; /* required */
+  opacity: 0;
+}
+
+.man-icon{
+  width: 100%
+}
+
+.john-text{
+  position: absolute;
+  top: 10px
+}
+
+.jane-text{
+  position: absolute;
+  top: 10px;
+  color: rgb(68,114,196) !important;
+}
+
+.white-box{
+  position: absolute;
+  top: 11%;
+  background-color: #fff;
+  height: 89%;
+  width: 100%;
+  left: 25%
+}
+
+ .row.row-parallax{
+   height: 70vh;
+   padding-top: 100px;
+   padding-bottom: 100px;
  }
+
 
  .landingpage strong{
    color: rgba(68,114,196,1);
@@ -295,57 +407,8 @@ margin-bottom: auto;
   font-size: 14pt;
 }
 
-
 }
-
 
 /* ===============================================================
     Skrollr styles
    =============================================================== */
-
-#slides-container {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-#slides {
-  width: 200%;
-  height: 200%;
-  position: fixed;
-  top: 0;
-  left: 0;
-}
-
-.slide {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 50%;
-  height: 50%;
-}
-
-#slide-1{
-  background: red;
-}
-
-#slide-2{
-  background: blue;
-  -webkit-transform: translate(0%,100%);
-  -ms-transform: translate(0%,100%);
-  transform: translate(0%,100%);
-}
-
-#slide-3{
-  background: green;
-  -webkit-transform: translate(100%,100%);
-  -ms-transform: translate(100%,100%);
-  transform: translate(100%,100%);
-}
-
-#slide-4{
-  background: yellow;
-  -webkit-transform: translate(100%,0%);
-  -ms-transform: translate(100%,0%);
-  transform: translate(100%,0%);
-}
