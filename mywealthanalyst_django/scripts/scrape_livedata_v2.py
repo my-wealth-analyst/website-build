@@ -79,7 +79,7 @@ def scrape_current():
     btc_get = requests.get('https://www.bitstamp.net/api/ticker/').json()
     btc_price = float(btc_get["last"])
     btc_change = float(btc_get["last"]) - float(btc_get["open"])
-    btc_change_perc = btc_change/btc_price
+    btc_change_perc = btc_change/btc_price * 100
     BITCOIN_USD = {'price': btc_price, 'price_change': btc_change, 'price_change_perc': btc_change_perc}
 
     ALLORDS_AUD = helper(soup=soup, title='ASX All Ordinaries')
