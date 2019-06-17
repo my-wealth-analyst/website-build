@@ -849,3 +849,23 @@ JavaScript warning: https://z.moatads.com/aolonebuyervideoflashint2012897410256/
 JavaScript warning: https://z.moatads.com/aolonebuyervideoflashint2012897410256/moatvideo.js#_moatApi87984496, line 234: Error: WebGL warning: <SetDimensions>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
 JavaScript warning: https://z.moatads.com/aolonebuyervideoflashint2012897410256/moatvideo.js#_moatApi87984496, line 234: Error: WebGL warning: <SetDimensions>: Failed to create WebGL context: WebGL creation failed: 
 * Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://cdn-ssl.vidible.tv/prod/ad-client/js/9.2.58/0.js, line 21: Error: WebGL warning: <SetDimensions>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://cdn-ssl.vidible.tv/prod/ad-client/js/9.2.58/0.js, line 21: Error: WebGL warning: <SetDimensions>: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://cdn-ssl.vidible.tv/prod/ad-client/js/9.2.58/0.js, line 21: Error: WebGL warning: <SetDimensions>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://cdn-ssl.vidible.tv/prod/ad-client/js/9.2.58/0.js, line 21: Error: WebGL warning: <SetDimensions>: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/turnvpaid34569/moatvideo.js#_moatApi45404893, line 233: Error: WebGL warning: <SetDimensions>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/turnvpaid34569/moatvideo.js#_moatApi45404893, line 233: Error: WebGL warning: <SetDimensions>: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/turnvpaid34569/moatvideo.js#_moatApi45404893, line 233: Error: WebGL warning: <SetDimensions>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/turnvpaid34569/moatvideo.js#_moatApi45404893, line 233: Error: WebGL warning: <SetDimensions>: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+
+(/usr/lib/firefox/firefox:20739): dconf-WARNING **: 02:30:06.324: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission denied
+JavaScript warning: https://z.moatads.com/aolonebuyervideoflashint2012897410256/moatvideo.js#_moatApi59730378, line 234: Error: WebGL warning: <SetDimensions>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/aolonebuyervideoflashint2012897410256/moatvideo.js#_moatApi59730378, line 234: Error: WebGL warning: <SetDimensions>: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/aolonebuyervideoflashint2012897410256/moatvideo.js#_moatApi59730378, line 234: Error: WebGL warning: <SetDimensions>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/aolonebuyervideoflashint2012897410256/moatvideo.js#_moatApi59730378, line 234: Error: WebGL warning: <SetDimensions>: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
