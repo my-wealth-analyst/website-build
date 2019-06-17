@@ -453,3 +453,399 @@ Exiting due to channel error.
 [Child 8097, Chrome_ChildThread] WARNING: pipe error (35): Connection reset by peer: file /build/firefox-gHMaBx/firefox-67.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
 Exiting due to channel error.
 Exiting due to channel error.
+/snap/firefox/226/bin/desktop-launch: line 174: /home/ram/snap/firefox/common/.config/user-dirs.dirs: No such file or directory
+cp: cannot create regular file '/home/ram/snap/firefox/common/.config/': Not a directory
+/snap/firefox/226/bin/desktop-launch: line 177: /home/ram/snap/firefox/common/.config/user-dirs.dirs.md5sum: No such file or directory
+/snap/firefox/226/bin/desktop-launch: line 177: /home/ram/snap/firefox/common/.config/user-dirs.locale.md5sum: No such file or directory
+1560780154315	mozrunner::runner	INFO	Running command: "/snap/bin/firefox" "-marionette" "--disable-notifications" "--no-sandbox" "--disable-dev-shm-usage" "--window-size=1900,1080" "user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.50 Safari/537.36" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.ySVhZQ39QlC1"
+/snap/firefox/226/bin/desktop-launch: line 174: /home/ram/snap/firefox/common/.config/user-dirs.dirs: No such file or directory
+cp: cannot create regular file '/home/ram/snap/firefox/common/.config/': Not a directory
+/snap/firefox/226/bin/desktop-launch: line 177: /home/ram/snap/firefox/common/.config/user-dirs.dirs.md5sum: No such file or directory
+/snap/firefox/226/bin/desktop-launch: line 177: /home/ram/snap/firefox/common/.config/user-dirs.locale.md5sum: No such file or directory
+Gtk-Message: Failed to load module "canberra-gtk-module"
+Gtk-Message: Failed to load module "canberra-gtk-module"
+/snap/firefox/226/bin/desktop-launch: line 174: /home/ram/snap/firefox/common/.config/user-dirs.dirs: No such file or directory
+cp: cannot create regular file '/home/ram/snap/firefox/common/.config/': Not a directory
+/snap/firefox/226/bin/desktop-launch: line 177: /home/ram/snap/firefox/common/.config/user-dirs.dirs.md5sum: No such file or directory
+/snap/firefox/226/bin/desktop-launch: line 177: /home/ram/snap/firefox/common/.config/user-dirs.locale.md5sum: No such file or directory
+1560780180159	mozrunner::runner	INFO	Running command: "/snap/bin/firefox" "-marionette" "--disable-notifications" "--no-sandbox" "--disable-dev-shm-usage" "--window-size=1900,1080" "user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.50 Safari/537.36" "-headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.uxwrSPrLyWDu"
+/snap/firefox/226/bin/desktop-launch: line 174: /home/ram/snap/firefox/common/.config/user-dirs.dirs: No such file or directory
+cp: cannot create regular file '/home/ram/snap/firefox/common/.config/': Not a directory
+/snap/firefox/226/bin/desktop-launch: line 177: /home/ram/snap/firefox/common/.config/user-dirs.dirs.md5sum: No such file or directory
+/snap/firefox/226/bin/desktop-launch: line 177: /home/ram/snap/firefox/common/.config/user-dirs.locale.md5sum: No such file or directory
+*** You are running in headless mode.
+/snap/firefox/226/bin/desktop-launch: line 174: /home/ram/snap/firefox/common/.config/user-dirs.dirs: No such file or directory
+cp: cannot create regular file '/home/ram/snap/firefox/common/.config/': Not a directory
+/snap/firefox/226/bin/desktop-launch: line 177: /home/ram/snap/firefox/common/.config/user-dirs.dirs.md5sum: No such file or directory
+/snap/firefox/226/bin/desktop-launch: line 177: /home/ram/snap/firefox/common/.config/user-dirs.locale.md5sum: No such file or directory
+1560780240447	mozrunner::runner	INFO	Running command: "/snap/bin/firefox" "-marionette" "--disable-notifications" "--no-sandbox" "--disable-dev-shm-usage" "--window-size=1900,1080" "user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.50 Safari/537.36" "-headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.tKn9KZxBwfGf"
+/snap/firefox/226/bin/desktop-launch: line 174: /home/ram/snap/firefox/common/.config/user-dirs.dirs: No such file or directory
+cp: cannot create regular file '/home/ram/snap/firefox/common/.config/': Not a directory
+/snap/firefox/226/bin/desktop-launch: line 177: /home/ram/snap/firefox/common/.config/user-dirs.dirs.md5sum: No such file or directory
+/snap/firefox/226/bin/desktop-launch: line 177: /home/ram/snap/firefox/common/.config/user-dirs.locale.md5sum: No such file or directory
+*** You are running in headless mode.
+/snap/firefox/226/bin/desktop-launch: line 174: /home/ram/snap/firefox/common/.config/user-dirs.dirs: No such file or directory
+cp: cannot create regular file '/home/ram/snap/firefox/common/.config/': Not a directory
+/snap/firefox/226/bin/desktop-launch: line 177: /home/ram/snap/firefox/common/.config/user-dirs.dirs.md5sum: No such file or directory
+/snap/firefox/226/bin/desktop-launch: line 177: /home/ram/snap/firefox/common/.config/user-dirs.locale.md5sum: No such file or directory
+1560780318160	mozrunner::runner	INFO	Running command: "/snap/bin/firefox" "-marionette" "--disable-notifications" "--no-sandbox" "--disable-dev-shm-usage" "user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.50 Safari/537.36" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.NMn1PDXmMlMN"
+/snap/firefox/226/bin/desktop-launch: line 174: /home/ram/snap/firefox/common/.config/user-dirs.dirs: No such file or directory
+cp: cannot create regular file '/home/ram/snap/firefox/common/.config/': Not a directory
+/snap/firefox/226/bin/desktop-launch: line 177: /home/ram/snap/firefox/common/.config/user-dirs.dirs.md5sum: No such file or directory
+/snap/firefox/226/bin/desktop-launch: line 177: /home/ram/snap/firefox/common/.config/user-dirs.locale.md5sum: No such file or directory
+Gtk-Message: Failed to load module "canberra-gtk-module"
+Gtk-Message: Failed to load module "canberra-gtk-module"
+/snap/firefox/226/bin/desktop-launch: line 174: /home/ram/snap/firefox/common/.config/user-dirs.dirs: No such file or directory
+cp: cannot create regular file '/home/ram/snap/firefox/common/.config/': Not a directory
+/snap/firefox/226/bin/desktop-launch: line 177: /home/ram/snap/firefox/common/.config/user-dirs.dirs.md5sum: No such file or directory
+/snap/firefox/226/bin/desktop-launch: line 177: /home/ram/snap/firefox/common/.config/user-dirs.locale.md5sum: No such file or directory
+1560780360222	mozrunner::runner	INFO	Running command: "/snap/bin/firefox" "-marionette" "--disable-notifications" "--no-sandbox" "--disable-dev-shm-usage" "user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.50 Safari/537.36" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.9ActswUs8A8q"
+/snap/firefox/226/bin/desktop-launch: line 174: /home/ram/snap/firefox/common/.config/user-dirs.dirs: No such file or directory
+cp: cannot create regular file '/home/ram/snap/firefox/common/.config/': Not a directory
+/snap/firefox/226/bin/desktop-launch: line 177: /home/ram/snap/firefox/common/.config/user-dirs.dirs.md5sum: No such file or directory
+/snap/firefox/226/bin/desktop-launch: line 177: /home/ram/snap/firefox/common/.config/user-dirs.locale.md5sum: No such file or directory
+Gtk-Message: Failed to load module "canberra-gtk-module"
+Gtk-Message: Failed to load module "canberra-gtk-module"
+/snap/firefox/226/bin/desktop-launch: line 174: /home/ram/snap/firefox/common/.config/user-dirs.dirs: No such file or directory
+cp: cannot create regular file '/home/ram/snap/firefox/common/.config/': Not a directory
+/snap/firefox/226/bin/desktop-launch: line 177: /home/ram/snap/firefox/common/.config/user-dirs.dirs.md5sum: No such file or directory
+/snap/firefox/226/bin/desktop-launch: line 177: /home/ram/snap/firefox/common/.config/user-dirs.locale.md5sum: No such file or directory
+1560780420171	mozrunner::runner	INFO	Running command: "/snap/bin/firefox" "-marionette" "--disable-notifications" "--no-sandbox" "--disable-dev-shm-usage" "user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.50 Safari/537.36" "-headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.4ZiwnMTMZCAB"
+/snap/firefox/226/bin/desktop-launch: line 174: /home/ram/snap/firefox/common/.config/user-dirs.dirs: No such file or directory
+cp: cannot create regular file '/home/ram/snap/firefox/common/.config/': Not a directory
+/snap/firefox/226/bin/desktop-launch: line 177: /home/ram/snap/firefox/common/.config/user-dirs.dirs.md5sum: No such file or directory
+/snap/firefox/226/bin/desktop-launch: line 177: /home/ram/snap/firefox/common/.config/user-dirs.locale.md5sum: No such file or directory
+*** You are running in headless mode.
+/snap/firefox/226/bin/desktop-launch: line 174: /home/ram/snap/firefox/common/.config/user-dirs.dirs: No such file or directory
+cp: cannot create regular file '/home/ram/snap/firefox/common/.config/': Not a directory
+/snap/firefox/226/bin/desktop-launch: line 177: /home/ram/snap/firefox/common/.config/user-dirs.dirs.md5sum: No such file or directory
+/snap/firefox/226/bin/desktop-launch: line 177: /home/ram/snap/firefox/common/.config/user-dirs.locale.md5sum: No such file or directory
+1560780480214	mozrunner::runner	INFO	Running command: "/snap/bin/firefox" "-marionette" "--disable-notifications" "--no-sandbox" "--disable-dev-shm-usage" "user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.50 Safari/537.36" "-headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.6ddnNHNjieC5"
+/snap/firefox/226/bin/desktop-launch: line 174: /home/ram/snap/firefox/common/.config/user-dirs.dirs: No such file or directory
+cp: cannot create regular file '/home/ram/snap/firefox/common/.config/': Not a directory
+/snap/firefox/226/bin/desktop-launch: line 177: /home/ram/snap/firefox/common/.config/user-dirs.dirs.md5sum: No such file or directory
+/snap/firefox/226/bin/desktop-launch: line 177: /home/ram/snap/firefox/common/.config/user-dirs.locale.md5sum: No such file or directory
+*** You are running in headless mode.
+/snap/firefox/226/bin/desktop-launch: line 174: /home/ram/snap/firefox/common/.config/user-dirs.dirs: No such file or directory
+cp: cannot create regular file '/home/ram/snap/firefox/common/.config/': Not a directory
+/snap/firefox/226/bin/desktop-launch: line 177: /home/ram/snap/firefox/common/.config/user-dirs.dirs.md5sum: No such file or directory
+/snap/firefox/226/bin/desktop-launch: line 177: /home/ram/snap/firefox/common/.config/user-dirs.locale.md5sum: No such file or directory
+1560780540163	mozrunner::runner	INFO	Running command: "/snap/bin/firefox" "-marionette" "--disable-notifications" "--no-sandbox" "--disable-dev-shm-usage" "user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.50 Safari/537.36" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.BXGViOcN72CD"
+/snap/firefox/226/bin/desktop-launch: line 174: /home/ram/snap/firefox/common/.config/user-dirs.dirs: No such file or directory
+cp: cannot create regular file '/home/ram/snap/firefox/common/.config/': Not a directory
+/snap/firefox/226/bin/desktop-launch: line 177: /home/ram/snap/firefox/common/.config/user-dirs.dirs.md5sum: No such file or directory
+/snap/firefox/226/bin/desktop-launch: line 177: /home/ram/snap/firefox/common/.config/user-dirs.locale.md5sum: No such file or directory
+Gtk-Message: Failed to load module "canberra-gtk-module"
+Gtk-Message: Failed to load module "canberra-gtk-module"
+/snap/firefox/226/bin/desktop-launch: line 174: /home/ram/snap/firefox/common/.config/user-dirs.dirs: No such file or directory
+cp: cannot create regular file '/home/ram/snap/firefox/common/.config/': Not a directory
+/snap/firefox/226/bin/desktop-launch: line 177: /home/ram/snap/firefox/common/.config/user-dirs.dirs.md5sum: No such file or directory
+/snap/firefox/226/bin/desktop-launch: line 177: /home/ram/snap/firefox/common/.config/user-dirs.locale.md5sum: No such file or directory
+1560780730340	mozrunner::runner	INFO	Running command: "/snap/bin/firefox" "-marionette" "user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.50 Safari/537.36" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.qDV384NkMMEe"
+/snap/firefox/226/bin/desktop-launch: line 174: /home/ram/snap/firefox/common/.config/user-dirs.dirs: No such file or directory
+cp: cannot create regular file '/home/ram/snap/firefox/common/.config/': Not a directory
+/snap/firefox/226/bin/desktop-launch: line 177: /home/ram/snap/firefox/common/.config/user-dirs.dirs.md5sum: No such file or directory
+/snap/firefox/226/bin/desktop-launch: line 177: /home/ram/snap/firefox/common/.config/user-dirs.locale.md5sum: No such file or directory
+Gtk-Message: Failed to load module "canberra-gtk-module"
+Gtk-Message: Failed to load module "canberra-gtk-module"
+1560780825262	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.50 Safari/537.36" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.eTfVyReVNK8C"
+1560780825643	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1560780825643	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1560780825643	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1560780827055	Marionette	INFO	Listening on port 42541
+1560780827080	Marionette	WARN	TLS certificate errors will be ignored for this session
+1560780841021	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.50 Safari/537.36" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.37M4QZy61q34"
+1560780841454	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1560780841455	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1560780841455	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1560780842894	Marionette	INFO	Listening on port 39513
+1560780842927	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:19306): dconf-WARNING **: 00:14:05.957: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission denied
+JavaScript error: resource://gre/modules/WebProgressChild.jsm, line 61: TypeError: this.mm.content is null
+JavaScript error: https://secure.quantserve.com/quant.js, line 19: NS_ERROR_UNEXPECTED: 
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+[Parent 19452, Gecko_IOThread] WARNING: pipe error (79): Connection reset by peer: file /build/firefox-TU7cn2/firefox-67.0.2+build2/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+[Parent 19452, Gecko_IOThread] WARNING: pipe error (85): Connection reset by peer: file /build/firefox-TU7cn2/firefox-67.0.2+build2/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+[Parent 19452, Gecko_IOThread] WARNING: pipe error (117): Connection reset by peer: file /build/firefox-TU7cn2/firefox-67.0.2+build2/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+1560780849217	Marionette	INFO	Stopped listening on port 39513
+JavaScript error: resource://gre/modules/WebProgressChild.jsm, line 61: TypeError: this.mm.content is null
+1560780853281	Marionette	INFO	Stopped listening on port 42541
+1560780900032	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.50 Safari/537.36" "-headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.r6rt6SoqjXTL"
+*** You are running in headless mode.
+1560780900376	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1560780900377	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1560780900377	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1560780901648	Marionette	INFO	Listening on port 37977
+1560780901745	Marionette	WARN	TLS certificate errors will be ignored for this session
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: http://%(server)s/dummy/blocklist//buckets/monitor/collections/changes/records?_expected=%221560618350307%22 is not a valid URL..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:203:13
+
+1560781475921	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.50 Safari/537.36" "-headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.0gy59KQcO00E"
+*** You are running in headless mode.
+1560781476286	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1560781476286	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1560781476286	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1560781477599	Marionette	INFO	Listening on port 34911
+1560781477631	Marionette	WARN	TLS certificate errors will be ignored for this session
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: http://%(server)s/dummy/blocklist//buckets/monitor/collections/changes/records?_expected=%221560618350307%22 is not a valid URL..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:203:13
+
+1560781519893	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.50 Safari/537.36" "-headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.Z5GVNe2sH8Gw"
+*** You are running in headless mode.
+1560781520274	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1560781520274	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1560781520274	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1560781521638	Marionette	INFO	Listening on port 41927
+1560781521699	Marionette	WARN	TLS certificate errors will be ignored for this session
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: http://%(server)s/dummy/blocklist//buckets/monitor/collections/changes/records?_expected=%221560618350307%22 is not a valid URL..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:203:13
+
+1560781684196	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.50 Safari/537.36" "-headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.noQ2fN7osTq9"
+*** You are running in headless mode.
+1560781684582	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1560781684584	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1560781684585	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1560781685983	Marionette	INFO	Listening on port 37359
+1560781686007	Marionette	WARN	TLS certificate errors will be ignored for this session
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: http://%(server)s/dummy/blocklist//buckets/monitor/collections/changes/records?_expected=%221560618350307%22 is not a valid URL..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:203:13
+
+1560782160058	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.50 Safari/537.36" "-headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.E5dqvgyk4dZm"
+*** You are running in headless mode.
+1560782160549	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1560782160550	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1560782160550	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1560782162177	Marionette	INFO	Listening on port 42145
+1560782162281	Marionette	WARN	TLS certificate errors will be ignored for this session
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: http://%(server)s/dummy/blocklist//buckets/monitor/collections/changes/records?_expected=%221560618350307%22 is not a valid URL..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:203:13
+
+1560782703095	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.50 Safari/537.36" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.FGs24NqsiMCu"
+1560782703715	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1560782703715	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1560782703715	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1560782706022	Marionette	INFO	Listening on port 46715
+1560782706092	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://i-invdn-com.akamaized.net/invwidgets/js/jquery-1.9.1.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+[Parent 22736, Gecko_IOThread] WARNING: pipe error (82): Connection reset by peer: file /build/firefox-TU7cn2/firefox-67.0.2+build2/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+[Parent 22736, Gecko_IOThread] WARNING: pipe error (79): Connection reset by peer: file /build/firefox-TU7cn2/firefox-67.0.2+build2/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+1560782727857	Marionette	INFO	Stopped listening on port 46715
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1560782761040	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.50 Safari/537.36" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.wLrOkUYzLqC9"
+1560782761630	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1560782761633	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1560782761633	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1560782763814	Marionette	INFO	Listening on port 34693
+1560782763915	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://i-invdn-com.akamaized.net/invwidgets/js/jquery-1.9.1.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: http://%(server)s/dummy/blocklist//buckets/monitor/collections/changes/records?_expected=%221560618350307%22 is not a valid URL..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:203:13
+
+1560782834804	Marionette	INFO	Stopped listening on port 34693
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1560782881047	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.50 Safari/537.36" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.xTsDFEinr7Hy"
+1560782881686	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1560782881686	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1560782881686	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1560782884027	Marionette	INFO	Listening on port 33311
+1560782884109	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://i-invdn-com.akamaized.net/invwidgets/js/jquery-1.9.1.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: http://%(server)s/dummy/blocklist//buckets/monitor/collections/changes/records?_expected=%221560618350307%22 is not a valid URL..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:203:13
+
+1560783127278	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.50 Safari/537.36" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.nJ8X4CToA5tT"
+1560783127860	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1560783127861	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1560783127861	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1560783130103	Marionette	INFO	Listening on port 40673
+1560783130193	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://i-invdn-com.akamaized.net/invwidgets/js/jquery-1.9.1.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: http://%(server)s/dummy/blocklist//buckets/monitor/collections/changes/records?_expected=%221560618350307%22 is not a valid URL..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:203:13
+
+1560783650506	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.50 Safari/537.36" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.A9fGZTmOVTQG"
+1560783651012	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1560783651014	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1560783651014	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1560783653208	Marionette	INFO	Listening on port 33723
+1560783653264	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Parent 24306, Gecko_IOThread] WARNING: pipe error (79): Connection reset by peer: file /build/firefox-TU7cn2/firefox-67.0.2+build2/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+[Parent 24306, Gecko_IOThread] WARNING: pipe error (93): Connection reset by peer: file /build/firefox-TU7cn2/firefox-67.0.2+build2/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+1560783655574	Marionette	INFO	Stopped listening on port 33723
+1560783672258	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.50 Safari/537.36" "-headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.P0tjyPp4ZYA6"
+*** You are running in headless mode.
+1560783672867	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1560783672868	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1560783672868	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1560783675353	Marionette	INFO	Listening on port 46367
+1560783675410	Marionette	WARN	TLS certificate errors will be ignored for this session
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: http://%(server)s/dummy/blocklist//buckets/monitor/collections/changes/records?_expected=%221560618350307%22 is not a valid URL..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:203:13
+
+1560783721068	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.50 Safari/537.36" "-headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.ZNompxPBPVdc"
+*** You are running in headless mode.
+1560783721818	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1560783721818	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1560783721818	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1560783724114	Marionette	INFO	Listening on port 42401
+1560783724207	Marionette	WARN	TLS certificate errors will be ignored for this session
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: http://%(server)s/dummy/blocklist//buckets/monitor/collections/changes/records?_expected=%221560618350307%22 is not a valid URL..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:203:13
+
+JavaScript warning: https://z.moatads.com/turnvpaid34569/moatvideo.js#_moatApi22300018, line 233: Error: WebGL warning: <SetDimensions>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/turnvpaid34569/moatvideo.js#_moatApi22300018, line 233: Error: WebGL warning: <SetDimensions>: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/turnvpaid34569/moatvideo.js#_moatApi22300018, line 233: Error: WebGL warning: <SetDimensions>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/turnvpaid34569/moatvideo.js#_moatApi22300018, line 233: Error: WebGL warning: <SetDimensions>: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+
+(/usr/lib/firefox/firefox:25042): dconf-WARNING **: 01:02:33.383: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission denied
+JavaScript warning: https://z.moatads.com/lkqdjsvideo774047740262/moatvideo.js#_moatApi37949892, line 234: Error: WebGL warning: <SetDimensions>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/lkqdjsvideo774047740262/moatvideo.js#_moatApi37949892, line 234: Error: WebGL warning: <SetDimensions>: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/lkqdjsvideo774047740262/moatvideo.js#_moatApi37949892, line 234: Error: WebGL warning: <SetDimensions>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/lkqdjsvideo774047740262/moatvideo.js#_moatApi37949892, line 234: Error: WebGL warning: <SetDimensions>: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://api.b2c.com/api/init-34636fwziv719eikyz5.js?siteID=730779 line 1 > eval, line 1: Error: WebGL warning: <SetDimensions>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://api.b2c.com/api/init-34636fwziv719eikyz5.js?siteID=730779 line 1 > eval, line 1: Error: WebGL warning: <SetDimensions>: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://api.b2c.com/api/init-34636fwziv719eikyz5.js?siteID=730779 line 1 > eval, line 1: Error: WebGL warning: <SetDimensions>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://api.b2c.com/api/init-34636fwziv719eikyz5.js?siteID=730779 line 1 > eval, line 1: Error: WebGL warning: <SetDimensions>: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pixel.yabidos.com/flimpobj.js?cb=1560783756192&ver1=2.2.2&qid=83230313f543330313f5033373&rnd=0p1vy29mgarm&cid=730 line 1 > eval, line 180: Error: WebGL warning: <SetDimensions>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pixel.yabidos.com/flimpobj.js?cb=1560783756192&ver1=2.2.2&qid=83230313f543330313f5033373&rnd=0p1vy29mgarm&cid=730 line 1 > eval, line 180: Error: WebGL warning: <SetDimensions>: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pixel.yabidos.com/flimpobj.js?cb=1560783756192&ver1=2.2.2&qid=83230313f543330313f5033373&rnd=0p1vy29mgarm&cid=730 line 1 > eval, line 180: Error: WebGL warning: <SetDimensions>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pixel.yabidos.com/flimpobj.js?cb=1560783756192&ver1=2.2.2&qid=83230313f543330313f5033373&rnd=0p1vy29mgarm&cid=730 line 1 > eval, line 180: Error: WebGL warning: <SetDimensions>: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pixel.yabidos.com/flimpobj.js?cb=1560783756192&ver1=2.2.2&qid=83230313f543330313f5033373&rnd=0p1vy29mgarm&cid=730 line 1 > eval, line 254: Error: WebGL warning: <SetDimensions>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pixel.yabidos.com/flimpobj.js?cb=1560783756192&ver1=2.2.2&qid=83230313f543330313f5033373&rnd=0p1vy29mgarm&cid=730 line 1 > eval, line 254: Error: WebGL warning: <SetDimensions>: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pixel.yabidos.com/flimpobj.js?cb=1560783756192&ver1=2.2.2&qid=83230313f543330313f5033373&rnd=0p1vy29mgarm&cid=730 line 1 > eval, line 254: Error: WebGL warning: <SetDimensions>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pixel.yabidos.com/flimpobj.js?cb=1560783756192&ver1=2.2.2&qid=83230313f543330313f5033373&rnd=0p1vy29mgarm&cid=730 line 1 > eval, line 254: Error: WebGL warning: <SetDimensions>: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+1560783780064	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.50 Safari/537.36" "-headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.tgruQhCwrgYo"
+*** You are running in headless mode.
+1560783780712	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1560783780712	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1560783780712	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1560783782904	Marionette	INFO	Listening on port 33235
+1560783782995	Marionette	WARN	TLS certificate errors will be ignored for this session
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: http://%(server)s/dummy/blocklist//buckets/monitor/collections/changes/records?_expected=%221560618350307%22 is not a valid URL..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:203:13
+
+JavaScript warning: https://z.moatads.com/turnvpaid34569/moatvideo.js#_moatApi30006932, line 233: Error: WebGL warning: <SetDimensions>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/turnvpaid34569/moatvideo.js#_moatApi30006932, line 233: Error: WebGL warning: <SetDimensions>: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/turnvpaid34569/moatvideo.js#_moatApi30006932, line 233: Error: WebGL warning: <SetDimensions>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/turnvpaid34569/moatvideo.js#_moatApi30006932, line 233: Error: WebGL warning: <SetDimensions>: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/spotxchangejsvideo759622536126/moatvideo.js#_moatApi62870563, line 234: Error: WebGL warning: <SetDimensions>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/spotxchangejsvideo759622536126/moatvideo.js#_moatApi62870563, line 234: Error: WebGL warning: <SetDimensions>: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/spotxchangejsvideo759622536126/moatvideo.js#_moatApi62870563, line 234: Error: WebGL warning: <SetDimensions>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/spotxchangejsvideo759622536126/moatvideo.js#_moatApi62870563, line 234: Error: WebGL warning: <SetDimensions>: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://cdn-ssl.vidible.tv/prod/ad-client/js/9.2.58/0.js, line 21: Error: WebGL warning: <SetDimensions>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://cdn-ssl.vidible.tv/prod/ad-client/js/9.2.58/0.js, line 21: Error: WebGL warning: <SetDimensions>: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://cdn-ssl.vidible.tv/prod/ad-client/js/9.2.58/0.js, line 21: Error: WebGL warning: <SetDimensions>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://cdn-ssl.vidible.tv/prod/ad-client/js/9.2.58/0.js, line 21: Error: WebGL warning: <SetDimensions>: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/turnvpaid34569/moatvideo.js#_moatApi66471909, line 233: Error: WebGL warning: <SetDimensions>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/turnvpaid34569/moatvideo.js#_moatApi66471909, line 233: Error: WebGL warning: <SetDimensions>: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/turnvpaid34569/moatvideo.js#_moatApi66471909, line 233: Error: WebGL warning: <SetDimensions>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/turnvpaid34569/moatvideo.js#_moatApi66471909, line 233: Error: WebGL warning: <SetDimensions>: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+
+(/usr/lib/firefox/firefox:25412): dconf-WARNING **: 01:58:11.226: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission denied
+JavaScript warning: https://z.moatads.com/aolonebuyervideoflashint2012897410256/moatvideo.js#_moatApi87984496, line 234: Error: WebGL warning: <SetDimensions>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/aolonebuyervideoflashint2012897410256/moatvideo.js#_moatApi87984496, line 234: Error: WebGL warning: <SetDimensions>: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/aolonebuyervideoflashint2012897410256/moatvideo.js#_moatApi87984496, line 234: Error: WebGL warning: <SetDimensions>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/aolonebuyervideoflashint2012897410256/moatvideo.js#_moatApi87984496, line 234: Error: WebGL warning: <SetDimensions>: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).

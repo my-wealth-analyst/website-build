@@ -24,6 +24,7 @@ def update_live_prices():
 
 
 
+
 # @periodic_task(
 #     run_every=(crontab(minute='*/5')),
 #     name="update_live_prices",
