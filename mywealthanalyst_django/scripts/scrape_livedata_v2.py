@@ -78,7 +78,7 @@ def scrape_current():
 
     btc_get = requests.get('https://www.bitstamp.net/api/ticker/').json()
     btc_price = float(btc_get["last"])
-    btc_change = float(btc_get["open"]) - float(btc_get["last"])
+    btc_change = float(btc_get["last"]) - float(btc_get["open"])
     btc_change_perc = btc_change/btc_price
     BITCOIN_USD = {'price': btc_price, 'price_change': btc_change, 'price_change_perc': btc_change_perc}
 
@@ -87,40 +87,40 @@ def scrape_current():
     ALLORDS_USD["price"] = ALLORDS_USD["price"]*AUD["price"]
     ALLORDS_USD["price_change"] = ALLORDS_USD["price_change"]*AUD["price"]
 
-    print("OIL_USD: ",OIL_USD)
-    print("GOLD_USD: ",GOLD_USD)
-    print("SILVER_USD: ",SILVER_USD)
-    print("BITCOIN_USD: ",BITCOIN_USD)
+    # print("OIL_USD: ",OIL_USD)
+    # print("GOLD_USD: ",GOLD_USD)
+    # print("SILVER_USD: ",SILVER_USD)
+    # print("BITCOIN_USD: ",BITCOIN_USD)
     # print("ALLORDS_USD: ",ALLORDS_USD)
 
-    # Commodities.objects.filter(commodity_name="AUD").update(date_last_scraped=datetime.now(),
-    #                                                              last_price=AUD["price"],
-    #                                                              last_movement_nominal=AUD["price_change"],
-    #                                                              last_movement_percentage=AUD["price_change_perc"])
-    #
-    # Commodities.objects.filter(commodity_name="Oil").update(date_last_scraped=datetime.now(),
-    #                                                              last_price=OIL_USD["price"],
-    #                                                              last_movement_nominal=OIL_USD["price_change"],
-    #                                                              last_movement_percentage=OIL_USD["price_change_perc"])
-    #
-    # Commodities.objects.filter(commodity_name="Gold").update(date_last_scraped=datetime.now(),
-    #                                                              last_price=GOLD_USD["price"],
-    #                                                              last_movement_nominal=GOLD_USD["price_change"],
-    #                                                              last_movement_percentage=GOLD_USD["price_change_perc"])
-    #
-    # Commodities.objects.filter(commodity_name="Silver").update(date_last_scraped=datetime.now(),
-    #                                                              last_price=SILVER_USD["price"],
-    #                                                              last_movement_nominal=SILVER_USD["price_change"],
-    #                                                              last_movement_percentage=SILVER_USD["price_change_perc"])
-    #
-    # Commodities.objects.filter(commodity_name="Bitcoin").update(date_last_scraped=datetime.now(),
-    #                                                              last_price=BITCOIN_USD["price"],
-    #                                                              last_movement_nominal=BITCOIN_USD["price_change"],
-    #                                                              last_movement_percentage=BITCOIN_USD["price_change_perc"])
-    #
-    # Commodities.objects.filter(commodity_name="All Ords").update(date_last_scraped=datetime.now(),
-    #                                                              last_price=ALLORDS_USD["price"],
-    #                                                              last_movement_nominal=ALLORDS_USD["price_change"],
-    #                                                              last_movement_percentage=ALLORDS_USD["price_change_perc"])
+    Commodities.objects.filter(commodity_name="AUD").update(date_last_scraped=datetime.now(),
+                                                                 last_price=AUD["price"],
+                                                                 last_movement_nominal=AUD["price_change"],
+                                                                 last_movement_percentage=AUD["price_change_perc"])
+
+    Commodities.objects.filter(commodity_name="Oil").update(date_last_scraped=datetime.now(),
+                                                                 last_price=OIL_USD["price"],
+                                                                 last_movement_nominal=OIL_USD["price_change"],
+                                                                 last_movement_percentage=OIL_USD["price_change_perc"])
+
+    Commodities.objects.filter(commodity_name="Gold").update(date_last_scraped=datetime.now(),
+                                                                 last_price=GOLD_USD["price"],
+                                                                 last_movement_nominal=GOLD_USD["price_change"],
+                                                                 last_movement_percentage=GOLD_USD["price_change_perc"])
+
+    Commodities.objects.filter(commodity_name="Silver").update(date_last_scraped=datetime.now(),
+                                                                 last_price=SILVER_USD["price"],
+                                                                 last_movement_nominal=SILVER_USD["price_change"],
+                                                                 last_movement_percentage=SILVER_USD["price_change_perc"])
+
+    Commodities.objects.filter(commodity_name="Bitcoin").update(date_last_scraped=datetime.now(),
+                                                                 last_price=BITCOIN_USD["price"],
+                                                                 last_movement_nominal=BITCOIN_USD["price_change"],
+                                                                 last_movement_percentage=BITCOIN_USD["price_change_perc"])
+
+    Commodities.objects.filter(commodity_name="All Ords").update(date_last_scraped=datetime.now(),
+                                                                 last_price=ALLORDS_USD["price"],
+                                                                 last_movement_nominal=ALLORDS_USD["price_change"],
+                                                                 last_movement_percentage=ALLORDS_USD["price_change_perc"])
 
     logger.info("Live prices updated")
