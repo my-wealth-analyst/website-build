@@ -40,46 +40,49 @@ def dashboard(request):
 def get_data(request):
     commodity_one = request.GET.get('commodity_one', None)
     commodity_two = request.GET.get('commodity_two', None)
+    city = request.GET.get('city', None)
 
-    filepath_one = os.path.join(BASE_DIR, f"../media_files/datasets/{commodity_one}_askprice_avg_aud.csv")
-    filepath_two = os.path.join(BASE_DIR, f"../media_files/datasets/{commodity_two}_askprice_avg_aud.csv")
+    filepath_one = os.path.join(BASE_DIR, f"../media_files/datasets/{commodity_one}.csv")
+    filepath_two = os.path.join(BASE_DIR, f"../media_files/datasets/{commodity_two}.csv")
 
-    commodity_one_df = pd.read_csv(filepath_one)
-    commodity_one_df.Date = pd.to_datetime(commodity_one_df.Date)
-    commodity_one_df.columns = ['Date',commodity_one]
-    commodity_one_df = commodity_one_df.set_index('Date')
+    commodity_one_df = pd.read_csv(filepath_one, index_col=0)
+    commodity_one_df.index = pd.to_datetime(commodity_one_df.index)
     commodity_one_df.sort_index(axis=0,ascending=True,inplace=True)
+
+    if commodity_one == 'houseprice':
+        if city:
+            commodity_one_df = commodity_one_df[[city]]
+            commodity_one_df = commodity_one_df.resample('d').interpolate(method='linear')
+        else:
+            return HttpResponse()
+
     commodity_one_df = commodity_one_df.loc[~commodity_one_df.index.duplicated(keep='first')]
 
     if commodity_two == 'identity':
         commodity_two_df = commodity_one_df.copy()
         commodity_two_df.iloc[:] = 1
     else:
-        commodity_two_df = pd.read_csv(filepath_two)
-        commodity_two_df.Date = pd.to_datetime(commodity_two_df.Date)
-        commodity_two_df.columns = ['Date',commodity_two]
-        commodity_two_df = commodity_two_df.set_index('Date')
+        commodity_two_df = pd.read_csv(filepath_two, index_col=0)
+        commodity_two_df.index = pd.to_datetime(commodity_two_df.index)
         commodity_two_df.sort_index(axis=0,ascending=True,inplace=True)
+
+        if commodity_two == 'annualincome':
+            if city:
+                commodity_two_df = commodity_two_df[[city]]*52
+                commodity_two_df = commodity_two_df.resample('d').interpolate(method='linear')
+            else:
+                return HttpResponse()
+
         commodity_two_df = commodity_two_df.loc[~commodity_two_df.index.duplicated(keep='first')]
 
-    # """ This block for converting AUD data sources to USD.
-    #     BUT this needs more thinking, because the AUD/USD exchange rate is not
-    #     constant over time. To do this properly we need a AUD/USD time series
-    #     going back to 1980........
-    # """
-    # exch_rate = Commodities.objects.get(commodity_name="AUD").last_price
-    # for df in [commodity_one_df,commodity_two_df]:
-    #     if df.columns[0] in ['gold','silver','allords']:
-    #         df.iloc[:,0] = df.iloc[:,0]*exch_rate
-
+    commodity_one_df = commodity_one_df.resample('d').interpolate(method='linear')
+    commodity_two_df = commodity_two_df.resample('d').interpolate(method='linear')
 
     df = commodity_one_df.merge(commodity_two_df, left_index=True,right_index=True)
-    df.dropna(axis=0,how='any',inplace=True)
+    df = df.replace(0, np.nan)
+    df.dropna(axis=0, how='any',inplace=True)
 
-    if df[df.columns[0]].sum() > df[df.columns[1]].sum():  # if commodity one nominally 'more valuable' (i.e. higher number) than commodity two
-        df['output'] = df[df.columns[0]] / df[df.columns[1]]
-    else: # if commodity two nominally 'more valuable' (i.e. higher number) than commodity one
-        df['output'] = df[df.columns[1]] / df[df.columns[0]]
+    df['output'] = df[df.columns[0]] / df[df.columns[1]]
 
     df.reset_index(inplace=True)
     df = df[['Date','output']]
