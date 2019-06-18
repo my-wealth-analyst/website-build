@@ -1776,3 +1776,7 @@ Traceback (most recent call last):
   File "/home/website-build/mywealthanalyst_django/MWA_webapp/tasks.py", line 23, in update_live_prices
     raise self.retry(exc=exc, countdown=60, max_retries=2)
 NameError: name 'self' is not defined
+[2019-06-18 21:35:43,787: INFO/MainProcess] Connected to redis://localhost:6379//
+[2019-06-18 21:35:43,801: INFO/MainProcess] mingle: searching for neighbors
+[2019-06-18 21:35:44,828: INFO/MainProcess] mingle: all alone
+[2019-06-18 21:35:44,839: INFO/MainProcess] celery@mywealthanalyst ready.
