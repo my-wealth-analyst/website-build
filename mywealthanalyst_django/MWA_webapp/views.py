@@ -22,7 +22,7 @@ def landingpage(request):
 @login_required
 def dashboard(request):
 
-    All = Commodities.objects.order_by('commodity_name').filter(enabled=True)
+    All = Commodities.objects.order_by('display_order').filter(enabled=True)
     Gold = Commodities.objects.filter(enabled=True).get(commodity_name='Gold')
     Silver = Commodities.objects.filter(enabled=True).get(commodity_name='Silver')
     Property = Commodities.objects.filter(enabled=True).get(commodity_name='Property')
