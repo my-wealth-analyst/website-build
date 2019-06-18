@@ -869,3 +869,81 @@ JavaScript warning: https://z.moatads.com/aolonebuyervideoflashint2012897410256/
 JavaScript warning: https://z.moatads.com/aolonebuyervideoflashint2012897410256/moatvideo.js#_moatApi59730378, line 234: Error: WebGL warning: <SetDimensions>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
 JavaScript warning: https://z.moatads.com/aolonebuyervideoflashint2012897410256/moatvideo.js#_moatApi59730378, line 234: Error: WebGL warning: <SetDimensions>: Failed to create WebGL context: WebGL creation failed: 
 * Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/turnvpaid34569/moatvideo.js#_moatApi72833943, line 233: Error: WebGL warning: <SetDimensions>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/turnvpaid34569/moatvideo.js#_moatApi72833943, line 233: Error: WebGL warning: <SetDimensions>: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/turnvpaid34569/moatvideo.js#_moatApi72833943, line 233: Error: WebGL warning: <SetDimensions>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/turnvpaid34569/moatvideo.js#_moatApi72833943, line 233: Error: WebGL warning: <SetDimensions>: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+
+(/usr/lib/firefox/firefox:21064): dconf-WARNING **: 02:39:49.625: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission denied
+JavaScript warning: https://z.moatads.com/spotxchangejsvideo759622536126/moatvideo.js#_moatApi13551834, line 234: Error: WebGL warning: <SetDimensions>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/spotxchangejsvideo759622536126/moatvideo.js#_moatApi13551834, line 234: Error: WebGL warning: <SetDimensions>: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/spotxchangejsvideo759622536126/moatvideo.js#_moatApi13551834, line 234: Error: WebGL warning: <SetDimensions>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/spotxchangejsvideo759622536126/moatvideo.js#_moatApi13551834, line 234: Error: WebGL warning: <SetDimensions>: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+[Parent 23704, Gecko_IOThread] WARNING: pipe error (96): Connection reset by peer: file /build/firefox-TU7cn2/firefox-67.0.2+build2/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+[Parent 23704, Gecko_IOThread] WARNING: pipe error (79): Connection reset by peer: file /build/firefox-TU7cn2/firefox-67.0.2+build2/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+1560789609721	Marionette	INFO	Stopped listening on port 40673
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1560789611642	Marionette	INFO	Stopped listening on port 33311
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+[Child 20054, Chrome_ChildThread] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-TU7cn2/firefox-67.0.2+build2/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Exiting due to channel error.
+Exiting due to channel error.
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+[Child 19940, Chrome_ChildThread] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-TU7cn2/firefox-67.0.2+build2/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Exiting due to channel error.
+Exiting due to channel error.
+[Child 22181, Chrome_ChildThread] WARNING: pipe error (37): Connection reset by peer: file /build/firefox-TU7cn2/firefox-67.0.2+build2/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+[Child 22181, Chrome_ChildThread] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-TU7cn2/firefox-67.0.2+build2/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+[Child 24753, Chrome_ChildThread] WARNING: pipe error (39): Connection reset by peer: file /build/firefox-TU7cn2/firefox-67.0.2+build2/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+[Child 24753, Chrome_ChildThread] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-TU7cn2/firefox-67.0.2+build2/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Exiting due to channel error.
+Sandbox: Unexpected EOF, op 0 flags 00 path /usr/share/locale/en_AU/LC_MESSAGES/libc.mo
+[Child 24821, Chrome_ChildThread] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-TU7cn2/firefox-67.0.2+build2/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+[Child 25412, Chrome_ChildThread] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-TU7cn2/firefox-67.0.2+build2/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Exiting due to channel error.
+Exiting due to channel error.
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+[Child 25116, Chrome_ChildThread] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-TU7cn2/firefox-67.0.2+build2/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Exiting due to channel error.
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+[Child 25018, Chrome_ChildThread] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-TU7cn2/firefox-67.0.2+build2/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Exiting due to channel error.
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+[Child 21064, Chrome_ChildThread] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-TU7cn2/firefox-67.0.2+build2/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Exiting due to channel error.
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+[Child 21041, Chrome_ChildThread] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-TU7cn2/firefox-67.0.2+build2/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Exiting due to channel error.
+[Child 25042, Chrome_ChildThread] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-TU7cn2/firefox-67.0.2+build2/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Exiting due to channel error.
+Sandbox: Unexpected EOF, op 0 flags 00 path /usr/share/locale/en_AU/LC_MESSAGES/libc.mo
+[Child 21155, Chrome_ChildThread] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-TU7cn2/firefox-67.0.2+build2/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Exiting due to channel error.
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+[Child 20830, Chrome_ChildThread] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-TU7cn2/firefox-67.0.2+build2/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Exiting due to channel error.
+Exiting due to channel error.
+[Child 20739, Chrome_ChildThread] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-TU7cn2/firefox-67.0.2+build2/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Exiting due to channel error.
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+[Child 21415, Chrome_ChildThread] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-TU7cn2/firefox-67.0.2+build2/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Exiting due to channel error.
+[Child 21438, Chrome_ChildThread] WARNING: pipe error (36): Connection reset by peer: file /build/firefox-TU7cn2/firefox-67.0.2+build2/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+[Child 21438, Chrome_ChildThread] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-TU7cn2/firefox-67.0.2+build2/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Exiting due to channel error.

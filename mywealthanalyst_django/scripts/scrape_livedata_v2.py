@@ -5,6 +5,9 @@ from django.conf import settings
 from celery.utils.log import get_task_logger
 import requests
 
+import warnings
+warnings.filterwarnings("ignore", category=RuntimeWarning)
+
 # from pyvirtualdisplay import Display
 # display = Display(visible=0, size=(1024, 768))
 # display.start()

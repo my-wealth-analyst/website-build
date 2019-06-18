@@ -3,6 +3,8 @@
 html, body {
   font-family: 'Tw Cen MT';
   overflow-x: hidden;
+--input-padding-x: 1.5rem;
+--input-padding-y: .75rem;
 }
 
 body {
@@ -125,6 +127,16 @@ h1, h2, h3, h4, h5 {
    box-shadow: 1px 2px 5px 0px rgba(34,42,53,0.5);
  }
 
+.graph_row{
+  padding-top: 25px !important;
+  padding-bottom: 25px !important;
+}
+
+ select.chart_dropdown{
+   z-index: 2 !important;
+  margin-left: 10px !important;
+ }
+
  /* CURRENCY TOGGLE BUTTON */
  .dashboard .my-auto{
 margin-bottom: auto;
@@ -166,12 +178,18 @@ margin-bottom: auto;
              content:"$";
          }
 
-  .dashboard td.price_small{ font-size: '8pt'}
+  .dashboard td.price_small{ font-size: 8pt}
   .dashboard td.negative { color: red ; font-size: 10pt   }
   .dashboard td.positive { color: green ; font-size: 10pt   }
 
   @media(max-width:500px){
-  .table-responsive{overflow-x:scroll;}
+  .dashboard .table{
+    overflow-x:scroll;
+    font-size: 11px !important}
+
+  .dashboard td.price_small{ font-size: 7pt}
+  .dashboard td.negative { color: red ; font-size: 9pt   }
+  .dashboard td.positive { color: green ; font-size: 9pt   }
 }
 
 
@@ -340,9 +358,10 @@ margin-bottom: auto;
 }
 
 .fixed-row{
-  position: fixed;
+  position: relative;
   top: 200px; /* required */
   opacity: 0;
+
 }
 
 .man-icon{

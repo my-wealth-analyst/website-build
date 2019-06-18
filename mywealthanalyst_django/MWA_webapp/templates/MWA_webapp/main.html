@@ -7,7 +7,8 @@
 
 {% block head %}
 <script src="{% static 'MWA_webapp/MWA_webapp.js' %}"></script>
-<meta http-equiv="Refresh" content="300"> 
+
+<meta http-equiv="Refresh" content="300">
 {% endblock %}
 
 {% block content %}
@@ -16,12 +17,12 @@
 
 <br>
 <br>
-<div class='container'>
+<div>
 
-<div class='container dashboard'>
+<div class='col-md-8 offset-md-2 col-12 dashboard'>
     <div class='row'>
-          <div class='col-11' align="left">
-                  <table class="table table-responsive-sm">
+          <div class='col-md-11 col-12' align="left">
+                  <table class="table">
                         <thead>
                               <tr>
                                 {% for item in Commodities %}
@@ -47,7 +48,8 @@
                                     <td class="price_small positive">
                                       <span class="currency_togglable" data-monetary-amount="{{ item.last_movement_nominal|floatformat:2 }}"></span>
                                       (<span data-monetary-amount="{{ item.last_movement_percentage|floatformat:2 }}"></span>%)
-                                    </td>                                    {% endif %}
+                                    </td>
+                                    {% endif %}
                                 {% endfor %}
                               </tr>
 
@@ -77,10 +79,13 @@
                         </tbody>
                   </table>
           </div>
+          <div class='col-md-1 col-12 text-center align-self-center' align="center" style="padding:0; padding-right:5px">
+              <button type="button" style="width:100%; padding:5px; text-align: center" class="btn btn-primary" id="currency_toggle" value="USD" data-toggle="button" aria-pressed="false" autocomplete="off">USD</button>
+          </div>
+      </div>
 
-        <div class='col-sm-1 my-auto text-center'>
-            <button type="button" class="btn btn-primary" id="currency_toggle" value="USD" data-toggle="button" aria-pressed="false" autocomplete="off">USD</button>
-        </div>
+
+
 
 </div>
 </div>
@@ -88,38 +93,76 @@
 
 
 <br>
-<div class='container'>
-<div class='row'>
+
+
+<div class='col-md-8 offset-md-2 col-12'>
+
+<div class='row graph_row'>
+  <SELECT id="citylist_1" class="chart_dropdown">
+        <OPTION VALUE="SYD">Sydney</option>
+        <OPTION VALUE="MEL">Melbourne</option>
+        <OPTION VALUE="BRI">Brisbane</option>
+        <OPTION VALUE="ADE">Adelaide</option>
+        <OPTION VALUE="PER">Perth</option>
+        <OPTION VALUE="CAN">Canberra</option>
+        <OPTION VALUE="HOB">Hobart</option>
+        <OPTION VALUE="DAR">Darwin</option>
+  </SELECT>
+      <div id="container_multichart" style="height: 400px; width: 100%"></div>
+</div>
+
+<div class='row graph_row'>
       <div id="container_gold_silver" style="height: 400px; width: 100%"></div>
 </div>
 
-<br>
+<div class='row graph_row'>
+      <SELECT id="citylist_2" class="chart_dropdown">
+            <OPTION VALUE="SYD">Sydney</option>
+            <OPTION VALUE="MEL">Melbourne</option>
+            <OPTION VALUE="BRI">Brisbane</option>
+            <OPTION VALUE="ADE">Adelaide</option>
+            <OPTION VALUE="PER">Perth</option>
+            <OPTION VALUE="CAN">Canberra</option>
+            <OPTION VALUE="HOB">Hobart</option>
+            <OPTION VALUE="DAR">Darwin</option>
+      </SELECT>
+      <div id="container_houseprice_gold" style="height: 400px; width: 100%"></div>
+</div>
 
-<div class='row'>
+<div class='row graph_row'>
+      <SELECT id="citylist_3" class="chart_dropdown">
+            <OPTION VALUE="SYD">Sydney</option>
+            <OPTION VALUE="MEL">Melbourne</option>
+            <OPTION VALUE="BRI">Brisbane</option>
+            <OPTION VALUE="ADE">Adelaide</option>
+            <OPTION VALUE="PER">Perth</option>
+            <OPTION VALUE="CAN">Canberra</option>
+            <OPTION VALUE="HOB">Hobart</option>
+            <OPTION VALUE="DAR">Darwin</option>
+      </SELECT>
+      <div id="container_houseprice_annualincome" style="height: 400px; width: 100%"></div>
+</div>
+
+<div class='row graph_row'>
       <div id="container_allordsperatio" style="height: 400px; width: 100%"></div>
 </div>
 
-<br>
-
-<div class='row'>
+<div class='row graph_row'>
       <div id="container_allords_gold" style="height: 400px; width: 100%"></div>
 </div>
 
-<br>
-
-<div class='row'>
+<div class='row graph_row'>
       <div id="container_bitcoin_gold" style="height: 400px; width: 100%"></div>
 </div>
 
-<br>
-
-<div class='row'>
+<div class='row graph_row'>
       <div id="container_bitcoin_allords" style="height: 400px; width: 100%"></div>
 </div>
 
-<br>
-
 </div>
+
+
+<script src="{% static 'MWA_webapp/MWA_multichart.js' %}"></script>
 
 <script>
 
@@ -156,10 +199,201 @@
   });
 
   plot_chart('gold','silver', 45,80)
+  plot_chart('houseprice','gold', null, null, "#citylist_2")
+  plot_chart('houseprice','annualincome', null, null, "#citylist_3")
   plot_allordsPEratio('allordsperatio',12,16)
   plot_chart('allords','gold', 2.5, 5)
   plot_chart('bitcoin','gold', 2, 5)
   plot_chart('bitcoin','allords')
+
+  $('#citylist_1').change(function(){
+    var seriesOptions = [],
+      seriesCounter = 0,
+      names = [['houseprice','gold'],
+               ['allords','gold'],
+               ['allordsperatio','identity'],
+              ];
+
+    var city = $("#citylist_1").val();
+
+    var rangeselector = {
+      selected: 2,
+      buttons: [{
+                    type: 'month',
+                    count: 6,
+                    text: '6m'
+                }, {
+                    type: 'year',
+                    count: 1,
+                    text: '1y'
+                }, {
+                    type: 'year',
+                    count: 5,
+                    text: '5y'
+                }, {
+                    type: 'year',
+                    count: 15,
+                    text: '15y'
+                }, {
+                    type: 'ytd',
+                    text: 'YTD'
+                }, {
+                    type: 'all',
+                    text: 'ALL'
+                }]
+    };
+
+    var plotbandcolour = 'rgba(127,127,27,0.15)';
+    var plotbands = [
+    {
+                color: plotbandcolour, // Color value
+                from: 120873600000, // Nov 1973
+                to: 162777600000, // Mar 1975
+                label: {
+                        text:'',
+                        rotation: 90,
+                        align:'left',
+                        style:{"fontSize": "11px"},
+                        y: 3,
+                        x: 3,
+                        color: 'rgb(34,42,53)'       },
+              },
+              {
+                color: plotbandcolour, // Color value
+                from: 315446400000, // Jan 1980
+                to: 331171200000, //  June 1980
+                label: {
+                        text:'',
+                        rotation: 90,
+                        align:'left',
+                        style:{"fontSize": "11px"},
+                        y: 3,
+                        x: 3,
+                        color: 'rgb(34,42,53)'       },
+              },
+              {
+                color: plotbandcolour, // Color value
+                from: 362707200000, // July 1981
+                to: 404870400000, // Nov 1982
+                label: {
+                        text:'',
+                        rotation: 90,
+                        align:'left',
+                        style:{"fontSize": "11px"},
+                        y: 3,
+                        x: 3,
+                        color: 'rgb(34,42,53)'       },
+              },
+              {
+                color: plotbandcolour, // Color value
+                from: 646704000000, // July 1990
+                to: 667699200000, // March 1991
+                label: {
+                        text:'',
+                        rotation: 90,
+                        align:'left',
+                        style:{"fontSize": "11px"},
+                        y: 3,
+                        x: 3,
+                        color: 'rgb(34,42,53)'       },
+              },
+              {
+                color: plotbandcolour, // Color value
+                from: 867715200000, // July 1997
+                to: 899251200000, // July 1998
+                label: {
+                        text:'',
+                        rotation: 90,
+                        align:'left',
+                        style:{"fontSize": "11px"},
+                        y: 3,
+                        x: 3,
+                        color: 'rgb(34,42,53)'       },
+              },
+              {
+                color: plotbandcolour, // Color value
+                from: 983318400000, // March 2001
+                to: 1004486400000, // Nov 2001
+                label: {
+                        text:'',
+                        rotation: 90,
+                        align:'left',
+                        style:{"fontSize": "11px"},
+                        y: 3,
+                        x: 3,
+                        color: 'rgb(34,42,53)'       },
+              },
+              {
+                color: plotbandcolour, // Color value
+                from: 1196380800000, // Dec 2007
+                to: 1243728000000, // June 2009
+                label: {
+                        text:'',
+                        rotation: 90,
+                        align:'left',
+                        style:{"fontSize": "11px"},
+                        y: 3,
+                        x: 3,
+                        color: 'rgb(34,42,53)'       },
+              },
+            ];
+
+    function createChart() {
+      Highcharts.stockChart('container_multichart', {
+        rangeSelector: rangeselector,
+        credits:{enabled:false},
+        exporting:{enabled:false},
+        colors: ['#7CB5EC','#FF9900','#FF5050'],
+        tooltip: {
+            valueDecimals: 2,
+            split: true,
+        },
+        xAxis: {
+                  plotBands: plotbands
+              },
+        plotOptions: {
+          series: {
+            showInNavigator: true
+          }
+        },
+        series: seriesOptions,
+        title: {
+            enabled: true,
+            text: "Median House Price : Gold : All Ordinaries",
+            align: 'left',
+            style: {'fontWeight':'bold'},
+        },
+      });
+    }
+
+    $.each(names, function(i, name) {
+      $.getJSON(`/getdata/?commodity_one=${name[0]}&commodity_two=${name[1]}&city=${city}`, function (data) {
+
+        seriesOptions[i] = {
+          name: `${jsUcfirst(prettifystringnames(name[0]))} : ${jsUcfirst(prettifystringnames(name[1]))}`,
+          data: data,
+        };
+
+
+
+        // As we're loading the data asynchronously, we don't know what order it will arrive. So
+        // we keep a counter and create the chart when all the data is loaded.
+        seriesCounter += 1;
+
+        if (seriesCounter === names.length) {
+          createChart();
+        }
+      });
+    });
+  })
+
+  $('#citylist_2').change(function(){
+      plot_chart('houseprice','gold', null, null, "#citylist_2")
+  })
+
+  $('#citylist_3').change(function(){
+      plot_chart('houseprice','annualincome', null, null, "#citylist_3")
+  })
 
 </script>
 
