@@ -39,6 +39,7 @@ class MWA_usermodel(AbstractUser):
     USERNAME_FIELD = 'email'
 
     email = models.EmailField(_('email address'), unique=True) # changes email to unique and blank to false
+    activated = models.BooleanField(default=False)
     REQUIRED_FIELDS = []  # removes email from REQUIRED_FIELDS
 
     phone_number = models.CharField(null=True, blank=True,

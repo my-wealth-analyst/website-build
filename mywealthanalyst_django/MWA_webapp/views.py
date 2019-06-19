@@ -21,6 +21,9 @@ def landingpage(request):
 
 @login_required
 def dashboard(request):
+    user=request.user
+    if user.activated == False:
+        return render(request, 'MWA_users/email_not_activated.html')
 
     All = Commodities.objects.order_by('display_order').filter(enabled=True)
     Gold = Commodities.objects.filter(enabled=True).get(commodity_name='Gold')
@@ -38,6 +41,10 @@ def dashboard(request):
 
 @login_required(redirect_field_name='my_redirect_field')
 def get_data(request):
+    user=request.user
+    if user.activated == False:
+        return render(request, 'MWA_users/email_not_activated.html')
+
     commodity_one = request.GET.get('commodity_one', None)
     commodity_two = request.GET.get('commodity_two', None)
     city = request.GET.get('city', None)

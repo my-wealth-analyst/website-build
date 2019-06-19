@@ -8,7 +8,7 @@ class MWA_usermodel_Admin(admin.ModelAdmin):
     list_display = ['email' , 'last_name' , 'first_name' , 'last_login' , 'phone_number' , 'country' ]
 
     fieldsets = (
-        (None, {'fields': ('email', 'password')}),
+        (None, {'fields': ('email', 'activated', 'password')}),
         (_('Personal info'), {'fields': ('first_name', 'last_name', 'phone_number', 'country')}),
         (_('Important dates'), {'fields': ('last_login', 'date_joined')}),
         (_('Permissions'), {'fields': ('is_active', 'is_staff', 'is_superuser',
@@ -21,7 +21,7 @@ class MWA_usermodel_Admin(admin.ModelAdmin):
             'fields': ('email', 'password1', 'password2'),
         }),
     )
-    list_display = ('email', 'first_name', 'last_name', 'is_staff')
+    list_display = ('email', 'first_name', 'last_name', 'is_staff', 'activated')
     search_fields = ('email', 'first_name', 'last_name')
     ordering = ('email',)
 
