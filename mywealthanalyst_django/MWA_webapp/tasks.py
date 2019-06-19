@@ -57,7 +57,7 @@ def updater(filename=None, commodity_name=None, date=None):
     if date > pd.to_datetime(existing.iloc[-1,0], format="%Y-%m-%d").date():
         new = pd.DataFrame(data={'Date': [date], 'price_USD': [helper(commodity_name)]})
         existing = pd.concat((existing,new), ignore_index=True)
-        existing.to_csv(filepath)
+        existing.to_csv(filepath, index=False)
 
 @periodic_task(
     run_every=(crontab(hour=0, minute=20)),

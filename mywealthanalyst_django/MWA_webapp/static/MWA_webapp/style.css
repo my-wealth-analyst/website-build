@@ -1,5 +1,10 @@
  /* GENERAL - ALL-OF-PAGE */
 
+ html {
+   height: 100%;
+   box-sizing: border-box;
+ }
+
 html, body {
   font-family: 'Tw Cen MT';
   overflow-x: hidden;
@@ -9,11 +14,17 @@ html, body {
 
 body {
     overflow-y: hidden !important;
+    display: flex;                  /* establish flex container */
+flex-direction: column;         /* align child elements ("flex items") vertically */
+justify-content: space-between; /* pin both flex items to opposite ends */
+margin: 0;
+min-height: 100%;
 }
 
 h1, h2, h3, h4, h5 {
    font-family: 'Verdana'
 }
+
 
 
 /* HEADER AND NAVBAR */
