@@ -9,3 +9,11 @@ celerybeat.pid
 celerybeat-schedule
 
 mywealthanalyst_django/celerybeat-schedule
+
+*.log
+*.pot
+*.pyc
+*/*/*/*/__pycache__/
+*/*/*/__pycache__/
+*/*/__pycache__/
+*/__pycache__/
