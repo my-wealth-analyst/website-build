@@ -7,3 +7,5 @@ __pycache__/
 celerybeat-schedule.db
 celerybeat.pid
 celerybeat-schedule
+
+mywealthanalyst_django/celerybeat-schedule
