@@ -1,5 +1,8 @@
 import pandas as pd
 import os
+import requests, time, random
+from bs4 import BeautifulSoup
+from torrequest import TorRequest
 from mywealthanalyst_django.settings import BASE_DIR
 from datetime import timedelta
 
@@ -9,26 +12,45 @@ from celery.utils.log import get_task_logger
 
 from MWA_webapp.models import Commodities
 
-from scripts.scrape_livedata_v2 import scrape_current
+from scripts.scrape_livedata_v2 import scrape_current_v2
 # from scripts.get_historical_data_v2 import update_houseprice, update_annualincome
 
 logger = get_task_logger(__name__)
 
+import warnings
+warnings.filterwarnings("ignore", category=RuntimeWarning)
 
 @periodic_task(
-    run_every=(crontab(minute='*/5')),
-    name="cron_update_live_prices",
+    run_every=(crontab(minute='*/15')),
+    name="cron_update_live_prices_v2",
     ignore_result=True
 )
-def cron_update_live_prices():
+def cron_update_live_prices_v2():
     """
     Scrape live prices (to be run every 5 minutes)
     """
     try:
-        scrape_current()
+        time.sleep(random.randint(0, 30))
+        scrape_current_v2()
     except Exception as exc:
         logger.warning(exc)
         raise Exception
+
+
+# @periodic_task(
+#     run_every=(crontab(minute='*/5')),
+#     name="cron_update_live_prices",
+#     ignore_result=True
+# )
+# def cron_update_live_prices():
+#     """
+#     Scrape live prices (to be run every 5 minutes)
+#     """
+#     try:
+#         scrape_current()
+#     except Exception as exc:
+#         logger.warning(exc)
+#         raise Exception
 
 
 @periodic_task(
@@ -51,6 +73,7 @@ def helper(commodity_name=None):
     previous_close = last_price - movement
     return(previous_close)
 
+
 def updater(filename=None, commodity_name=None, date=None):
     filepath = os.path.join(BASE_DIR,f"../media_files/datasets/{filename}")
     existing = pd.read_csv(filepath)
@@ -58,6 +81,7 @@ def updater(filename=None, commodity_name=None, date=None):
         new = pd.DataFrame(data={'Date': [date], 'price_USD': [helper(commodity_name)]})
         existing = pd.concat((existing,new), ignore_index=True)
         existing.to_csv(filepath, index=False)
+
 
 @periodic_task(
     run_every=(crontab(hour=0, minute=20)),
