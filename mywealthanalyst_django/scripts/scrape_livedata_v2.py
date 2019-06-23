@@ -161,7 +161,7 @@ user_agent_list = [
 
 def scrape_current_v2():
 
-    tr=TorRequest(password='Lond2345!')
+    tr=TorRequest(password='mywealthanalyst_admin')
     tr.reset_identity() # Reset Tor
     user_agent = random.choice(user_agent_list)
     headers = {'User-Agent': user_agent,}
