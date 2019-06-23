@@ -3,7 +3,7 @@ from .models import (
                     Commodities
                     )
 from scripts.get_historical_data import update_gold_and_silver, update_oil, update_bitcoin, update_allords_PE_ratio, update_allords
-from scripts.scrape_livedata_v2 import scrape_current
+from scripts.scrape_livedata_v2 import scrape_current_v2
 
 
 def create_commodities():
@@ -28,7 +28,7 @@ def scrape_live_data(ModelAdmin, request, queryset):
     scrape_all()
 
 def scrape_live_data(ModelAdmin, request, queryset):
-    scrape_current()
+    scrape_current_v2()
 
 class CommoditiesAdmin(admin.ModelAdmin):
     actions = [refresh_historical_data, scrape_live_data]
