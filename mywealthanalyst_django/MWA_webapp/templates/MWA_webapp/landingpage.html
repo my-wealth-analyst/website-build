@@ -56,13 +56,13 @@
                 </div>
                 <div class='offset-2 col-4 order-md-1 order-lg-0' style="text-align: center" data-top="transform: translateY(-50px)" data-300-top="transform: translateY(100px)" data-anchor-target=".frame-03">
                     <img src="{%static 'MWA_webapp/images/phone2.png' %}" id="phone_img" class="img-responsive" max-height="400px">
-                    <img src="{%static 'MWA_webapp/icons/notification_icon.png' %}" id="notification_img" data-100-center="width: 40%" data-center="width: 45%" data--100-center="width: 50%" data-anchor-target=".frame-03">
+                    <img src="{%static 'MWA_webapp/icons/notification_icon.png' %}" id="notification_img" data-100-center="width: 30%" data-center="width: 35%" data--100-center="width: 40%" data-anchor-target=".frame-03">
 
                 </div>
             </div>
 
 
-            <div class='row row-parallax align-items-center'>
+            <div id="IconsDiv" class='row row-parallax align-items-center'>
                 <div class='col-lg-7 col-12 order-lg-1 text-right'>
                     <br>
                     <h3> One <strong>click</strong> access to purchase <strong>quality</strong> investment assets</h3>
@@ -71,18 +71,18 @@
                 <div class='col-lg-5 offset-lg-0 offset-1 col-10 order-lg-0 text-center'>
                     <div class="row">
                         <div class="col col-centered">
-                            <img src="{%static 'MWA_webapp/icons/gold_icon.png' %}" id="gold-icon" class="img-responsive commodity-icon" data-bottom="opacity:0" data-top="opacity:1">
-                            <img src="{%static 'MWA_webapp/icons/bitcoin.png' %}" id="gold-icon" class="img-responsive commodity-icon" data--200-bottom="opacity:0" data-top="opacity:1">
+                            <img src="{%static 'MWA_webapp/icons/gold_icon.png' %}" id="gold-icon" class="img-responsive commodity-icon">
+                            <img src="{%static 'MWA_webapp/icons/bitcoin.png' %}" id="bitcoin-icon" class="img-responsive commodity-icon">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col col-centered">
-                            <img src="{%static 'MWA_webapp/icons/oil.png' %}" id="gold-icon" class="img-responsive commodity-icon" data--100-bottom="opacity:0" data-top="opacity:1">
-                            <img src="{%static 'MWA_webapp/icons/stock_icon.png' %}" id="gold-icon" class="img-responsive commodity-icon" data--300-bottom="opacity:0" data-top="opacity:1">
+                            <img src="{%static 'MWA_webapp/icons/oil.png' %}" id="oil-icon" class="img-responsive commodity-icon">
+                            <img src="{%static 'MWA_webapp/icons/stock_icon.png' %}" id="stock-icon" class="img-responsive commodity-icon">
                         </div>
                     </div>
                     <br>
-                    <a class="btn btn-lg btn-primary text-uppercase custombutton" style="width:200px" href="{% url 'register' %}">Buy now</a>
+                    <a class="btn btn-lg btn-primary text-uppercase custombutton" id="buy-now-btn" style="width:200px" href="{% url 'register' %}">Buy now</a>
                 </div>
 
             </div>
@@ -93,6 +93,7 @@
               <div class="row">
                 <div class='col-12'>
                     <h3> How John uses <strong>mywealthanalyst</strong> to increase his <strong>wealth</strong></h3>
+                    <br>
                 </div>
                 </div>
 
@@ -101,19 +102,24 @@
                     <img src="{%static 'MWA_webapp/icons/man_icon.png' %}" class="img-responsive man-icon">
                   </div>
                   <div class="col-11">
-                    <span class="subheading john-text">In 1998 John & Jane both invest in 1 oz. of Gold bullion</span>
-                    <span class="subheading john-text">In 2003 John converts his 1oz. Gold bullion into 78 ounces of Silver</span>
-                    <span class="subheading john-text">In 2007 John converts his 78 oz. of Silver into 1.65 oz. of Gold</span>
-                    <span class="subheading john-text">In 2008 John converts his 1.65 oz. of Gold into 129 oz. of Silver</span>
-                    <span class="subheading john-text">In 2011 John converts his 129 oz. of Silver into 2.9 oz. of Gold</span>
-                    <span class="subheading john-text">In 13 years John has tripled his wealth, increasing from 1 oz. to 2.9 oz. of Gold</span>
+                     <br>
+                    <span class="subheading john-text seq1">In 1998 John & Jane both invest in 1 oz. of Gold bullion</span>
+                    <span class="subheading john-text seq2">In 2003 John converts his 1oz. Gold bullion into 78 ounces of Silver</span>
+                    <span class="subheading john-text seq3">In 2007 John converts his 78 oz. of Silver into 1.65 oz. of Gold</span>
+                    <span class="subheading john-text seq4">In 2008 John converts his 1.65 oz. of Gold into 129 oz. of Silver</span>
+                    <span class="subheading john-text seq5">In 2011 John converts his 129 oz. of Silver into 2.9 oz. of Gold</span>
+                    <span class="subheading john-text seq6">In 13 years John has tripled his wealth, increasing from 1 oz. to 2.9 oz. of Gold</span>
                   </div>
                 </div>
 
                 <div class="row">
                   <div class="col-12 col-md-10">
                     <img src="{%static 'MWA_webapp/images/graph2.png' %}" class="img-responsive" id="JJ-graph" width="95%">
-                    <div class="white-box"></div>
+                    <div class="white-box seq1" style="left:25%;"></div>
+                    <div class="white-box seq2" style="left:41%;"></div>
+                    <div class="white-box seq3" style="left:53%;"></div>
+                    <div class="white-box seq4" style="left:60%;"></div>
+                    <div class="white-box seq5" style="left:66%;"></div>
                   </div>
                 </div>
 
@@ -122,8 +128,9 @@
                     <img src="{%static 'MWA_webapp/icons/woman_icon.png' %}" class="img-responsive man-icon">
                   </div>
                   <div class="col-11">
-                    <span class="subheading jane-text">Jane holds her investment</span>
-                    <span class="subheading jane-text">Jane's wealth doesn't change</span>
+                     <br>
+                    <span class="subheading jane-text seq2">Jane holds her investment</span>
+                    <span class="subheading jane-text seq6">Jane's wealth doesn't change</span>
                   </div>
                 </div>
 
@@ -157,5 +164,100 @@
         skrollr.menu.init(s);
     };
 </script>
+
+<script>
+
+
+var IconsAnimated = false;
+   function IconsAnimation(){
+   $('#gold-icon').each(function(i) {
+      $(this).fadeTo(1000,1);
+   });
+   $('#bitcoin-icon').each(function(i) {
+      $(this).delay(1000).fadeTo(1000,1);
+   });
+   $('#oil-icon').each(function(i) {
+      $(this).delay(2000).fadeTo(1000,1);
+   });
+   $('#stock-icon').each(function(i) {
+      $(this).delay(3000).fadeTo(1000,1);
+   });
+   $('#buy-now-btn').each(function(i) {
+      $(this).delay(3000).fadeTo(1000,1);
+   });
+
+   IconsAnimated = true;
+   }
+
+var JohnJaneAnimated = false;
+   function JohnJaneAnimation(){
+   $('.seq1').each(function(i) {
+      $(this).fadeIn(500);
+      $(this).delay(3000).fadeOut(500);
+   });
+   $('.seq2').each(function(i) {
+      $(this).delay(4000).fadeIn(500);
+      $(this).delay(5000).fadeOut(500);
+   });
+   $('.seq3').each(function(i) {
+      $(this).delay(12000).fadeIn(500);
+      $(this).delay(5000).fadeOut(500);
+   });
+   $('.seq4').each(function(i) {
+      $(this).delay(18000).fadeIn(500);
+      $(this).delay(5000).fadeOut(500);
+   });
+   $('.seq5').each(function(i) {
+      $(this).delay(24000).fadeIn(500);
+      $(this).delay(5000).fadeOut(500);
+   });
+   $('.seq6').each(function(i) {
+      $(this).delay(30000).fadeIn(500);
+   });
+
+   JohnJaneAnimated = true;
+   }
+
+
+   $.fn.isOnScreen = function(){
+
+       var win = $(window);
+       var viewport = {
+           top : win.scrollTop(),
+           left : win.scrollLeft()
+       };
+       viewport.right = viewport.left + win.width();
+       viewport.bottom = viewport.top + win.height();
+
+       var bounds = this.offset();
+       bounds.right = bounds.left + this.outerWidth();
+       bounds.bottom = bounds.top + this.outerHeight();
+
+       return (!(viewport.right < bounds.left || viewport.left > bounds.right || viewport.bottom < bounds.top || viewport.top > bounds.bottom));
+   };
+
+   $(document).ready(function(){
+       $(window).scroll(function(){
+           if ($('#JohnJaneDiv').isOnScreen()) {
+               // The element is visible, do something
+               if(JohnJaneAnimated == false){
+                  JohnJaneAnimation()
+                  }
+           }
+
+           if ($('#IconsDiv').isOnScreen()) {
+               // The element is visible, do something
+               if(IconsAnimated == false){
+                  IconsAnimation()
+                  }
+           }
+
+       });
+
+   });
+
+
+</script>
+
 
 {% endblock %}

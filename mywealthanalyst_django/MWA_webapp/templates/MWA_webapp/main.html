@@ -33,29 +33,43 @@
                         <tbody>
                               <tr>
                                 {% for item in Commodities %}
-                                          <td class="currency""><span class="currency_togglable" data-monetary-amount="{{ item.last_price|floatformat:2 }}"></span></td>
+
+                                    {% if item.commodity_name == 'Property' %}
+                                    <td class="currency""><span class="currency_togglable" id="propertyprice" data-monetary-amount="{{ Property.SYD|floatformat:0 }}"></span></td>
+                                    {% else %}
+                                    <td class="currency""><span class="currency_togglable" data-monetary-amount="{{ item.last_price|floatformat:2 }}"></span></td>
+                                    {% endif %}
+
                                 {% endfor %}
                               </tr>
 
                               <tr>
                                 {% for item in Commodities %}
-                                    {% if 0 > item.last_movement_nominal %}
-                                        <td class="price_small negative">
-                                          <span class="currency_togglable" data-monetary-amount="{{ item.last_movement_nominal|floatformat:2 }}"></span>
-                                          (<span data-monetary-amount="{{ item.last_movement_percentage|floatformat:2 }}"></span>%)
-                                        </td>
+                                    {% if item.commodity_name == 'Property' %}
+                                       <td></td>
                                     {% else %}
-                                    <td class="price_small positive">
-                                      <span class="currency_togglable" data-monetary-amount="{{ item.last_movement_nominal|floatformat:2 }}"></span>
-                                      (<span data-monetary-amount="{{ item.last_movement_percentage|floatformat:2 }}"></span>%)
-                                    </td>
+                                       {% if 0 > item.last_movement_nominal %}
+                                           <td class="price_small negative">
+                                             <span class="currency_togglable" data-monetary-amount="{{ item.last_movement_nominal|floatformat:2 }}"></span>
+                                             (<span data-monetary-amount="{{ item.last_movement_percentage|floatformat:2 }}"></span>%)
+                                           </td>
+                                       {% else %}
+                                       <td class="price_small positive">
+                                         <span class="currency_togglable" data-monetary-amount="{{ item.last_movement_nominal|floatformat:2 }}"></span>
+                                         (<span data-monetary-amount="{{ item.last_movement_percentage|floatformat:2 }}"></span>%)
+                                       </td>
+                                       {% endif %}
                                     {% endif %}
                                 {% endfor %}
                               </tr>
 
                               <tr>
                                 {% for item in Commodities %}
+                                  {% if item.commodity_name == "Property" %}
+                                  <td class="price_small" style="font-size:9pt"> {{Property.name|date:"Y-M-d"}} </td>
+                                  {% else %}
                                   <td class="price_small" style="font-size:9pt"> {{item.date_last_scraped|date:"M-d H:i"}} </td>
+                                  {% endif %}
                                 {% endfor %}
                               </tr>
 
@@ -72,7 +86,17 @@
                                       {% elif item.commodity_name == "Oil"%}
                                     <td class="price_small" style="font-size:9pt"> <a href="https://www.plus500.com.au/" target="_blank" style="font-size:9pt">buy now</a> </td>
                                       {% else %}
-                                    <td class="price_small" style="font-size:9pt"> </td>
+                                    <td class="price_small" style="font-size:9pt">
+                                       <SELECT id="citylist_0" class="chart_dropdown">
+                                             <OPTION VALUE="SYD">Sydney</option>
+                                             <OPTION VALUE="MEL">Melbourne</option>
+                                             <OPTION VALUE="BRI">Brisbane</option>
+                                             <OPTION VALUE="ADE">Adelaide</option>
+                                             <OPTION VALUE="PER">Perth</option>
+                                             <OPTION VALUE="CAN">Canberra</option>
+                                             <OPTION VALUE="HOB">Hobart</option>
+                                             <OPTION VALUE="DAR">Darwin</option>
+                                       </SELECT></td>
                                       {% endif %}
                                 {% endfor %}
                               </tr>
@@ -170,6 +194,21 @@
     return(parseFloat(toString(string).replace(",","")))
   }
 
+  $('#citylist_0').change(function(){
+     var city = $("#citylist_0").val();
+     $.getJSON(`/getpropertyprice/?city=${city}`, function (data) {
+     if ( $('#currency_toggle').text() == 'USD'){
+        console.log("USD")
+        $("#propertyprice").attr('data-monetary-amount', parseFloat(data).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+     }
+     if ($('#currency_toggle').text() == 'AUD'){
+        console.log("AUD");
+        console.log(data)
+        console.log(data/{{AUD.last_price}})
+        $("#propertyprice").attr('data-monetary-amount', parseFloat(data/{{AUD.last_price}}/{{AUD.last_price}}).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+     }
+  })
+})
 
   $('#currency_toggle').on('click', function(event) {
     if (this.innerHTML == 'USD'){
@@ -199,12 +238,13 @@
   });
 
   plot_chart('gold','silver', 45,80)
-  plot_chart('houseprice','gold', null, null, "#citylist_2")
+  plot_chart('houseprice','gold', 'std', 'std', "#citylist_2")
   plot_chart('houseprice','annualincome', null, null, "#citylist_3")
   plot_allordsPEratio('allordsperatio',12,16)
   plot_chart('allords','gold', 2.5, 5)
   plot_chart('bitcoin','gold', 2, 5)
   plot_chart('bitcoin','allords')
+
 
   $('#citylist_1').change(function(){
     var seriesOptions = [],

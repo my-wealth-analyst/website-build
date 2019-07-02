@@ -14,7 +14,6 @@ from scripts.get_historical_data import update_allords
 
 # Create your views here.
 
-
 def landingpage(request):
     return render(request, 'MWA_webapp/landingpage.html')
 
@@ -28,16 +27,35 @@ def dashboard(request):
     All = Commodities.objects.order_by('display_order').filter(enabled=True)
     Gold = Commodities.objects.filter(enabled=True).get(commodity_name='Gold')
     Silver = Commodities.objects.filter(enabled=True).get(commodity_name='Silver')
-    Property = Commodities.objects.filter(enabled=True).get(commodity_name='Property')
     Oil = Commodities.objects.filter(enabled=True).get(commodity_name='Oil')
     AllOrds = Commodities.objects.filter(enabled=True).get(commodity_name='All Ords')
     Bitcoin = Commodities.objects.filter(enabled=True).get(commodity_name='Bitcoin')
     AUD = Commodities.objects.get(commodity_name='AUD')
 
+    Property = pd.read_csv(os.path.join(BASE_DIR, f"../media_files/datasets/houseprice.csv"), index_col=0)
+    Property.index = pd.to_datetime(Property.index)
+    Property = Property*1000 * AUD.last_price
+    Property = Property.iloc[-1,:]
+    print(Property.name)
+
     return render(request, 'MWA_webapp/main.html', {'Commodities': All, 'Gold': Gold, 'Silver': Silver,
     'Property':Property , 'Oil': Oil , 'AllOrds': AllOrds , 'Bitcoin': Bitcoin, 'AUD': AUD
     })
 
+
+@login_required(redirect_field_name='my_redirect_field')
+def get_propertyprice(request):
+    user=request.user
+    if user.activated == False:
+        return render(request, 'MWA_users/email_not_activated.html')
+
+    city = request.GET.get('city', None)
+    AUD = Commodities.objects.get(commodity_name='AUD')
+
+    Property = pd.read_csv(os.path.join(BASE_DIR, f"../media_files/datasets/houseprice.csv"), index_col=0)
+    Property = Property*1000 * AUD.last_price
+    Property = Property.iloc[-1,:]
+    return HttpResponse(Property[city])
 
 @login_required(redirect_field_name='my_redirect_field')
 def get_data(request):
@@ -60,6 +78,7 @@ def get_data(request):
         if city:
             commodity_one_df = commodity_one_df[[city]]
             commodity_one_df = commodity_one_df.resample('d').interpolate(method='linear')
+            commodity_one_df = commodity_one_df*1000
         else:
             return HttpResponse()
 
@@ -99,3 +118,7 @@ def get_data(request):
     df.columns = ['x','y']
     df_jsonformat = [df.values.tolist()]
     return HttpResponse(df_jsonformat)
+
+
+def testview(request):
+    return render(request, 'MWA_users/confirmation_email.html')
