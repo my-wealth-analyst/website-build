@@ -1,11 +1,28 @@
-{% autoescape off %}
+{% extends "MWA_users/email_head.html" %}
 
-The following e-mail addresses are associated with your mywealthanalyst account!
+{% block content%}
+<br>
+<div style="text-align: center;">
+    <span>
+        <small><i> DO NOT REPLY TO THIS EMAIL </i></small>
+    </span>
+</div>
+<br>
 
-Please click on the link to confirm your registration,
-http://{{ domain }}{% url 'activate' uidb64=uid token=token %}
+<b> Confirm your email address </b><br>
+In order to activate your mywealthanalyst account, you'll need to confirm your email address. <br>
+<br>
+Please click on the link to confirm your registration, <br>
+http://{{ domain }}{% url 'activate' uidb64=uid token=token %} <br>
+<br>
+<br>
+<br>
+thank you from the mywealthanalyst team <br>
+<a href="{% url 'landingpage' %}">www.mywealthanalyst.com</a>
+<br>
+<br>
+If you believe you have received this email erronously, please ignore it or contact our team at <b>contact@mywealthanalyst.com</b>
+<br>
+<br>
 
-thank you from the mywealthanalyst team
-www.mywealthanalyst.com
-
-{% endautoescape %}
+{% endblock %}

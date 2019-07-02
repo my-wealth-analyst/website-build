@@ -1,0 +1,48 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        {{ form.media.css }}
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="{% static 'MWA_webapp/style.css' %}?id=29" />
+
+        {{ form.media.js }}
+
+    </head>
+
+    <body>
+
+
+            <div class="container">
+                   <div class="mx-auto order-0" style="background-color: rgb(68, 114, 196)">
+                       <a href="{% url 'landingpage' %}"><img src="https://www.mywealthanalyst.com/static/MWA_webapp/logos/logo_full_nobackground.png" alt="mywealthanalyst" height="50px"></a>
+                   </div>
+            {% block content %}
+            {% endblock %}
+
+            {% load static%}
+
+            <!-- Footer -->
+            <div id="footer">
+              <!-- COPYRIGHT AND PRIVACY POLICY ROW -->
+              <div class="row vcenter footer_bar" style="background:rgba(34, 42, 53, 1); color:rgba(255, 153, 0, 1);">
+                <div class = 'container'>
+                    <div class="row">
+                      <div style="text-align: center"><h5> © {% now "Y" %} mywealthanalyst.com</h5></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            </div>
+    </body>
+
+</html>

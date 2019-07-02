@@ -10,7 +10,7 @@ function prettifystringnames(string){
     else if (string == 'annualincome'){
     return 'Average Annual Income'}
     else if (string == 'houseprice'){
-    return 'Median House Price'}
+    return 'Property'}
     else if (string == 'identity'){
     return ''}
     else {
@@ -24,7 +24,7 @@ function _formatEpochDate(eTS) {
 // Global Vars
 
 var rangeselector = {
-    selected: 2,
+    selected: 5,
     buttons: [{
                   type: 'month',
                   count: 6,
@@ -50,7 +50,28 @@ var rangeselector = {
               }]
 };
 
+function StandardDeviation(numbersArr) {
+    //--CALCULATE AVAREGE--
+    var total = 0;
+    for(var key in numbersArr)
+       total += numbersArr[key];
+    var meanVal = total / numbersArr.length;
+    //--CALCULATE AVAREGE--
 
+    //--CALCULATE STANDARD DEVIATION--
+    var SDprep = 0;
+    for(var key in numbersArr)
+       SDprep += Math.pow((parseFloat(numbersArr[key]) - meanVal),2);
+    var SDresult = Math.sqrt(SDprep/numbersArr.length);
+    //--CALCULATE STANDARD DEVIATION--
+    return SDresult ;
+
+}
+
+function getAvg(grades) {
+  const total = grades.reduce((acc, c) => acc + c, 0);
+  return total / grades.length;
+}
 
 function plot_chart(commodity_one, commodity_two, undervalue, overvalue, button_id){
 var plotbandcolour = 'rgba(127,127,27,0.15)';
@@ -152,6 +173,19 @@ var city = $(button_id).val();
 
 $.getJSON(`/getdata/?commodity_one=${commodity_one}&commodity_two=${commodity_two}&city=${city}`, function (data) {
     // Create the chart
+
+    if (undervalue == 'std' && overvalue == 'std'){
+      var arr = new Array();
+      for (i = 0; i < data.length; i++){
+         arr.push(data[i][1]);
+      }
+
+      var std = StandardDeviation(arr);
+      var mean = getAvg(arr);
+
+      undervalue = mean - std
+      overvalue = mean + std
+   }
 
     Highcharts.stockChart(`container_${commodity_one}_${commodity_two}`, {
 

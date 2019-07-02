@@ -345,7 +345,7 @@ margin-bottom: auto;
 }
 
 #phone_img{
-  width: 75%;
+  width: 50%;
   left: 26%;
   top: 20%;
 }
@@ -362,10 +362,14 @@ margin-bottom: auto;
   height: 150px;
   width: 150px;
   position: relative;
+  opacity: 0;
+}
+
+#buy-now-btn{
+   opacity: 0;
 }
 
 #JohnJaneDiv{
-  background-color: red
 }
 
 .man-icon{
@@ -373,10 +377,12 @@ margin-bottom: auto;
 }
 
 .john-text{
+   display: none;
 }
 
 .jane-text{
   color: rgb(68,114,196) !important;
+   display: none;
 }
 
 .white-box{
@@ -385,7 +391,6 @@ margin-bottom: auto;
   background-color: #fff;
   height: 89%;
   width: 100%;
-  left: 25%
 }
 
 .row-parallax{
@@ -405,7 +410,7 @@ margin-bottom: auto;
 
  .landingpage .subheading{
    color: rgba(255,153,0,1);
-   font-size: 16pt;
+   font-size: 18pt;
    font-weight: 550;
  }
 
