@@ -414,8 +414,6 @@
           data: data,
         };
 
-
-
         // As we're loading the data asynchronously, we don't know what order it will arrive. So
         // we keep a counter and create the chart when all the data is loaded.
         seriesCounter += 1;
@@ -428,7 +426,7 @@
   })
 
   $('#citylist_2').change(function(){
-      plot_chart('houseprice','gold', null, null, "#citylist_2")
+      plot_chart('houseprice','gold', 'std', 'std', "#citylist_2")
   })
 
   $('#citylist_3').change(function(){
