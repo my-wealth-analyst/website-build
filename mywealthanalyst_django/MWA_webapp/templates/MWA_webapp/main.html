@@ -198,14 +198,10 @@
      var city = $("#citylist_0").val();
      $.getJSON(`/getpropertyprice/?city=${city}`, function (data) {
      if ( $('#currency_toggle').text() == 'USD'){
-        console.log("USD")
         $("#propertyprice").attr('data-monetary-amount', parseFloat(data).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
      }
      if ($('#currency_toggle').text() == 'AUD'){
-        console.log("AUD");
-        console.log(data)
-        console.log(data/{{AUD.last_price}})
-        $("#propertyprice").attr('data-monetary-amount', parseFloat(data/{{AUD.last_price}}/{{AUD.last_price}}).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+        $("#propertyprice").attr('data-monetary-amount', parseFloat(data/{{AUD.last_price}}).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
      }
   })
 })
