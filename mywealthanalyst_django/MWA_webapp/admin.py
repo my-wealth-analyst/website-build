@@ -24,10 +24,6 @@ def refresh_historical_data(ModelAdmin, request, queryset):
     update_allords()
 
 def scrape_live_data(ModelAdmin, request, queryset):
-    create_commodities()
-    scrape_all()
-
-def scrape_live_data(ModelAdmin, request, queryset):
     scrape_current_v2()
 
 class CommoditiesAdmin(admin.ModelAdmin):
