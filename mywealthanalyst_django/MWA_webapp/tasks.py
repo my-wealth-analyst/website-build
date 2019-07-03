@@ -47,22 +47,6 @@ def cron_update_live_prices_v2():
         raise Exception
 
 
-# @periodic_task(
-#     run_every=(crontab(minute='*/5')),
-#     name="cron_update_live_prices",
-#     ignore_result=True
-# )
-# def cron_update_live_prices():
-#     """
-#     Scrape live prices (to be run every 5 minutes)
-#     """
-#     try:
-#         scrape_current()
-#     except Exception as exc:
-#         logger.warning(exc)
-#         raise Exception
-
-
 @periodic_task(
     run_every=(crontab(hour=0, minute=20, day_of_month='1')),
     name="cron_update_houseprice_and_annualincome",
@@ -104,7 +88,6 @@ def update_historic_from_live_prices():
     Update ABS house price data for 8 capital cities
     """
     date = pd.to_datetime('today').date() - pd.Timedelta(1, unit='d')
-
     updater('allords.csv', 'All Ords', date)
     updater('bitcoin.csv', 'Bitcoin', date)
     updater('gold.csv', 'Gold', date)
