@@ -20,6 +20,16 @@ logger = get_task_logger(__name__)
 import warnings
 warnings.filterwarnings("ignore", category=RuntimeWarning)
 
+
+@periodic_task(
+    run_every=(crontab(minute='*/1')),
+    name="test",
+    ignore_result=True
+)
+def test():
+    logger.warning("success")
+
+
 @periodic_task(
     run_every=(crontab(minute='*/5')),
     name="cron_update_live_prices_v2",
