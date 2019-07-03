@@ -21,7 +21,7 @@ import warnings
 warnings.filterwarnings("ignore", category=RuntimeWarning)
 
 @periodic_task(
-    run_every=(crontab(minute='*/15')),
+    run_every=(crontab(minute='*/5')),
     name="cron_update_live_prices_v2",
     ignore_result=True
 )
