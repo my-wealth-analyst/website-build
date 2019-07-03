@@ -13,7 +13,7 @@ from celery.utils.log import get_task_logger
 from MWA_webapp.models import Commodities
 
 from scripts.scrape_livedata_v2 import scrape_current_v2
-from scripts.get_historical_data_v2 import update_houseprice, update_annualincome, update_allords_PE_ratio
+from scripts.get_historical_data_v2 import update_houseprice, update_annualincome#, update_allords_PE_ratio
 
 logger = get_task_logger(__name__)
 
@@ -58,7 +58,7 @@ def cron_update_houseprice_and_annualincome():
     """
     update_houseprice()
     update_annualincome()
-    update_allords_PE_ratio()
+    # update_allords_PE_ratio()
 
 
 def helper(commodity_name=None):
