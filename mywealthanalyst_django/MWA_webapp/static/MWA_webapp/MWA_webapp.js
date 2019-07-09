@@ -10,7 +10,7 @@ function prettifystringnames(string){
     else if (string == 'annualincome'){
     return 'Average Annual Income'}
     else if (string == 'houseprice'){
-    return 'Property'}
+    return 'Median House Price'}
     else if (string == 'identity'){
     return ''}
     else {

@@ -22,7 +22,7 @@ warnings.filterwarnings("ignore", category=RuntimeWarning)
 
 
 @periodic_task(
-    run_every=(crontab(minute='*/10')),
+    run_every=(crontab(minute='*/5')),
     name="cron_update_live_prices_v2",
     ignore_result=True
 )
@@ -39,7 +39,7 @@ def cron_update_live_prices_v2():
 
 
 @periodic_task(
-    run_every=(crontab(hour=0, minute=20, day_of_month='1')),
+    run_every=(crontab(hour=0, minute=20)),
     name="cron_update_houseprice_and_annualincome",
     ignore_result=True
 )

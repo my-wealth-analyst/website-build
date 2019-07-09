@@ -1,25 +1,25 @@
 {% extends "MWA_webapp/head.html" %}
 
-
+{% load tz %}
 {% load static %}
 {% block title %} mywealthanalyst {% endblock %}
 {% block description %} Providing information and analysis on the true value of investment assets to safeguard your wealth for generations. {% endblock %}
 
 {% block head %}
-<script src="{% static 'MWA_webapp/MWA_webapp.js' %}"></script>
-
+<script src="{% static 'MWA_webapp/MWA_webapp.js' %}?id=2"></script>
 <meta http-equiv="Refresh" content="300">
+
 {% endblock %}
 
 {% block content %}
 
 
 
-<br>
-<br>
 <div>
-
+   <br>
+   <br>
 <div class='col-md-8 offset-md-2 col-12 dashboard'>
+
     <div class='row'>
           <div class='col-md-11 col-12' align="left">
                   <table class="table">
@@ -66,7 +66,7 @@
                               <tr>
                                 {% for item in Commodities %}
                                   {% if item.commodity_name == "Property" %}
-                                  <td class="price_small" style="font-size:9pt"> {{Property.name|date:"Y-M-d"}} </td>
+                                  <td class="price_small" style="font-size:9pt"> {% localtime on %}{{Property.name|date:"Y-M-d"}}{% endlocaltime %} </td>
                                   {% else %}
                                   <td class="price_small" style="font-size:9pt"> {{item.date_last_scraped|date:"M-d H:i"}} </td>
                                   {% endif %}
@@ -80,11 +80,11 @@
                                       {% elif item.commodity_name == "Silver"%}
                                     <td class="price_small" style="font-size:9pt"> <a href="https://www.perthmint.com/" target="_blank" style="font-size:9pt">buy now</a> </td>
                                       {% elif item.commodity_name == "All Ords"%}
-                                    <td class="price_small" style="font-size:9pt"> <a href="https://www.plus500.com.au/" target="_blank" style="font-size:9pt">buy now</a> </td>
+                                    <td class="price_small" style="font-size:9pt"> <a href="https://www.500affiliates.com/Home.aspx?id=122624" target="_blank" style="font-size:9pt">buy now</a> </td>
                                       {% elif item.commodity_name == "Bitcoin"%}
                                     <td class="price_small" style="font-size:9pt"> <a href="https://www.coinbase.com/" target="_blank" style="font-size:9pt">buy now</a> </td>
                                       {% elif item.commodity_name == "Oil"%}
-                                    <td class="price_small" style="font-size:9pt"> <a href="https://www.plus500.com.au/" target="_blank" style="font-size:9pt">buy now</a> </td>
+                                    <td class="price_small" style="font-size:9pt"> <a href="https://www.500affiliates.com/Home.aspx?id=122624" target="_blank" style="font-size:9pt">buy now</a> </td>
                                       {% else %}
                                     <td class="price_small" style="font-size:9pt">
                                        <SELECT id="citylist_0" class="chart_dropdown">
@@ -115,9 +115,7 @@
 </div>
 </div>
 
-
 <br>
-
 
 <div class='col-md-8 offset-md-2 col-12'>
 
