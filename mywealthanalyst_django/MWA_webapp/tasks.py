@@ -62,10 +62,10 @@ def helper(commodity_name=None):
 def updater(filename=None, commodity_name=None, date=None):
     filepath = os.path.join(BASE_DIR,f"../media_files/datasets/{filename}")
     existing = pd.read_csv(filepath)
-    if date > pd.to_datetime(existing.iloc[-1,0], format="%Y-%m-%d").date():
+    if date > pd.to_datetime(existing.iloc[-1,0], format="%d/%m/%Y").date():
         new = pd.DataFrame(data={'Date': [date], 'price_USD': [helper(commodity_name)]})
         existing = pd.concat((existing,new), ignore_index=True)
-        existing.to_csv(filepath, index=False)
+        existing.to_csv(filepath, index=False, date_format="%d/%m/%Y")
 
 
 @periodic_task(

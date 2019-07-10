@@ -65,7 +65,7 @@ def update_houseprice():
     existing.index = pd.to_datetime(existing.index, format="%Y-%m-%d")
 
     new = pd.concat((existing, df[df.index > existing.index[-1]]))
-    new.to_csv(os.path.join(BASE_DIR,f"../media_files/datasets/houseprice.csv"))
+    new.to_csv(os.path.join(BASE_DIR,f"../media_files/datasets/houseprice.csv"), date_format="%d/%m/%Y")
     Commodities.objects.filter(commodity_name="Property").update(date_last_scraped=datetime.now())
 
 def helper(state, url):
@@ -95,10 +95,10 @@ def update_annualincome():
     df.index = pd.to_datetime(df.index, format="%Y-%m-%d")
 
     existing = pd.read_csv(os.path.join(BASE_DIR,f"../media_files/datasets/annualincome.csv"), index_col=0)
-    existing.index = pd.to_datetime(existing.index, format="%Y-%m-%d")
+    existing.index = pd.to_datetime(existing.index, format="%d/%m/%Y")
 
     new = pd.concat((existing, df[df.index > existing.index[-1]]))
-    new.to_csv(os.path.join(BASE_DIR,f"../media_files/datasets/annualincome.csv"))
+    new.to_csv(os.path.join(BASE_DIR,f"../media_files/datasets/annualincome.csv"), date_format="%d/%m/%Y")
     Commodities.objects.filter(commodity_name="Annual Income").update(date_last_scraped=datetime.now())
 
 
@@ -128,5 +128,5 @@ def update_allords_PE_ratio():
     df.columns = ['Date','AskPrice_Avg_AUD']
     df.dropna(axis=0,how='any',inplace=True)
 
-    df.to_csv(filepath, index=False)
+    df.to_csv(filepath, index=False, date_format="%d/%m/%Y")
     Commodities.objects.filter(commodity_name="All Ords PE Ratio").update(date_last_scraped=datetime.now())

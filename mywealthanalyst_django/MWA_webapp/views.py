@@ -36,7 +36,6 @@ def dashboard(request):
     Property.index = pd.to_datetime(Property.index)
     Property = Property*1000 * AUD.last_price
     Property = Property.iloc[-1,:]
-    print(Property.name)
 
     return render(request, 'MWA_webapp/main.html', {'Commodities': All, 'Gold': Gold, 'Silver': Silver,
     'Property':Property , 'Oil': Oil , 'AllOrds': AllOrds , 'Bitcoin': Bitcoin, 'AUD': AUD
@@ -70,8 +69,9 @@ def get_data(request):
     filepath_one = os.path.join(BASE_DIR, f"../media_files/datasets/{commodity_one}.csv")
     filepath_two = os.path.join(BASE_DIR, f"../media_files/datasets/{commodity_two}.csv")
 
-    commodity_one_df = pd.read_csv(filepath_one, index_col=0)
-    commodity_one_df.index = pd.to_datetime(commodity_one_df.index)
+    commodity_one_df = pd.read_csv(filepath_one, )
+    commodity_one_df.Date = pd.to_datetime(commodity_one_df.Date, format="%d/%m/%Y")
+    commodity_one_df.set_index('Date', inplace=True)
     commodity_one_df.sort_index(axis=0,ascending=True,inplace=True)
 
     if commodity_one == 'houseprice':
@@ -88,8 +88,9 @@ def get_data(request):
         commodity_two_df = commodity_one_df.copy()
         commodity_two_df.iloc[:] = 1
     else:
-        commodity_two_df = pd.read_csv(filepath_two, index_col=0)
-        commodity_two_df.index = pd.to_datetime(commodity_two_df.index)
+        commodity_two_df = pd.read_csv(filepath_two)
+        commodity_two_df.Date = pd.to_datetime(commodity_two_df.Date, format="%d/%m/%Y")
+        commodity_two_df.set_index('Date', inplace=True)
         commodity_two_df.sort_index(axis=0,ascending=True,inplace=True)
 
         if commodity_two == 'annualincome':
