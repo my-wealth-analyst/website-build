@@ -28,7 +28,7 @@ def scrape_live_data(ModelAdmin, request, queryset):
 
 class CommoditiesAdmin(admin.ModelAdmin):
     actions = [refresh_historical_data, scrape_live_data]
-    readonly_fields = ["date_last_scraped"]
+    readonly_fields = ["date_last_scraped","historical_data_APIendpoint"]
     list_display = ['commodity_name','enabled','date_last_scraped','last_price']
 
 # Register your models here.
