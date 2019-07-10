@@ -2,6 +2,7 @@ import time, datetime
 import requests
 import os, io
 from functools import reduce
+import random
 
 from mywealthanalyst_django.settings import BASE_DIR
 
