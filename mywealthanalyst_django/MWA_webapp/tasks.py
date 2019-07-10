@@ -39,7 +39,7 @@ def cron_update_live_prices_v2():
 
 
 @periodic_task(
-    run_every=(crontab(hour=0, minute=20)),
+    run_every=(crontab(hour=0, minute=20, day_of_month="1")),
     name="cron_update_houseprice_and_annualincome",
     ignore_result=True
 )
@@ -49,7 +49,6 @@ def cron_update_houseprice_and_annualincome():
     """
     update_houseprice()
     update_annualincome()
-    update_allords_PE_ratio()
 
 
 def helper(commodity_name=None):
@@ -83,3 +82,4 @@ def update_historic_from_live_prices():
     updater('bitcoin.csv', 'Bitcoin', date)
     updater('gold.csv', 'Gold', date)
     updater('silver.csv', 'Silver', date)
+    update_allords_PE_ratio()

@@ -43,18 +43,6 @@ user_agent_list = [
 ]
 
 
-def build_datasets():
-    gold = quandl.get("LBMA/GOLD")
-    gold = gold[["USD (AM)"]]
-    gold.columns = ['price_USD']
-    gold.to_csv(os.path.join(BASE_DIR,f"../media_files/datasets/gold_usd.csv"))
-
-    silver = quandl.get("LBMA/SILVER")
-    silver = silver[["USD"]]
-    silver.columns = ['price_USD']
-    silver.to_csv(os.path.join(BASE_DIR,f"../media_files/datasets/silver_usd.csv"))
-
-
 def update_houseprice():
     url = "https://www.abs.gov.au/ausstats/meisubs.nsf/log?openagent&641604.xls&6416.0&Time%20Series%20Spreadsheet&55CB84AAC829D752CA25841C0017D0EF&0&Mar%202019&18.06.2019&Latest"
     df = pd.read_excel(url, sheet_name="Data1", header=0)
@@ -78,6 +66,7 @@ def update_houseprice():
 
     new = pd.concat((existing, df[df.index > existing.index[-1]]))
     new.to_csv(os.path.join(BASE_DIR,f"../media_files/datasets/houseprice.csv"))
+    Commodities.objects.filter(commodity_name="Property").update(date_last_scraped=datetime.now())
 
 def helper(state, url):
     df = pd.read_excel(url, sheet_name="Data1", header=0)
@@ -110,6 +99,7 @@ def update_annualincome():
 
     new = pd.concat((existing, df[df.index > existing.index[-1]]))
     new.to_csv(os.path.join(BASE_DIR,f"../media_files/datasets/annualincome.csv"))
+    Commodities.objects.filter(commodity_name="Annual Income").update(date_last_scraped=datetime.now())
 
 
 def update_allords_PE_ratio():
@@ -139,3 +129,4 @@ def update_allords_PE_ratio():
     df.dropna(axis=0,how='any',inplace=True)
 
     df.to_csv(filepath, index=False)
+    Commodities.objects.filter(commodity_name="All Ords PE Ratio").update(date_last_scraped=datetime.now())
