@@ -9,6 +9,7 @@ celerybeat.pid
 celerybeat-schedule
 
 mywealthanalyst_django/celerybeat-schedule
+*/media_files/datasets/*.csv
 
 *.log
 *.pot
