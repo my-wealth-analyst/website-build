@@ -118,7 +118,7 @@ def update_allords_PE_ratio():
     url = 'https://www.marketindex.com.au/sites/default/files/statistics/asx-fundamentals.xlsx'
     r = tr.get(url, headers=headers)
 
-    filepath = os.path.join(BASE_DIR,f"../media_files/datasets/allordsperatio_askprice_avg_aud.csv")
+    filepath = os.path.join(BASE_DIR,f"../media_files/datasets/allordsperatio.csv")
 
     with open(os.path.join(BASE_DIR,f"../media_files/datasets/asx-fundamentals.xlsx"), 'wb') as f:
         f.write(r.content)
