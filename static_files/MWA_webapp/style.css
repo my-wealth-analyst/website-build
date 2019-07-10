@@ -1,5 +1,10 @@
  /* GENERAL - ALL-OF-PAGE */
 
+ html {
+   height: 100%;
+   box-sizing: border-box;
+ }
+
 html, body {
   font-family: 'Tw Cen MT';
   overflow-x: hidden;
@@ -9,11 +14,17 @@ html, body {
 
 body {
     overflow-y: hidden !important;
+    display: flex;                  /* establish flex container */
+flex-direction: column;         /* align child elements ("flex items") vertically */
+justify-content: space-between; /* pin both flex items to opposite ends */
+margin: 0;
+min-height: 100%;
 }
 
 h1, h2, h3, h4, h5 {
    font-family: 'Verdana'
 }
+
 
 
 /* HEADER AND NAVBAR */
@@ -334,7 +345,7 @@ margin-bottom: auto;
 }
 
 #phone_img{
-  width: 75%;
+  width: 50%;
   left: 26%;
   top: 20%;
 }
@@ -351,17 +362,14 @@ margin-bottom: auto;
   height: 150px;
   width: 150px;
   position: relative;
+  opacity: 0;
+}
+
+#buy-now-btn{
+   opacity: 0;
 }
 
 #JohnJaneDiv{
-  height: 6000px;
-}
-
-.fixed-row{
-  position: relative;
-  top: 200px; /* required */
-  opacity: 0;
-
 }
 
 .man-icon{
@@ -369,14 +377,12 @@ margin-bottom: auto;
 }
 
 .john-text{
-  position: absolute;
-  top: 10px
+   display: none;
 }
 
 .jane-text{
-  position: absolute;
-  top: 10px;
   color: rgb(68,114,196) !important;
+   display: none;
 }
 
 .white-box{
@@ -385,15 +391,12 @@ margin-bottom: auto;
   background-color: #fff;
   height: 89%;
   width: 100%;
-  left: 25%
 }
 
- .row.row-parallax{
-   height: 70vh;
+.row-parallax{
    padding-top: 100px;
    padding-bottom: 100px;
  }
-
 
  .landingpage strong{
    color: rgba(68,114,196,1);
@@ -407,7 +410,7 @@ margin-bottom: auto;
 
  .landingpage .subheading{
    color: rgba(255,153,0,1);
-   font-size: 16pt;
+   font-size: 18pt;
    font-weight: 550;
  }
 
