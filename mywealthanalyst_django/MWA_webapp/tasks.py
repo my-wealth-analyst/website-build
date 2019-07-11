@@ -83,4 +83,5 @@ def update_historic_from_live_prices():
     updater('bitcoin.csv', 'Bitcoin', date)
     updater('gold.csv', 'Gold', date)
     updater('silver.csv', 'Silver', date)
+    updater('aud.csv', 'AUD', date)
     update_allords_PE_ratio()
