@@ -68,6 +68,7 @@ def get_data(request):
 
     filepath_one = os.path.join(BASE_DIR, f"../media_files/datasets/{commodity_one}.csv")
     filepath_two = os.path.join(BASE_DIR, f"../media_files/datasets/{commodity_two}.csv")
+    filepath_exchrate = os.path.join(BASE_DIR, f"../media_files/datasets/aud.csv")
 
     commodity_one_df = pd.read_csv(filepath_one, )
     commodity_one_df.Date = pd.to_datetime(commodity_one_df.Date, format="%d/%m/%Y")
@@ -79,6 +80,17 @@ def get_data(request):
             commodity_one_df = commodity_one_df[[city]]
             commodity_one_df = commodity_one_df.resample('d').interpolate(method='linear')
             commodity_one_df = commodity_one_df*1000
+
+            exch = pd.read_csv(filepath_exchrate)
+            exch.Date = pd.to_datetime(exch.Date, format="%d/%m/%Y")
+            exch.set_index('Date', inplace=True)
+            exch.price_USD = exch.price_USD.astype('float')
+            exch = exch.resample('d').interpolate(method='linear')
+
+            commodity_one_df = commodity_one_df.merge(exch, left_index=True,right_index=True)
+            commodity_one_df.iloc[:,0] = commodity_one_df.iloc[:,0] * commodity_one_df.price_USD
+            commodity_one_df = commodity_one_df.iloc[:,0].to_frame()
+
         else:
             return HttpResponse()
 
@@ -87,6 +99,7 @@ def get_data(request):
     if commodity_two == 'identity':
         commodity_two_df = commodity_one_df.copy()
         commodity_two_df.iloc[:] = 1
+
     else:
         commodity_two_df = pd.read_csv(filepath_two)
         commodity_two_df.Date = pd.to_datetime(commodity_two_df.Date, format="%d/%m/%Y")
@@ -97,6 +110,17 @@ def get_data(request):
             if city:
                 commodity_two_df = commodity_two_df[[city]]*52
                 commodity_two_df = commodity_two_df.resample('d').interpolate(method='linear')
+
+                exch = pd.read_csv(filepath_exchrate)
+                exch.Date = pd.to_datetime(exch.Date, format="%d/%m/%Y")
+                exch.set_index('Date', inplace=True)
+                exch.price_USD = exch.price_USD.astype('float')
+                exch = exch.resample('d').interpolate(method='linear')
+
+                commodity_two_df = commodity_two_df.merge(exch, left_index=True,right_index=True)
+                commodity_two_df.iloc[:,0] = commodity_two_df.iloc[:,0] * commodity_two_df.price_USD
+                commodity_two_df = commodity_two_df.iloc[:,0].to_frame()
+
             else:
                 return HttpResponse()
 
