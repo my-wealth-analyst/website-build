@@ -7,6 +7,9 @@ from django.conf import settings
 from celery.utils.log import get_task_logger
 import requests
 
+import resource
+resource.setrlimit(resource.RLIMIT_NOFILE, (999999, 999999))
+
 import warnings
 warnings.filterwarnings("ignore", category=RuntimeWarning)
 
@@ -57,7 +60,7 @@ user_agent_list = [
 def scrape_current_v2():
 
     tr=TorRequest(password='mywealthanalyst_admin')
-    tr.reset_identity() # Reset Tor
+    # tr.reset_identity() # Reset Tor
     user_agent = random.choice(user_agent_list)
     headers = {'User-Agent': user_agent,}
 
