@@ -6,6 +6,7 @@ import random
 from django.conf import settings
 from celery.utils.log import get_task_logger
 import requests
+import time
 
 import resource
 resource.setrlimit(resource.RLIMIT_NOFILE, (999999, 999999))
@@ -113,3 +114,6 @@ def scrape_current_v2():
                                                                  last_movement_percentage=ALLORDS_USD["price_change_perc"])
 
     logger.info(f"Live prices updated using IP: {current_ip}")
+
+    tr.close()
+    time.sleep(5)
