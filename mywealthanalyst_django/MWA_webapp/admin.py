@@ -42,6 +42,8 @@ class CommoditiesAdmin(admin.ModelAdmin):
 class CommoditiesTSAdmin(admin.ModelAdmin):
     list_filter = (('date', DateFieldListFilter), 'name')
     list_display = ['date', 'name', 'last_price']
+    fields = ['name', 'date', 'datetime', 'last_price',
+              'last_movement_nominal', 'last_movement_percentage']
 
 # Register your models here.
 

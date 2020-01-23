@@ -9,8 +9,8 @@ from celery.utils.log import get_task_logger
 import requests
 import time
 
-import resource
-resource.setrlimit(resource.RLIMIT_NOFILE, (999999, 999999))
+# import resource
+# resource.setrlimit(resource.RLIMIT_NOFILE, (999999, 999999))
 
 warnings.filterwarnings("ignore", category=RuntimeWarning)
 

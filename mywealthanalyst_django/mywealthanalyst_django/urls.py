@@ -19,18 +19,18 @@ from django.conf.urls import url, include
 from django.contrib.sitemaps.views import sitemap
 from MWA_webapp.sitemaps import StaticViewSitemap
 
-## Sitemap
+# Sitemap
 sitemaps = {
     'home': StaticViewSitemap,
 }
 ###########################
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-	url(r'^', include('MWA_webapp.urls')),
-	url(r'^', include('MWA_users.urls')),
+    path('django_admin/', admin.site.urls),
+    url(r'^', include('MWA_webapp.urls')),
+    url(r'^', include('MWA_users.urls')),
 
-    #### Sitemap
+    # Sitemap
     url(r'^sitemap\.xml$', sitemap, {'sitemaps': sitemaps},
         name='django.contrib.sitemaps.views.sitemap'),
-    ]
+]
