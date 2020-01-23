@@ -7,24 +7,34 @@ from django.utils import timezone
 from django.conf import settings
 from django.core.files.storage import FileSystemStorage
 
+from django_pandas.managers import DataFrameManager
+
+
 class MyFileStorage(FileSystemStorage):
 
     # This method is actually defined in Storage
     def get_available_name(self, name, max_length=None):
         if self.exists(name):
             os.remove(os.path.join(settings.MEDIA_ROOT, name))
-        return name # simply returns the name passed
+        return name  # simply returns the name passed
+
 
 class Commodities(models.Model):
     enabled = models.BooleanField()
-    commodity_name = models.CharField(max_length = 20)
+    commodity_name = models.CharField(max_length=20)
     display_order = models.IntegerField(default=1, null=True)
-    date_last_scraped = models.DateTimeField(null=True,blank=True, default= timezone.now )
-    last_price = models.FloatField(null=True,blank=True, help_text='Value in USD, or index value')
-    last_movement_nominal = models.FloatField(null=True,blank=True, help_text='Value in USD, or index value')
-    last_movement_percentage = models.FloatField(null=True,blank=True, help_text='Value in percent ("5" = 5%)')
-    historical_data = models.FileField(upload_to='datasets/', storage=MyFileStorage(), null=True,blank=True, help_text="historical data in csv format (don't change column names or format)")
-    historical_data_APIendpoint = models.CharField(max_length=20, null=True,blank=True)
+    date_last_scraped = models.DateTimeField(
+        null=True, blank=True, default=timezone.now)
+    last_price = models.FloatField(
+        null=True, blank=True, help_text='Value in USD, or index value')
+    last_movement_nominal = models.FloatField(
+        null=True, blank=True, help_text='Value in USD, or index value')
+    last_movement_percentage = models.FloatField(
+        null=True, blank=True, help_text='Value in percent ("5" = 5%)')
+    historical_data = models.FileField(upload_to='datasets/', storage=MyFileStorage(), null=True,
+                                       blank=True, help_text="historical data in csv format (don't change column names or format)")
+    historical_data_APIendpoint = models.CharField(
+        max_length=20, null=True, blank=True)
 
     def __str__(self):
         return "%s" % (self.commodity_name)
@@ -33,3 +43,29 @@ class Commodities(models.Model):
         if self.historical_data.name:
             self.historical_data.name = self.historical_data_APIendpoint
         super(Commodities, self).save(*args, **kwargs)
+
+
+COMMODITIES = [('Gold', 'Gold'),
+               ('Silver', 'Silver'),
+               ('Oil', 'Oil'),
+               ('Allords', 'Allords'),
+               ('Allordsperatio', 'Allordsperatio'),
+               ('Bitcoin', 'Bitcoin'),
+               ('AUD', 'AUD'),
+               ]
+
+
+class Commodity_TS(models.Model):
+    name = models.CharField(choices=COMMODITIES,
+                            max_length=20, null=False, blank=False)
+    date = models.DateField(default=date.today, null=False, blank=False)
+    datetime = models.DateTimeField(auto_now=True, null=False, blank=False)
+
+    last_price = models.FloatField(
+        null=True, blank=True, help_text='Value in USD, or index value')
+    last_movement_nominal = models.FloatField(
+        null=True, blank=True, help_text='Value in USD, or index value')
+    last_movement_percentage = models.FloatField(
+        null=True, blank=True, help_text='Value in percent ("5" = 5%)')
+
+    objects = DataFrameManager()
