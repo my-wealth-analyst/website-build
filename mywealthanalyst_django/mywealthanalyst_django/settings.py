@@ -28,7 +28,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['localhost',
                  '104.248.152.99',
                  'www.mywealthanalyst.com',
-                ]
+                 ]
 
 
 # Application definition
@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-	'django.contrib.sitemaps',
+    'django.contrib.sitemaps',
+    'django_pandas'
 ]
 
 MIDDLEWARE = [
@@ -88,21 +89,29 @@ CELERY_TIMEZONE = 'Australia/Sydney'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default':{
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'mywealthanalyst',
+#         'USER': 'admin',
+#         'PASSWORD': 'admin',
+#         'HOST': '104.248.152.99',
+#         'PORT': '',
+#     }
+# }
+
 DATABASES = {
-    'default':{
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'mywealthanalyst',
-        'USER': 'admin',
-        'PASSWORD': 'admin',
-        'HOST': '104.248.152.99',
-        'PORT': '',
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'mywealthanalyst.db',
     }
 }
-
+DATABASES["default"]["ATOMIC_REQUESTS"] = True
 
 
 # Email BACKEND
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'  # During development only
+# During development only
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 EMAIL_FILE_PATH = os.path.join(BASE_DIR, "sent_emails")
 
 # Password validation
@@ -143,8 +152,10 @@ USE_THOUSAND_SEPARATOR = True
 
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-STATIC_ROOT = os.path.join(BASE_DIR, "..", "static_files") # Static files (CSS, JavaScript, Images)
+# Static files (CSS, JavaScript, Images)
+STATIC_ROOT = os.path.join(BASE_DIR, "..", "static_files")
 STATIC_URL = '/static/'
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, "..", "media_files") # 'media' is my media folder
+# 'media' is my media folder
+MEDIA_ROOT = os.path.join(BASE_DIR, "..", "media_files")

@@ -25,68 +25,59 @@
                   <table class="table">
                         <thead>
                               <tr>
-                                {% for item in Commodities %}
-                                <th> {{ item.commodity_name }} </th>
-                                {% endfor %}
+                                <th>Property</th>
+                                <th>Gold</th>
+                                <th>Silver</th>
+                                <th>Oil</th>
+                                <th>Bitcoin</th>
+                                <th>All Ords</th>
                               </tr>
                         </thead>
                         <tbody>
                               <tr>
-                                {% for item in Commodities %}
-
-                                    {% if item.commodity_name == 'Property' %}
-                                    <td class="currency""><span class="currency_togglable" id="propertyprice" data-monetary-amount="{{ Property.SYD|floatformat:0 }}"></span></td>
-                                    {% else %}
-                                    <td class="currency""><span class="currency_togglable" data-monetary-amount="{{ item.last_price|floatformat:2 }}"></span></td>
-                                    {% endif %}
-
-                                {% endfor %}
+                                <td class="currency""><span class="currency_togglable" id="propertyprice" data-monetary-amount="{{ Property.SYD|floatformat:0 }}"></span></td>
+                                <td class="currency""><span class="currency_togglable" data-monetary-amount="{{ Gold.last_price|floatformat:2 }}"></span></td>
+                                <td class="currency""><span class="currency_togglable" data-monetary-amount="{{ Silver.last_price|floatformat:2 }}"></span></td>
+                                <td class="currency""><span class="currency_togglable" data-monetary-amount="{{ Oil.last_price|floatformat:2 }}"></span></td>
+                                <td class="currency""><span class="currency_togglable" data-monetary-amount="{{ Bitcoin.last_price|floatformat:2 }}"></span></td>
+                                <td class="currency""><span class="currency_togglable" data-monetary-amount="{{ Allords.last_price|floatformat:2 }}"></span></td>
                               </tr>
 
                               <tr>
-                                {% for item in Commodities %}
-                                    {% if item.commodity_name == 'Property' %}
-                                       <td></td>
-                                    {% else %}
-                                       {% if 0 > item.last_movement_nominal %}
-                                           <td class="price_small negative">
-                                             <span class="currency_togglable" data-monetary-amount="{{ item.last_movement_nominal|floatformat:2 }}"></span>
-                                             (<span data-monetary-amount="{{ item.last_movement_percentage|floatformat:2 }}"></span>%)
-                                           </td>
-                                       {% else %}
-                                       <td class="price_small positive">
-                                         <span class="currency_togglable" data-monetary-amount="{{ item.last_movement_nominal|floatformat:2 }}"></span>
-                                         (<span data-monetary-amount="{{ item.last_movement_percentage|floatformat:2 }}"></span>%)
-                                       </td>
-                                       {% endif %}
-                                    {% endif %}
-                                {% endfor %}
+                                <td></td>
+                                <td class={% if Gold.last_movement_nominal < 0 %}"price_small negative"{% else %} "price_small positive" {% endif %}>
+                                         <span class="currency_togglable" data-monetary-amount="{{ Gold.last_movement_nominal|floatformat:2 }}"></span>
+                                         (<span data-monetary-amount="{{ Gold.last_movement_percentage|floatformat:2 }}"></span>%)
+                                </td>
+                                <td class={% if Silver.last_movement_nominal < 0 %}"price_small negative"{% else %} "price_small positive" {% endif %}>
+                                         <span class="currency_togglable" data-monetary-amount="{{ Silver.last_movement_nominal|floatformat:2 }}"></span>
+                                         (<span data-monetary-amount="{{ Silver.last_movement_percentage|floatformat:2 }}"></span>%)
+                                </td>
+                                <td class={% if Oil.last_movement_nominal < 0 %}"price_small negative"{% else %} "price_small positive" {% endif %}>
+                                         <span class="currency_togglable" data-monetary-amount="{{ Oil.last_movement_nominal|floatformat:2 }}"></span>
+                                         (<span data-monetary-amount="{{ Oil.last_movement_percentage|floatformat:2 }}"></span>%)
+                                </td>
+                                <td class={% if Bitcoin.last_movement_nominal < 0 %}"price_small negative"{% else %} "price_small positive" {% endif %}>
+                                         <span class="currency_togglable" data-monetary-amount="{{ Bitcoin.last_movement_nominal|floatformat:2 }}"></span>
+                                         (<span data-monetary-amount="{{ Bitcoin.last_movement_percentage|floatformat:2 }}"></span>%)
+                                </td>  
+                                <td class={% if Allords.last_movement_nominal < 0 %}"price_small negative"{% else %} "price_small positive" {% endif %}>
+                                         <span class="currency_togglable" data-monetary-amount="{{ Allords.last_movement_nominal|floatformat:2 }}"></span>
+                                         (<span data-monetary-amount="{{ Allords.last_movement_percentage|floatformat:2 }}"></span>%)
+                                </td>                                
                               </tr>
 
                               <tr>
-                                {% for item in Commodities %}
-                                  {% if item.commodity_name == "Property" %}
-                                  <td class="price_small" style="font-size:9pt"> {% localtime on %}{{Property.name|date:"Y-M-d"}}{% endlocaltime %} </td>
-                                  {% else %}
-                                  <td class="price_small" style="font-size:9pt"> {{item.date_last_scraped|date:"M-d H:i"}} </td>
-                                  {% endif %}
-                                {% endfor %}
+                               <td class="price_small" style="font-size:9pt"> {% localtime on %}{{Property.name|date:"Y-M-d"}}{% endlocaltime %}</td>
+                               <td class="price_small" style="font-size:9pt"> {{Gold.datetime|date:"M-d H:i"}}</td>
+                               <td class="price_small" style="font-size:9pt"> {{Silver.datetime|date:"M-d H:i"}}</td>
+                               <td class="price_small" style="font-size:9pt"> {{Oil.datetime|date:"M-d H:i"}}</td>
+                               <td class="price_small" style="font-size:9pt"> {{Bitcoin.datetime|date:"M-d H:i"}}</td>
+                               <td class="price_small" style="font-size:9pt"> {{Allords.datetime|date:"M-d H:i"}}</td>
                               </tr>
 
                               <tr>
-                                {% for item in Commodities %}
-                                      {% if item.commodity_name == "Gold"%}
-                                    <td class="price_small" style="font-size:9pt"> <a href="https://www.perthmint.com/" target="_blank" style="font-size:9pt">buy now</a> </td>
-                                      {% elif item.commodity_name == "Silver"%}
-                                    <td class="price_small" style="font-size:9pt"> <a href="https://www.perthmint.com/" target="_blank" style="font-size:9pt">buy now</a> </td>
-                                      {% elif item.commodity_name == "All Ords"%}
-                                    <td class="price_small" style="font-size:9pt"> <a href="https://www.500affiliates.com/Home.aspx?id=122624" target="_blank" style="font-size:9pt">buy now</a> </td>
-                                      {% elif item.commodity_name == "Bitcoin"%}
-                                    <td class="price_small" style="font-size:9pt"> <a href="http://coinbase-consumer.sjv.io/QvLVx" target="_blank" style="font-size:9pt">buy now</a> </td>
-                                      {% elif item.commodity_name == "Oil"%}
-                                    <td class="price_small" style="font-size:9pt"> <a href="https://www.500affiliates.com/Home.aspx?id=122624" target="_blank" style="font-size:9pt">buy now</a> </td>
-                                      {% else %}
-                                    <td class="price_small" style="font-size:9pt">
+                                <td class="price_small" style="font-size:9pt">
                                        <SELECT id="citylist_0" class="chart_dropdown">
                                              <OPTION VALUE="SYD">Sydney</option>
                                              <OPTION VALUE="MEL">Melbourne</option>
@@ -96,9 +87,13 @@
                                              <OPTION VALUE="CAN">Canberra</option>
                                              <OPTION VALUE="HOB">Hobart</option>
                                              <OPTION VALUE="DAR">Darwin</option>
-                                       </SELECT></td>
-                                      {% endif %}
-                                {% endfor %}
+                                       </SELECT>
+                                </td>
+                                <td class="price_small" style="font-size:9pt"> <a href="https://www.perthmint.com/" target="_blank" style="font-size:9pt">buy now</a> </td>
+                                <td class="price_small" style="font-size:9pt"> <a href="https://www.perthmint.com/" target="_blank" style="font-size:9pt">buy now</a> </td>
+                                <td class="price_small" style="font-size:9pt"> <a href="https://www.500affiliates.com/Home.aspx?id=122624" target="_blank" style="font-size:9pt">buy now</a> </td>
+                                <td class="price_small" style="font-size:9pt"> <a href="http://coinbase-consumer.sjv.io/QvLVx" target="_blank" style="font-size:9pt">buy now</a> </td>
+                                <td class="price_small" style="font-size:9pt"> <a href="https://www.500affiliates.com/Home.aspx?id=122624" target="_blank" style="font-size:9pt">buy now</a> </td>
                               </tr>
                         </tbody>
                   </table>
