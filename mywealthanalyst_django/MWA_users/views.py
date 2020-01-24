@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import os
 import requests
-
+from django.contrib.auth import authenticate, login
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
@@ -31,23 +31,27 @@ def register_view(request):
         if form.is_valid():
 
             user = form.save(commit=False)
-            user.activated = False
+            # user.activated = False
+            user.activated = True
+
             user.save()
-            current_site = get_current_site(request)
-            mail_subject = 'Activate your mywealthanalyst account.'
-            html_message = render_to_string('MWA_users/confirmation_email.html', {
-                'user': user,
-                'domain': current_site.domain,
-                'uid': urlsafe_base64_encode(force_bytes(user.pk)),#.decode(),
-                'token': account_activation_token.make_token(user),
-            })
-            plain_message = strip_tags(html_message)
-            from_email = 'mywealthanalyst <register@mywealthanalyst.com>'
-            to_email = [form.cleaned_data.get('email')]
+            # current_site = get_current_site(request)
+            # mail_subject = 'Activate your mywealthanalyst account.'
+            # html_message = render_to_string('MWA_users/confirmation_email.html', {
+            #     'user': user,
+            #     'domain': current_site.domain,
+            #     'uid': urlsafe_base64_encode(force_bytes(user.pk)),#.decode(),
+            #     'token': account_activation_token.make_token(user),
+            # })
+            # plain_message = strip_tags(html_message)
+            # from_email = 'mywealthanalyst <register@mywealthanalyst.com>'
+            # to_email = [form.cleaned_data.get('email')]
 
-            mail.send_mail(mail_subject, plain_message, from_email, to_email, html_message=html_message)
+            # mail.send_mail(mail_subject, plain_message, from_email, to_email, html_message=html_message)
 
-            return(render(request, "MWA_users/please_confirm_email.html"))
+            login(request, user)  # TEMP
+            return(render(request, "MWA_users/email_confirmed.html"))  # TEMP
+            # return(render(request, "MWA_users/please_confirm_email.html"))
     else:
         form = RegistrationForm()
 
