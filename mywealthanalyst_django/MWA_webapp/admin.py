@@ -44,6 +44,7 @@ class CommoditiesTSAdmin(admin.ModelAdmin):
     list_display = ['date', 'name', 'last_price']
     fields = ['name', 'date', 'datetime', 'last_price',
               'last_movement_nominal', 'last_movement_percentage']
+    readonly_fields = ('datetime',)
 
 # Register your models here.
 

@@ -159,3 +159,13 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 # 'media' is my media folder
 MEDIA_ROOT = os.path.join(BASE_DIR, "..", "media_files")
+
+
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = 'smtp.office365.com'
+# EMAIL_HOST_USER = 'dean@mywealthanalyst.com'
+# DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+# EMAIL_HOST_PASSWORD = 'Dragon.ba11'
+# EMAIL_PORT = 587
+# EMAIL_USE_SSL = False
+# EMAIL_USE_TLS = True
