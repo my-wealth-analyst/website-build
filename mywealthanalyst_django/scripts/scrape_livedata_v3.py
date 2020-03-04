@@ -6,7 +6,7 @@ import random
 from django.conf import settings
 from celery.utils.log import get_task_logger
 import requests
-
+import time
 import warnings
 warnings.filterwarnings("ignore", category=RuntimeWarning)
 
