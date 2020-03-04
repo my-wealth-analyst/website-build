@@ -123,3 +123,6 @@ def scrape_current_v3():
     record.save()
 
     logger.info(f"Live prices updated using IP: {current_ip}")
+
+    tr.close()
+    time.sleep(5)
